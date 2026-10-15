@@ -33,11 +33,20 @@ jobs:
         # Every other workspace imports @betterlabo/shared from its built dist.
         run: npm run build:shared
 
+      - name: Build the API
+        # `apps/web` typechecks against `@betterlabo/api`, whose `types` point at
+        # `dist/`. On a CLEAN checkout that dist does not exist yet, so typechecking
+        # the web workspace without this step fails with
+        # `TS2307: Cannot find module '@betterlabo/api'` — a failure a warm local
+        # tree hides completely. The root `typecheck` script also guards this with a
+        # `pretypecheck` hook; it is spelled out here so the CI log shows why.
+        run: npm run build:api
+
       - name: Typecheck every workspace
         run: npm run typecheck
 
-      - name: Build the API and the portal
-        run: npm run build
+      - name: Build the portal
+        run: npm run build:web
 
       - name: Verify the committed data
         # Reads only the committed files under apps/web/public/data — no network,

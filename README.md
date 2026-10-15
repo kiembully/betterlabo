@@ -78,7 +78,11 @@ a task to the ETL that produces it, with a source URL and a licence.
 ```bash
 # Node 22+ (developed on 26.7) and npm 11
 npm install
-npm run build:shared          # packages/shared must be built before anything
+# Both built workspaces must exist before anything can be typechecked or built:
+# packages/shared (imported by name) and apps/api (its `types` point at dist/,
+# so `apps/web` cannot typecheck without it). `npm run typecheck` also guards
+# this with a `pretypecheck` hook.
+npm run build:shared && npm run build:api
 cp .env.example .env.local    # every value has a default; nothing is required
 
 # 1. Compile the cached data (needs network; see "Fetch sizes" below)

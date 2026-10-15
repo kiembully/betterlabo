@@ -23,6 +23,7 @@
     "build:shared": "npm run build -w @betterlabo/shared",
     "build:api": "npm run build -w @betterlabo/api",
     "build:web": "npm run build -w @betterlabo/web",
+    "pretypecheck": "npm run build:shared && npm run build:api",
     "typecheck": "npm run typecheck -w @betterlabo/shared && npm run typecheck -w @betterlabo/api && npm run typecheck -w @betterlabo/web",
     "lint": "npm run lint -w @betterlabo/web",
     "etl": "node tools/etl/src/cli.mjs",

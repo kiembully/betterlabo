@@ -62,7 +62,8 @@ timestamp inside the hashed payload.
 
 ```bash
 npm run build:shared      # must precede anything else
-npm run typecheck         # all workspaces
+npm run build:api         # apps/web typechecks against @betterlabo/api/dist
+npm run typecheck         # all workspaces (pretypecheck builds the two above)
 npm run build             # shared → api → web
 npm run etl:verify        # offline assertions over the committed data
 npm run smoke             # API assertions against a real mongod
