@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build the shared contract
+        # Every other workspace imports @betterlabo/shared from its built dist.
+        run: npm run build:shared
+
+      - name: Typecheck every workspace
+        run: npm run typecheck
+
+      - name: Build the API and the portal
+        run: npm run build
+
+      - name: Verify the committed data
+        # Reads only the committed files under apps/web/public/data — no network,
+        # so a red build means the data in this repository disagrees with itself.
+        run: npm run etl:verify

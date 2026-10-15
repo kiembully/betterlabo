@@ -86,14 +86,39 @@ layer uses `node:https` with HTTP/1.1, a browser-like UA and a Referer.
 | Licence | CC0 1.0 Universal |
 | File | `https://huggingface.co/datasets/bettergovph/dpwh-transparency-data/resolve/main/dpwh_transparency_data.parquet` (24 MB, 248,220 rows) |
 
-**Transformation.** Read over **HTTP range requests with a column projection**
-using `hyparquet` + `asyncBufferFromUrl`, so the ETL never downloads the whole
-file. **The schema has `location.province` and `location.region` and no
-municipality column**, so a Labo project cannot be selected by field: the task
-narrows to Camarines Norte by province, then flags rows whose `description`
-contains a Labo place-name token, and publishes both counts so a reader can see
-how much was excluded. A Labo project whose description omits the town name is
-invisible to this filter — a limitation of the source, not the filter.
+**Transformation.** Downloaded once to the ETL cache with the shared resumable
+downloader, then read from disk with `hyparquet` and a 17-of-25-column projection;
+streaming over HTTP range requests is kept as the fallback when a download cannot
+complete. (`compressors` must **not** be passed to `parquetReadObjects` here —
+hyparquet handles the file's own compression, and an explicit map fails with
+`Cannot create property '0' on number`.)
+
+Selecting Labo's projects needed three findings, and each changed the answer:
+
+1. **`location.province` is not a project location.** It holds the implementing
+   **District Engineering Office** — real values read `"Camarines Norte DEO"`,
+   `"Agusan del Norte DEO"`, `"Region V"`. Filtering it for a municipality matches
+   nothing at all, and filtering it for a province only says which office built the
+   thing, not where it stands.
+2. **The dataset does carry `latitude`/`longitude`** — 214,747 of the 248,220 rows
+   have usable coordinates, so projects can be located properly rather than
+   guessed at from prose.
+3. **A bounding-box test over Labo's rectangle over-includes its neighbours.** The
+   bbox's western edge reaches into Tagkawayan, Quezon, and 28 rows are implemented
+   by `"Quezon 4th DEO"`. The selector is therefore a **point-in-polygon test
+   against the compiled barangay polygons** — the same authoritative geometry the
+   hazard clip uses — and the containing barangay is recorded on each project.
+
+**Result:** 478 rows fall inside the bounding box, **309 fall inside a Labo
+barangay** (the polygon test removes 169 neighbour over-inclusions), spanning
+**50 of the 52 barangays**, 2016–2025, ₱10.76 B in contract amounts. The largest
+entries are flood-control structures on the **Labo River** and the **Busigon
+River** — the exact vulnerability the project brief names.
+
+**Published exclusions**, because they are real and cannot be verified: 203 rows
+name Labo in their description but carry no usable coordinate, so they are counted
+in `counts.mentionsLaboButUnlocated` and left out of the compiled list rather than
+placed on a guess.
 
 ---
 

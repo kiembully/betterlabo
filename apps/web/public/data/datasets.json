@@ -36,14 +36,16 @@
       "license": "CC0 1.0 Universal",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "attributionText": "Infrastructure project data from the official DPWH transparency platform, packaged by BetterGov.ph.",
-      "retrievedAt": "2026-10-15T21:59:10.520Z",
+      "retrievedAt": "2026-10-15T22:56:32.568Z",
       "sourceVersion": "2025-11-29",
-      "rowCount": null,
-      "bytes": null,
+      "rowCount": 309,
+      "bytes": 24330129,
       "sha256": null,
-      "outputs": [],
-      "notes": "Not compiled in this run: reading the Parquet file failed (Invalid typed array length: 741867)",
-      "unavailable": true
+      "outputs": [
+        "apps/web/public/data/projects.json"
+      ],
+      "notes": "Read from a 248220-row Parquet file (17 of 25 columns projected). 214747 rows carry usable coordinates; 478 fall inside Labo's bounding box, and 309 fall inside a Labo barangay polygon. 203 row(s) name Labo in the description but could not be located, so they are excluded. `location.province` is the implementing District Engineering Office, not a project location.",
+      "unavailable": false
     },
     {
       "id": "noah-hazard-maps",
@@ -113,6 +115,6 @@
       "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
     }
   ],
-  "dataHash": "7666db97d9ad2dcefa53dbdc3337195780c247ea9352b5bf055738a8aa5bb005",
-  "generatedAt": "2026-10-15T21:59:10.550Z"
+  "dataHash": "f7bed90245ea23e6025f938281cc330865779da3e661f3b6a8d5ef51b7564937",
+  "generatedAt": "2026-10-15T22:56:32.611Z"
 }

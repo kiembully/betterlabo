@@ -1,0 +1,97 @@
+name: Refresh cached data
+
+# Refreshes every compiled dataset under apps/web/public/data and commits the
+# result. The portal itself is static: it never fetches upstream data at request
+# time, so this job is the only thing that touches the government sources.
+on:
+  schedule:
+    # 21:10 UTC = 05:10 Asia/Manila, before the working day starts.
+    - cron: '10 21 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Re-download every upstream file even if the cache is warm
+        type: boolean
+        default: false
+      skip_hazards:
+        description: Skip the Project NOAH archives (~320 MB per run)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build the shared contract
+        run: npm run build:shared
+
+      - name: Cache the ETL's raw downloads
+        uses: actions/cache@v4
+        with:
+          path: data/sources
+          # The barangay boundary release is versioned in its filename-less URL,
+          # so the cache key is the source registry's mtime — bump it by hand when
+          # a source is repointed.
+          key: etl-sources-${{ github.run_id }}
+          restore-keys: |
+            etl-sources-
+
+      - name: Compile the cached JSON
+        env:
+          # The ETL sends a browser-like UA and Referer; some upstream hosts 403
+          # without them, and the request must not look like a scraper.
+          ETL_HTTP_TIMEOUT_MS: '5400000'
+        run: |
+          set -o pipefail
+          FLAGS=""
+          if [ "${{ inputs.force }}" = "true" ]; then FLAGS="$FLAGS --force"; fi
+          TASKS="barangays profile fiscal projects"
+          if [ "${{ inputs.skip_hazards }}" != "true" ]; then TASKS="$TASKS hazards"; fi
+          node tools/etl/src/cli.mjs $TASKS $FLAGS 2>&1 | tee etl.log
+
+      - name: Verify the compiled files
+        run: node tools/etl/src/cli.mjs verify 2>&1 | tee verify.log
+
+      - name: Upload the ETL logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: etl-logs
+          path: |
+            etl.log
+            verify.log
+          if-no-files-found: ignore
+
+      - name: Commit the refreshed data
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- apps/web/public/data; then
+            echo "No data changed in this refresh."
+            exit 0
+          fi
+          git config user.name  "betterlabo-bot"
+          git config user.email "bot@betterlabo.org"
+          git add apps/web/public/data
+          git commit -m "chore(data): scheduled refresh of cached datasets
+
+          Produced by .github/workflows/refresh-data.yml and verified by
+          npm run etl:verify before this commit was made."
+          git push
