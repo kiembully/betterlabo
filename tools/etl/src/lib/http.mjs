@@ -18,8 +18,9 @@
  *     host rejects the uncompressed request.
  */
 import { createHash } from 'node:crypto';
-import { createReadStream, existsSync } from 'node:fs';
-import { mkdir, readFile, rename, stat, writeFile } from 'node:fs/promises';
+import { once } from 'node:events';
+import { createReadStream, createWriteStream, existsSync } from 'node:fs';
+import { mkdir, rename, rm, stat } from 'node:fs/promises';
 import http from 'node:http';
 import https from 'node:https';
 import { dirname } from 'node:path';
@@ -145,8 +146,19 @@ export async function fetchJson(url, opts) {
 }
 
 /**
- * Download to `dest`, resuming a partial `.part` file when the server supports
- * it. Returns `{ path, bytes, sha256, skipped }`.
+ * Download to `dest`, resuming a partial `.part` file across attempts.
+ *
+ * Streams to disk as it goes rather than buffering the whole body, so a dropped
+ * connection costs only the bytes in flight and the retry resumes from what is
+ * already on disk. That is not theoretical: the DPWH Parquet's transfer ended
+ * early TWICE in one run ("end of response with 18547918 bytes missing", then
+ * 8956777), and a buffer-then-write implementation would have discarded all of it
+ * and started again. The final size is checked against the server's declared total
+ * before the `.part` file is promoted, so a short transfer can never be mistaken
+ * for a complete download — which matters because a truncated Parquet/zip reads
+ * as corrupt data rather than as a network problem.
+ *
+ * Returns `{ path, bytes, sha256, skipped }`.
  */
 export async function downloadToFile(url, dest, opts = {}) {
   const {
@@ -154,45 +166,91 @@ export async function downloadToFile(url, dest, opts = {}) {
     timeout = DEFAULT_TIMEOUT,
     logEveryBytes = 8 * 1024 * 1024,
     extraHeaders = {},
+    maxAttempts = 5,
   } = opts;
   await mkdir(dirname(dest), { recursive: true });
 
   if (!force && existsSync(dest)) {
     const { size } = await stat(dest);
-    return { path: dest, bytes: size, sha256: await sha256File(dest), skipped: true };
+    if (size > 0) return { path: dest, bytes: size, sha256: await sha256File(dest), skipped: true };
   }
 
   const part = `${dest}.part`;
-  let start = 0;
-  if (existsSync(part)) {
-    start = (await stat(part)).size;
-    log(`resuming ${dest.split(/[\\/]/).pop()} at ${(start / 1e6).toFixed(1)} MB`);
-  }
+  const name = dest.split(/[\\/]/).pop();
+  if (force) await rm(part, { force: true });
 
-  const { stream, status } = await open(url, {
-    timeout,
-    extraHeaders,
-    range: start > 0 ? `bytes=${start}-` : undefined,
-  });
+  let expected = null;
+  let lastError = null;
 
-  const resumed = status === 206 && start > 0;
-  const chunks = [];
-  let received = resumed ? start : 0;
-  let lastLogged = received;
-  for await (const chunk of stream) {
-    chunks.push(chunk);
-    received += chunk.length;
-    if (received - lastLogged >= logEveryBytes) {
-      lastLogged = received;
-      log(`  \u2026${(received / 1e6).toFixed(1)} MB  ${dest.split(/[\\/]/).pop()}`);
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    let start = existsSync(part) ? (await stat(part)).size : 0;
+    if (attempt > 1) {
+      log(`retry ${attempt}/${maxAttempts} for ${name} — resuming at ${(start / 1e6).toFixed(1)} MB`);
+      await new Promise((r) => setTimeout(r, 2000 * attempt));
+    }
+
+    try {
+      const { res, stream, status } = await open(url, {
+        timeout,
+        extraHeaders,
+        range: start > 0 ? `bytes=${start}-` : undefined,
+      });
+
+      const contentRange = res.headers['content-range'];
+      const contentLength = Number(res.headers['content-length']);
+      if (typeof contentRange === 'string' && contentRange.includes('/')) {
+        const total = Number(contentRange.split('/')[1]);
+        if (Number.isFinite(total)) expected = total;
+      } else if (status === 200 && Number.isFinite(contentLength)) {
+        expected = contentLength;
+      } else if (status === 206 && Number.isFinite(contentLength) && start > 0) {
+        expected = start + contentLength;
+      }
+
+      // The server ignored the Range header: the bytes on disk are not a prefix.
+      const resumed = status === 206 && start > 0;
+      if (!resumed && start > 0) {
+        log(`${name}: server ignored the Range request — restarting the transfer`);
+        await rm(part, { force: true });
+        start = 0;
+      }
+
+      const out = createWriteStream(part, { flags: resumed ? 'a' : 'w' });
+      let received = start;
+      let lastLogged = received;
+      for await (const chunk of stream) {
+        if (!out.write(chunk)) {
+          await once(out, 'drain');
+        }
+        received += chunk.length;
+        if (received - lastLogged >= logEveryBytes) {
+          lastLogged = received;
+          log(`  \u2026${(received / 1e6).toFixed(1)} MB  ${name}`);
+        }
+      }
+      out.end();
+      await once(out, 'close');
+
+      const { size } = await stat(part);
+      if (expected != null && size !== expected) {
+        throw new Error(
+          `short transfer: ${size} of ${expected} bytes (${(expected - size) / 1e6} MB missing)`,
+        );
+      }
+
+      await rename(part, dest);
+      return { path: dest, bytes: size, sha256: await sha256File(dest), skipped: false };
+    } catch (err) {
+      lastError = err;
+      // The `.part` file is deliberately left in place: it is what the next
+      // attempt resumes from.
+      log(`${name}: ${err instanceof Error ? err.message : err}`);
     }
   }
 
-  const body = Buffer.concat(chunks);
-  const out = resumed ? Buffer.concat([await readFile(part), body]) : body;
-  await writeFile(part, out);
-  await rename(part, dest);
-  return { path: dest, bytes: out.length, sha256: sha256Buffer(out), skipped: false };
+  throw new Error(
+    `download failed after ${maxAttempts} attempts: ${lastError instanceof Error ? lastError.message : lastError}`,
+  );
 }
 
 /** Total size of a remote file, read from a one-byte range request. */

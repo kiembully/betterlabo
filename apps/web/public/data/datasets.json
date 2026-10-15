@@ -11,7 +11,7 @@
       "license": "Public Domain",
       "licenseUrl": null,
       "attributionText": "Local fiscal data compiled and published by the Bureau of Local Government Finance (BLGF), Department of Finance.",
-      "retrievedAt": "2026-10-15T21:28:38.385Z",
+      "retrievedAt": "2026-10-15T23:22:38.869Z",
       "sourceVersion": "FY 2024 (Preliminary)",
       "rowCount": 95,
       "bytes": 1935275,
@@ -36,11 +36,11 @@
       "license": "CC0 1.0 Universal",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "attributionText": "Infrastructure project data from the official DPWH transparency platform, packaged by BetterGov.ph.",
-      "retrievedAt": "2026-10-15T22:56:32.568Z",
+      "retrievedAt": "2026-10-15T23:22:40.307Z",
       "sourceVersion": "2025-11-29",
       "rowCount": 309,
       "bytes": 24330129,
-      "sha256": null,
+      "sha256": "5b411cf3f112fabd1913c70681791e5e2b78b43a8393f489f48bd882f154e123",
       "outputs": [
         "apps/web/public/data/projects.json"
       ],
@@ -57,7 +57,7 @@
       "license": "ODC-ODbL",
       "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
       "attributionText": "Hazard layers produced by Project NOAH, Department of Science and Technology, Philippines.",
-      "retrievedAt": "2026-10-15T21:31:17.765Z",
+      "retrievedAt": "2026-10-15T23:22:52.632Z",
       "sourceVersion": "2026-04-11",
       "rowCount": 3,
       "bytes": 6365400,
@@ -79,7 +79,7 @@
       "license": "MIT",
       "licenseUrl": "https://github.com/bendlikeabamboo/barangay-boundaries-repository/blob/main/LICENSE",
       "attributionText": "Boundary polygons derived from PSA Philippine Standard Geographic Code snapshots (2023-10-24) and NAMRIA administrative-boundary shapefiles (v2023-11-06), packaged by Manuel Balmeo.",
-      "retrievedAt": "2026-10-15T21:26:55.878Z",
+      "retrievedAt": "2026-10-15T23:22:36.255Z",
       "sourceVersion": "v2026.4.13.0",
       "rowCount": 52,
       "bytes": 72910665,
@@ -115,6 +115,6 @@
       "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
     }
   ],
-  "dataHash": "f7bed90245ea23e6025f938281cc330865779da3e661f3b6a8d5ef51b7564937",
-  "generatedAt": "2026-10-15T22:56:32.611Z"
+  "dataHash": "12738c9cecd3eab99c8f27388b469c00c2331e32910e0ba350019a088ffed43a",
+  "generatedAt": "2026-10-15T23:22:52.997Z"
 }

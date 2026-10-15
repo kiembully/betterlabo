@@ -42,7 +42,7 @@ import {
 } from 'hyparquet';
 
 import { bboxOf, bboxesOverlap, pointInGeometry } from '../lib/geo.mjs';
-import { downloadToFile, log } from '../lib/http.mjs';
+import { downloadToFile, log, sha256File } from '../lib/http.mjs';
 import { paths } from '../lib/paths.mjs';
 import { recordProvenance, recordUnavailable } from '../lib/registry.mjs';
 import { SOURCES } from '../lib/sources.mjs';
@@ -304,7 +304,7 @@ export async function run(ctx) {
     sourceVersion: src.sourceVersion,
     rowCount: projects.length,
     bytes: existsSync(localPath) ? (await stat(localPath)).size : null,
-    sha256: null,
+    sha256: existsSync(localPath) ? await sha256File(localPath) : null,
     outputs: ['apps/web/public/data/projects.json'],
     notes: `Read from a ${totalRows ?? scanned}-row Parquet file (17 of 25 columns projected). ${withCoordinates} rows carry usable coordinates; ${insideBbox} fall inside Labo's bounding box, and ${projects.length} fall inside a Labo barangay polygon. ${mentionsLaboButUnlocated} row(s) name Labo in the description but could not be located, so they are excluded. \`location.province\` is the implementing District Engineering Office, not a project location.`,
     unavailable: false,
