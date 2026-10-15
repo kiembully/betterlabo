@@ -1,0 +1,962 @@
+{
+  "municipality": "Labo",
+  "municipalityPsgcCode": "0501606000",
+  "fiscalYear": 2024,
+  "preliminary": true,
+  "sheets": [
+    {
+      "id": "sre-real-property-tax",
+      "title": "Real Property Tax",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 6–8",
+      "total": 9238374.190000001,
+      "figures": [
+        {
+          "label": "General Fund",
+          "amount": 4914059.71,
+          "sharePercent": 53.19,
+          "note": null
+        },
+        {
+          "label": "Special Education Fund",
+          "amount": 4324314.48,
+          "sharePercent": 46.81,
+          "note": null
+        },
+        {
+          "label": "Total",
+          "amount": 9238374.19,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published. The source's Total row (9,238,374.19) does not equal the sum of the components listed here (9,238,374.19); the difference belongs to a nested header level the source groups separately. Both figures are reproduced exactly as published."
+    },
+    {
+      "id": "sre-tax-revenue",
+      "title": "Tax Revenue",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 9–11",
+      "total": 34626442.07,
+      "figures": [
+        {
+          "label": "Tax on Business",
+          "amount": 23904910.68,
+          "sharePercent": 94.16,
+          "note": null
+        },
+        {
+          "label": "Other Taxes",
+          "amount": 1483157.2,
+          "sharePercent": 5.84,
+          "note": null
+        },
+        {
+          "label": "Total Tax Revenue",
+          "amount": 34626442.07,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published. This section's Total includes “Real Property Tax”, compiled as its own section because the source header nests it one level deeper. The listed components therefore do not sum to the Total on their own.",
+      "subSections": [
+        "sre-real-property-tax"
+      ]
+    },
+    {
+      "id": "sre-non-tax-revenue",
+      "title": "Non-Tax Revenue",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 12–16",
+      "total": 31054428.509999998,
+      "figures": [
+        {
+          "label": "Regulatory Fees",
+          "amount": 6968064.96,
+          "sharePercent": 22.44,
+          "note": null
+        },
+        {
+          "label": "Service/ User Charges",
+          "amount": 20461159.88,
+          "sharePercent": 65.89,
+          "note": null
+        },
+        {
+          "label": "Receipts from Economic Enterprises",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Other Receipts",
+          "amount": 3625203.67,
+          "sharePercent": 11.67,
+          "note": null
+        },
+        {
+          "label": "Total Non-Tax Revenue",
+          "amount": 31054428.51,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published. The source's Total row (31,054,428.51) does not equal the sum of the components listed here (31,054,428.51); the difference belongs to a nested header level the source groups separately. Both figures are reproduced exactly as published."
+    },
+    {
+      "id": "sre-local-sources",
+      "title": "Local Sources",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 17–17",
+      "total": 65680870.58,
+      "figures": [
+        {
+          "label": "Total Local Sources",
+          "amount": 65680870.58,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-external-sources",
+      "title": "External Sources",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 18–22",
+      "total": 446931453.96,
+      "figures": [
+        {
+          "label": "National Tax Allotment",
+          "amount": 446931453.96,
+          "sharePercent": 100,
+          "note": null
+        },
+        {
+          "label": "Other Shares from National Tax Collection",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Inter-Local Transfers",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Extraordinary Receipts/ Grants/ Donations/ Aids",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Total External Sources",
+          "amount": 446931453.96,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-current-operating-income",
+      "title": "Current Operating Income",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 23–23",
+      "total": 512612324.53999996,
+      "figures": [
+        {
+          "label": "Total Current Operating Income",
+          "amount": 512612324.54,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-by-lgu-sre-fy2024",
+      "title": "Fund balance and non-operating items",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 24–58",
+      "total": 378168258.64000005,
+      "figures": [
+        {
+          "label": "General Public Services",
+          "amount": 228164960.38,
+          "sharePercent": 11.82,
+          "note": null
+        },
+        {
+          "label": "Total Current Operating Expenditures",
+          "amount": 378168258.64,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Net Operating Income/ (Loss) From Current Operations",
+          "amount": 134444065.9,
+          "sharePercent": 6.96,
+          "note": null
+        },
+        {
+          "label": "Net Increase/ (Decrease) In Funds",
+          "amount": 58446036.19,
+          "sharePercent": 3.03,
+          "note": null
+        },
+        {
+          "label": "Add: Cash Balance, Beginning",
+          "amount": 464128612.65,
+          "sharePercent": 24.04,
+          "note": null
+        },
+        {
+          "label": "Fund/ Cash Available",
+          "amount": 522574648.84,
+          "sharePercent": 27.07,
+          "note": null
+        },
+        {
+          "label": "Less: Payment of Prior Year/s Accounts Payable",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Continuing Appropriation",
+          "amount": 172256318.41,
+          "sharePercent": 8.92,
+          "note": null
+        },
+        {
+          "label": "Fund/ Cash Balance, End",
+          "amount": 350318330.43,
+          "sharePercent": 18.15,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published. The source's Total row (378,168,258.64) does not equal the sum of its listed components (1,930,332,972.8). Both are reproduced exactly as published; treat the component breakdown as indicative."
+    },
+    {
+      "id": "sre-social-services",
+      "title": "Social Services",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 25–30",
+      "total": 94992892.34,
+      "figures": [
+        {
+          "label": "Education, Culture & Sports/ Manpower Development",
+          "amount": 541252,
+          "sharePercent": 0.57,
+          "note": null
+        },
+        {
+          "label": "Health, Nutrition & Population Control",
+          "amount": 55012100.89,
+          "sharePercent": 57.91,
+          "note": null
+        },
+        {
+          "label": "Labor and Employment",
+          "amount": 2843819.94,
+          "sharePercent": 2.99,
+          "note": null
+        },
+        {
+          "label": "Housing and Community Development",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Social Services and Social Welfare",
+          "amount": 36595719.51,
+          "sharePercent": 38.52,
+          "note": null
+        },
+        {
+          "label": "Total Social Services",
+          "amount": 94992892.34,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-total-current-operating-expenditures",
+      "title": "Total Current Operating Expenditures",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 31–32",
+      "total": 55010405.92,
+      "figures": [
+        {
+          "label": "Economic Services",
+          "amount": 55010405.92,
+          "sharePercent": 100,
+          "note": null
+        },
+        {
+          "label": "DEBT SERVICE (Interest Expense & Other Charges)",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-capital-investment-receipts",
+      "title": "Capital/ Investment Receipts",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 35–38",
+      "total": 0,
+      "figures": [
+        {
+          "label": "Proceeds from Sale of Assets",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Proceeds from Sale of Debt Securities of Other Entities",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Collection of Loans Receivables",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Total Capital/Investment Receipts",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-receipts-from-loans-and-borrowings",
+      "title": "Receipts From Loans And Borrowings",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 39–41",
+      "total": 90265652.07,
+      "figures": [
+        {
+          "label": "Acquisition of Loans",
+          "amount": 90265652.07,
+          "sharePercent": 100,
+          "note": null
+        },
+        {
+          "label": "Issuance of Bonds",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Total Receipts From Loans And Borrowings",
+          "amount": 90265652.07,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-non-income-receipts",
+      "title": "Non-Income Receipts",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 42–43",
+      "total": 103597072.25,
+      "figures": [
+        {
+          "label": "Other Non-Income Receipts",
+          "amount": 13331420.18,
+          "sharePercent": 100,
+          "note": null
+        },
+        {
+          "label": "Total Non-Income Receipts",
+          "amount": 103597072.25,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published. This section's Total includes “Receipts From Loans And Borrowings”, compiled as its own section because the source header nests it one level deeper. The listed components therefore do not sum to the Total on their own.",
+      "subSections": [
+        "sre-receipts-from-loans-and-borrowings"
+      ]
+    },
+    {
+      "id": "sre-capital-investment-expenditures",
+      "title": "Capital/ Investment Expenditures",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 44–47",
+      "total": 179595101.96,
+      "figures": [
+        {
+          "label": "Purchase/ Construct of Property Plant and Equipment (Assets/ Capital Outlay)",
+          "amount": 179595101.96,
+          "sharePercent": 100,
+          "note": null
+        },
+        {
+          "label": "Purchase of Debt Securities of Other Entities (Investment Outlay)",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Grant/ Make Loan to Other Entities (Investment Outlay)",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Total Capital/ Investment Expenditures",
+          "amount": 179595101.96,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-debt-service-principal-cost",
+      "title": "DEBT SERVICE (Principal Cost)",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 48–50",
+      "total": 0,
+      "figures": [
+        {
+          "label": "Payment of Loan Amortization",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Retirement/ Redemption of Bonds/ Debt Securities",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "TOTAL DEBT SERVICE (Principal Cost)",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "sre-non-operating-expenditures",
+      "title": "Non-Operating Expenditures",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU, sheet \"By LGU SRE FY2024\", row 849, columns 51–52",
+      "total": 179595101.96,
+      "figures": [
+        {
+          "label": "Other Non-Operating Expenditures",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Total Non-Operating Expenditures",
+          "amount": 179595101.96,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": "The source workbook is captioned \"In Php Million\"; its values are pesos (Labo’s National Tax Allotment reads ₱446,931,453.96 — ₱446.93 M, not ₱446.93 T). Values are reproduced exactly as published."
+    },
+    {
+      "id": "ari-tax-revenue",
+      "title": "Tax Revenue",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 6–9",
+      "total": 30302127.59,
+      "figures": [
+        {
+          "label": "Real Property Tax (General Fund)",
+          "amount": 4914059.71,
+          "sharePercent": 16.22,
+          "note": null
+        },
+        {
+          "label": "Tax On Business",
+          "amount": 23904910.68,
+          "sharePercent": 78.89,
+          "note": null
+        },
+        {
+          "label": "Other Taxes",
+          "amount": 1483157.2,
+          "sharePercent": 4.89,
+          "note": null
+        },
+        {
+          "label": "Total Tax Revenue",
+          "amount": 30302127.59,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-non-tax-revenue",
+      "title": "Non-Tax Revenue",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 10–13",
+      "total": 27429224.84,
+      "figures": [
+        {
+          "label": "Regulatory Fees",
+          "amount": 6968064.96,
+          "sharePercent": 25.4,
+          "note": null
+        },
+        {
+          "label": "Service/User Charges",
+          "amount": 20461159.88,
+          "sharePercent": 74.6,
+          "note": null
+        },
+        {
+          "label": "Receipts From Economic Enterprises",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Total Non-Tax Revenue",
+          "amount": 27429224.84,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-total-locally-sourced-revenue-lsr",
+      "title": "Total Locally - Sourced Revenue (LSR)",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 14–14",
+      "total": 57731352.43,
+      "figures": [
+        {
+          "label": "Total Locally - Sourced Revenue (LSR)",
+          "amount": 57731352.43,
+          "sharePercent": null,
+          "note": "Source definition: a"
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-interest-income",
+      "title": "Interest Income",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 15–15",
+      "total": 299758.48,
+      "figures": [
+        {
+          "label": "Interest Income",
+          "amount": 299758.48,
+          "sharePercent": 100,
+          "note": "Source definition: b"
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-national-tax-allotment-nta",
+      "title": "National Tax Allotment (NTA)",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 16–16",
+      "total": 446931453.96,
+      "figures": [
+        {
+          "label": "National Tax Allotment (NTA)",
+          "amount": 446931453.96,
+          "sharePercent": 100,
+          "note": "Source definition: c"
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-other-shares-from-national-tax-collection",
+      "title": "Other Shares From National Tax Collection",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 17–22",
+      "total": 0,
+      "figures": [
+        {
+          "label": "Share From Economic Zone (RA 7227)",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Share From EVAT",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Share From National Wealth",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Share From Pagcor/PCSO/Lotto",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Share From Tobacco Excise Tax (RA 7171)",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        },
+        {
+          "label": "Others",
+          "amount": 0,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-total-other-shares-from-national-tax-collection",
+      "title": "Total Other Shares From National Tax Collection",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 23–23",
+      "total": 0,
+      "figures": [
+        {
+          "label": "Total Other Shares From National Tax Collection",
+          "amount": 0,
+          "sharePercent": null,
+          "note": "Source definition: d"
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-annual-regular-income-ari",
+      "title": "Annual Regular Income (ARI)",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 24–24",
+      "total": 504962564.87,
+      "figures": [
+        {
+          "label": "Annual Regular Income (ARI)",
+          "amount": 504962564.87,
+          "sharePercent": 100,
+          "note": "Source definition: e = sum(a,b,c,d)"
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-lsr-dependency",
+      "title": "LSR Dependency",
+      "fiscalYear": 2024,
+      "unit": "%",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 25–25",
+      "total": 11.4328,
+      "figures": [
+        {
+          "label": "LSR Dependency",
+          "amount": 11.43,
+          "sharePercent": null,
+          "note": "Source definition: f = a / e"
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-nta-dependency",
+      "title": "NTA Dependency",
+      "fiscalYear": 2024,
+      "unit": "%",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 26–26",
+      "total": 88.5078,
+      "figures": [
+        {
+          "label": "NTA Dependency",
+          "amount": 88.51,
+          "sharePercent": null,
+          "note": "Source definition: g = c / e"
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ari-other-shares-from-national-tax-dependency",
+      "title": "Other Shares From National Tax Dependency",
+      "fiscalYear": 2024,
+      "unit": "%",
+      "basis": "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU, sheet \"ARI 2024\", row 848, columns 27–27",
+      "total": 0,
+      "figures": [
+        {
+          "label": "Other Shares From National Tax Dependency",
+          "amount": 0,
+          "sharePercent": null,
+          "note": "Source definition: h = d / e"
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "sef-income",
+      "title": "Income",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Special Education Fund Income and Expenditures, sheet \"Income\", row 844, columns 6–6",
+      "total": 4324314.48,
+      "figures": [
+        {
+          "label": "RPT Collections (SEF)",
+          "amount": 4324314.48,
+          "sharePercent": 100,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "sef-expenditures",
+      "title": "Expenditures",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Special Education Fund Income and Expenditures, sheet \"Expenditures\", row 845, columns 6–18",
+      "total": 2622108,
+      "figures": [
+        {
+          "label": "General Administration",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Education Subsidiary Services",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Elementary School",
+          "amount": 2292576,
+          "sharePercent": 87.43,
+          "note": null
+        },
+        {
+          "label": "Secondary School",
+          "amount": 329532,
+          "sharePercent": 12.57,
+          "note": null
+        },
+        {
+          "label": "Vocational/Technical School",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "University/College Education School",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Adult Education",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Maintenance Of Sports Center, Athletic Fields, Playground",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Manpower Development Management Tool",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Others",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Loan Amortization-Domestic(Debt Service-Principal)",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Interest Payment-Domestic(Debt Service-Interest)",
+          "amount": 0,
+          "sharePercent": 0,
+          "note": null
+        },
+        {
+          "label": "Total Expenditures",
+          "amount": 2622108,
+          "sharePercent": null,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ldrrmf-70-ldrrmf",
+      "title": "70% Ldrrmf",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Local Disaster Risk Reduction Management Fund by LGU, sheet \"FY2024\", row 845, columns 6–7",
+      "total": 27954948.49,
+      "figures": [
+        {
+          "label": "Budget Appropriation",
+          "amount": 17852916.69,
+          "sharePercent": 63.86,
+          "note": null
+        },
+        {
+          "label": "Expenditures",
+          "amount": 10102031.8,
+          "sharePercent": 36.14,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ldrrmf-30-quick-response-fund",
+      "title": "30% Quick Response Fund",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Local Disaster Risk Reduction Management Fund by LGU, sheet \"FY2024\", row 845, columns 8–9",
+      "total": 14666384,
+      "figures": [
+        {
+          "label": "Budget Appropriation",
+          "amount": 7356028,
+          "sharePercent": 50.16,
+          "note": null
+        },
+        {
+          "label": "Expenditures",
+          "amount": 7310356,
+          "sharePercent": 49.84,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    },
+    {
+      "id": "ldrrmf-total",
+      "title": "LDRRMF — Total",
+      "fiscalYear": 2024,
+      "unit": "PHP",
+      "basis": "BLGF — FY 2024 Local Disaster Risk Reduction Management Fund by LGU, sheet \"FY2024\", row 845, columns 10–11",
+      "total": 42621332.49,
+      "figures": [
+        {
+          "label": "Budget Appropriation",
+          "amount": 25208944.69,
+          "sharePercent": 59.15,
+          "note": null
+        },
+        {
+          "label": "Expenditures",
+          "amount": 17412387.8,
+          "sharePercent": 40.85,
+          "note": null
+        }
+      ],
+      "sourceId": "blgf-lgu-fiscal",
+      "note": null
+    }
+  ],
+  "note": "FY 2024 figures as published by BLGF, marked \"Preliminary\" by the source. Nominal pesos, not inflation-adjusted. Rows the source leaves blank are published as null, never as zero.",
+  "sources": [
+    "blgf-lgu-fiscal"
+  ],
+  "dataHash": "bda3e8035f18402459c888f8fd91e1c5cfc70d47dfc2d05d675ef7a619673719",
+  "generatedAt": "2026-10-15T21:28:38.384Z"
+}

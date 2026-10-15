@@ -1,0 +1,362 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BetterLabo design system
+   ───────────────────────────────────────────────────────────────────────────
+   The palette is anchored to the BetterGov.ph **Kapwa** design system
+   (github.com/bettergovph/kapwa, src/styles/kapwa.css) so this portal reads as a
+   sibling of the other BetterLGU sites rather than a one-off. Every hue below is
+   copied from Kapwa's token file, not approximated:
+
+     brand-500 #0787ff · brand-600 #005df5 · brand-900 #0038a8 (PH flag blue)
+     yellow-400 #fcd116 (PH flag yellow) · red-500 #fb384d · green-600 #0b7f42
+     orange-500 #fc9416 · gray-* = Kapwa's neutral ramp
+
+   Civic semantics on top: `ink` for text, `surface`/`raised` for planes, `rule`
+   for hairlines, `hazard-*` for the NOAH hazard classes.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  /* Display type is the same grotesque, tracked tight — institutional, not trendy. */
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Kapwa brand (BetterGov.ph) ── */
+  --color-brand-50: #ebf6ff;
+  --color-brand-100: #d1ecff;
+  --color-brand-200: #aedfff;
+  --color-brand-300: #76cdff;
+  --color-brand-400: #35b0ff;
+  --color-brand-500: #0787ff;
+  --color-brand-600: #005df5;
+  --color-brand-700: #0052d6;
+  --color-brand-800: #004ac2;
+  --color-brand-900: #0038a8;
+  --color-brand-950: #062365;
+
+  /* ── Kapwa neutral ramp ── */
+  --color-gray-50: #f7f7f8;
+  --color-gray-100: #ecedee;
+  --color-gray-200: #d8dbdf;
+  --color-gray-300: #c6ccd2;
+  --color-gray-400: #b8c0c6;
+  --color-gray-500: #abb2ba;
+  --color-gray-600: #6f7c88;
+  --color-gray-700: #596570;
+  --color-gray-800: #49525b;
+  --color-gray-900: #373d43;
+  --color-gray-950: #1e2124;
+
+  /* ── Accents ── */
+  --color-accent-red-50: #fff1f2;
+  --color-accent-red-200: #ffc6cc;
+  --color-accent-red-500: #fb384d;
+  --color-accent-red-600: #e9192f;
+  --color-accent-red-700: #ce1226;
+  --color-accent-orange-50: #fff9ed;
+  --color-accent-orange-200: #ffe3a9;
+  --color-accent-orange-500: #fc9416;
+  --color-accent-orange-600: #ed7609;
+  --color-accent-orange-700: #c45a0a;
+  --color-accent-yellow-50: #fefce8;
+  --color-accent-yellow-100: #fffac2;
+  --color-accent-yellow-200: #fff389;
+  --color-accent-yellow-400: #fcd116;
+  --color-accent-yellow-600: #cc8e02;
+  --color-accent-yellow-900: #724011;
+  --color-accent-green-50: #effef5;
+  --color-accent-green-200: #b6fcd5;
+  --color-accent-green-500: #14d36d;
+  --color-accent-green-600: #0b7f42;
+  --color-accent-green-700: #0a713a;
+
+  /* ── Civic semantics ── */
+  --color-ink: #1e2124;
+  --color-ink-support: #596570;
+  --color-ink-subtle: #6f7c88;
+  --color-ink-inverse: #f7f7f8;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f7f7f8;
+  --color-surface-raised: #ffffff;
+  --color-surface-brand: #ebf6ff;
+  --color-surface-bold: #062365;
+  --color-rule: #ecedee;
+  --color-rule-strong: #c6ccd2;
+
+  /* ── NOAH hazard classes (Low → Very high) ── */
+  --color-hazard-low: #aedfff;
+  --color-hazard-moderate: #fcd116;
+  --color-hazard-high: #fc9416;
+  --color-hazard-veryhigh: #ce1226;
+
+  /* ── Report status ── */
+  --color-status-received: #6f7c88;
+  --color-status-acknowledged: #0787ff;
+  --color-status-progress: #fc9416;
+  --color-status-resolved: #0b7f42;
+  --color-status-closed: #596570;
+  --color-status-rejected: #ce1226;
+
+  --breakpoint-xs: 26rem;
+
+  --radius-card: 0.75rem;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgb(30 33 36 / 0.06), 0 1px 3px rgb(30 33 36 / 0.04);
+  --shadow-raised: 0 10px 24px -12px rgb(6 35 101 / 0.28);
+  --shadow-sticker: 0 2px 0 0 var(--color-rule-strong);
+
+  --animate-rise: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-drift: drift 26s linear infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 120px 120px;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-surface-sunken);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv05" 1, "ss01" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  /* Figures must line up column-to-column in every table and stat tile. */
+  table,
+  output,
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  a {
+    text-underline-offset: 0.2em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-700);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-brand-200);
+  }
+}
+
+/* ═══════════════════════════════ utilities ═══════════════════════════════ */
+
+/** Page gutter + max measure. Every page section uses this, nothing else. */
+@utility container-page {
+  width: 100%;
+  max-width: 82rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
+/** The standards-compliant card. One class so cards cannot drift apart. */
+@utility card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+@utility card-hover {
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    border-color: var(--color-brand-300);
+    box-shadow: var(--shadow-raised);
+  }
+}
+
+/** Small-caps label above a figure or section. */
+@utility eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-subtle);
+}
+
+/** Provenance / source chip. */
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border: 1px solid var(--color-rule-strong);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-pill);
+  padding: 0.1875rem 0.5625rem;
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--color-ink-support);
+  white-space: nowrap;
+}
+
+/** Tabular figure, monospaced for codes and amounts in dense tables. */
+@utility figure-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/** The horizontal rule that separates stacked sections. */
+@utility rule-y {
+  border-top: 1px solid var(--color-rule);
+}
+
+/**
+ * Municipal-survey background: a faint 1px grid, the visual language of a
+ * cadastral plan. Used behind hero and empty states only.
+ */
+@utility survey-grid {
+  background-image:
+    linear-gradient(to right, var(--color-rule) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-rule) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/** Diagonal hazard tape — used as an accent strip, never as a block. */
+@utility hazard-tape {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-accent-yellow-400) 0 10px,
+    var(--color-gray-950) 10px 20px
+  );
+}
+
+/** Thin progress/ratio bar. Set `--value` (0–100) inline. */
+@utility meter {
+  position: relative;
+  height: 0.5rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-gray-100);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: calc(var(--value, 0) * 1%);
+    background-color: var(--color-brand-600);
+    border-radius: inherit;
+  }
+}
+
+/** Hide a scroll container's scrollbar (chip rails on mobile). */
+@utility scrollbar-none {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/** Bottom padding that respects an installed-PWA safe area. */
+@utility safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);
+}
+
+/** Anchor offset so in-page links are not hidden under the sticky header. */
+@utility anchor-offset {
+  scroll-margin-top: 5.5rem;
+}
+
+/** Screen-reader-only, but focusable (skip link). */
+@utility skip-link {
+  position: absolute;
+  inset-inline-start: 0.5rem;
+  top: -100%;
+  z-index: 100;
+  background-color: var(--color-surface-bold);
+  color: var(--color-brand-50);
+  padding: 0.625rem 1rem;
+  border-radius: var(--radius-card);
+  font-weight: 600;
+  transition: top 0.15s ease;
+
+  &:focus {
+    top: 0.5rem;
+  }
+}
+
+/* MapLibre's own popup/control styling, brought into the system palette. */
+.maplibregl-popup-content {
+  border-radius: var(--radius-card) !important;
+  border: 1px solid var(--color-rule) !important;
+  box-shadow: var(--shadow-raised) !important;
+  padding: 0.75rem 0.875rem !important;
+  font-family: var(--font-sans) !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: var(--color-surface) !important;
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 10px !important;
+}
+
+/* Print: a citizen printing a budget page should get the figures, not the chrome. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}

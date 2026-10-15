@@ -1,0 +1,78 @@
+{
+  "name": "Labo",
+  "officialName": "Municipality of Labo",
+  "psgcCode": "0501606000",
+  "psgcId": "PH0501606",
+  "province": "Camarines Norte",
+  "provincePsgcCode": "0501600000",
+  "region": "Region V (Bicol Region)",
+  "islandGroup": "Luzon",
+  "incomeClass": null,
+  "areaSqKm": 628.706958,
+  "barangayCount": 52,
+  "centroid": {
+    "lat": 14.138113,
+    "lng": 122.691826
+  },
+  "bounds": [
+    122.451994,
+    14.013752,
+    122.872368,
+    14.221664
+  ],
+  "counts": {
+    "poblacion": 5,
+    "inland": 47,
+    "withPopulationData": 0
+  },
+  "largestBarangays": [
+    {
+      "name": "Baay",
+      "areaSqKm": 65.6523372626
+    },
+    {
+      "name": "Pag-Asa",
+      "areaSqKm": 54.116633673
+    },
+    {
+      "name": "Lugui",
+      "areaSqKm": 47.0065626826
+    },
+    {
+      "name": "Dumagmang",
+      "areaSqKm": 36.7517457448
+    },
+    {
+      "name": "Cabatuhan",
+      "areaSqKm": 35.0950767141
+    }
+  ],
+  "pendingFields": [
+    {
+      "field": "Barangay population",
+      "reason": "No barangay-level PSA census extract is published on data.bettergov.ph. Place an official PSA Census of Population file at data/sources/psa-population.csv (headers: psgc_code,population,source,year) and re-run `npm run etl barangays` to attach it."
+    },
+    {
+      "field": "Annual Investment Plan (AIP) line items",
+      "reason": "The AIP is published per-LGU as a PDF on the LGU website, not as a structured dataset. The FDPP explorer links to the source document instead of transcribing it."
+    },
+    {
+      "field": "Commission on Audit annual audit report text",
+      "reason": "data.bettergov.ph dataset 14 indexes COA audit-agency listings as PDFs; the Labo-specific report has not been parsed into structured rows."
+    },
+    {
+      "field": "Elected and appointed officials",
+      "reason": "No open dataset carries current Labo officials with contact details. Left out rather than transcribed from an unverifiable page."
+    },
+    {
+      "field": "Ordinance index",
+      "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
+    }
+  ],
+  "note": "Derived from the compiled barangay boundary file. The centroid is the area-weighted centroid of the 52 barangay polygons, not the municipal hall.",
+  "sources": [
+    "psgc-barangay-boundaries"
+  ],
+  "dataHash": "959fe2a1c116ecfed27639a20e4b54275f06b96152959f3a530f27d4139801f7",
+  "generatedAt": "2026-10-15T21:02:38.675Z"
+}

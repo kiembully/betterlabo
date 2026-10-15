@@ -1,0 +1,118 @@
+{
+  "municipality": "Labo, Camarines Norte",
+  "datasets": [
+    {
+      "id": "blgf-lgu-fiscal",
+      "title": "BLGF Local Government Unit Fiscal Data",
+      "publisher": "Bureau of Local Government Finance (BLGF) via BetterGov.ph",
+      "portalDatasetId": 9,
+      "portalUrl": "https://data.bettergov.ph/datasets/9",
+      "sourceUrl": "https://blgf.gov.ph/wp-content/uploads/2025/08/By-LGU-SRE-2024.xlsx",
+      "license": "Public Domain",
+      "licenseUrl": null,
+      "attributionText": "Local fiscal data compiled and published by the Bureau of Local Government Finance (BLGF), Department of Finance.",
+      "retrievedAt": "2026-10-15T21:28:38.385Z",
+      "sourceVersion": "FY 2024 (Preliminary)",
+      "rowCount": 95,
+      "bytes": 1935275,
+      "sha256": "e836347e1e5dec7a57a195ba218613c861a65187b0e64554d239f23f45f02715",
+      "outputs": [
+        "apps/web/public/data/fiscal.json",
+        "BLGF — FY 2024 Statement of Receipts and Expenditures by LGU (resource 30)",
+        "BLGF — FY 2024 Annual Regular Income and Dependencies by LGU (resource 31)",
+        "BLGF — FY 2024 Special Education Fund Income and Expenditures (resource 44)",
+        "BLGF — FY 2024 Local Disaster Risk Reduction Management Fund by LGU (resource 41)"
+      ],
+      "notes": "Four per-LGU workbooks, one row selected for Labo, Camarines Norte. sha256 is of the Statement of Receipts and Expenditures workbook; bytes is the combined download size.",
+      "unavailable": false
+    },
+    {
+      "id": "dpwh-infrastructure",
+      "title": "DPWH Infrastructure Transparency Dataset",
+      "publisher": "Department of Public Works and Highways (DPWH) via BetterGov.ph",
+      "portalDatasetId": 19,
+      "portalUrl": "https://data.bettergov.ph/datasets/19",
+      "sourceUrl": "https://huggingface.co/datasets/bettergovph/dpwh-transparency-data/resolve/main/dpwh_transparency_data.parquet",
+      "license": "CC0 1.0 Universal",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attributionText": "Infrastructure project data from the official DPWH transparency platform, packaged by BetterGov.ph.",
+      "retrievedAt": "2026-10-15T21:59:10.520Z",
+      "sourceVersion": "2025-11-29",
+      "rowCount": null,
+      "bytes": null,
+      "sha256": null,
+      "outputs": [],
+      "notes": "Not compiled in this run: reading the Parquet file failed (Invalid typed array length: 741867)",
+      "unavailable": true
+    },
+    {
+      "id": "noah-hazard-maps",
+      "title": "Project NOAH Hazard Maps",
+      "publisher": "Project NOAH (Nationwide Operational Assessment of Hazards), DOST",
+      "portalDatasetId": 22,
+      "portalUrl": "https://data.bettergov.ph/datasets/22",
+      "sourceUrl": "https://huggingface.co/datasets/bettergovph/project-noah-hazard-maps/resolve/main/Flood/5yr/CamarinesNorte.zip",
+      "license": "ODC-ODbL",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "attributionText": "Hazard layers produced by Project NOAH, Department of Science and Technology, Philippines.",
+      "retrievedAt": "2026-10-15T21:31:17.765Z",
+      "sourceVersion": "2026-04-11",
+      "rowCount": 3,
+      "bytes": 6365400,
+      "sha256": "8b3fbedbb8027bbea6e8300867dc639d2d2e4616b7b658fedde19249cfee667c",
+      "outputs": [
+        "apps/web/public/data/hazards.json",
+        "apps/web/public/data/hazards/labo-flood-5yr.geojson"
+      ],
+      "notes": "Per-province shapefile archives for Camarines Norte, clipped to the Labo municipal outline with a point-in-polygon test. Analysed: flood_5yr (static, 3 features), storm_surge (none-in-area, 0 features). Not compiled: flood_25yr, flood_100yr, landslide.",
+      "unavailable": false
+    },
+    {
+      "id": "psgc-barangay-boundaries",
+      "title": "Philippine Barangay Boundaries (Hierarchical GeoJSON)",
+      "publisher": "Manuel Balmeo (PSA PSGC + NAMRIA boundary layers) via BetterGov.ph",
+      "portalDatasetId": 23,
+      "portalUrl": "https://data.bettergov.ph/datasets/23",
+      "sourceUrl": "https://github.com/bendlikeabamboo/barangay-boundaries-repository/releases/download/v2026.4.13.0/barangays.geojson",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/bendlikeabamboo/barangay-boundaries-repository/blob/main/LICENSE",
+      "attributionText": "Boundary polygons derived from PSA Philippine Standard Geographic Code snapshots (2023-10-24) and NAMRIA administrative-boundary shapefiles (v2023-11-06), packaged by Manuel Balmeo.",
+      "retrievedAt": "2026-10-15T21:26:55.878Z",
+      "sourceVersion": "v2026.4.13.0",
+      "rowCount": 52,
+      "bytes": 72910665,
+      "sha256": "10606e46cd7b4b34a61f4975f3568bb3c11a48fa355cbe3c4d78c3737e0fcfa9",
+      "outputs": [
+        "apps/web/public/data/labo-barangays.geojson",
+        "apps/web/public/data/labo-municipality.geojson",
+        "apps/web/public/data/barangays.json"
+      ],
+      "notes": "Selected 52 of 42026 national barangay polygons by ADM3_PCODE=PH0501606; geometry simplified at 0.0002°. Areas are the upstream AREA_SQKM values (NAMRIA-derived), not recomputed.",
+      "unavailable": false
+    }
+  ],
+  "pendingFields": [
+    {
+      "field": "Barangay population",
+      "reason": "No barangay-level PSA census extract is published on data.bettergov.ph. Place an official PSA Census of Population file at data/sources/psa-population.csv (headers: psgc_code,population,source,year) and re-run `npm run etl barangays` to attach it."
+    },
+    {
+      "field": "Annual Investment Plan (AIP) line items",
+      "reason": "The AIP is published per-LGU as a PDF on the LGU website, not as a structured dataset. The FDPP explorer links to the source document instead of transcribing it."
+    },
+    {
+      "field": "Commission on Audit annual audit report text",
+      "reason": "data.bettergov.ph dataset 14 indexes COA audit-agency listings as PDFs; the Labo-specific report has not been parsed into structured rows."
+    },
+    {
+      "field": "Elected and appointed officials",
+      "reason": "No open dataset carries current Labo officials with contact details. Left out rather than transcribed from an unverifiable page."
+    },
+    {
+      "field": "Ordinance index",
+      "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
+    }
+  ],
+  "dataHash": "7666db97d9ad2dcefa53dbdc3337195780c247ea9352b5bf055738a8aa5bb005",
+  "generatedAt": "2026-10-15T21:59:10.550Z"
+}

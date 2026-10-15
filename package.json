@@ -1,0 +1,38 @@
+{
+  "name": "betterlabo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "BetterLabo — an open-source digital transparency and citizen engagement portal for the Municipality of Labo, Camarines Norte (BetterGov.ph BetterLGU initiative).",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n shared,api,web -c blue,magenta,green \"npm:dev:shared\" \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:shared": "npm run dev -w @betterlabo/shared",
+    "dev:api": "npm run dev -w @betterlabo/api",
+    "dev:web": "npm run dev -w @betterlabo/web",
+    "dev:memory": "npm run dev:memory -w @betterlabo/api",
+    "build": "npm run build:shared && npm run build:api && npm run build:web",
+    "build:shared": "npm run build -w @betterlabo/shared",
+    "build:api": "npm run build -w @betterlabo/api",
+    "build:web": "npm run build -w @betterlabo/web",
+    "typecheck": "npm run typecheck -w @betterlabo/shared && npm run typecheck -w @betterlabo/api && npm run typecheck -w @betterlabo/web",
+    "lint": "npm run lint -w @betterlabo/web",
+    "etl": "node tools/etl/src/cli.mjs",
+    "etl:all": "node tools/etl/src/cli.mjs all",
+    "etl:verify": "node tools/etl/src/cli.mjs verify",
+    "check:live": "node scripts/live-check.mjs",
+    "seed": "npm run seed -w @betterlabo/api",
+    "smoke": "npm run smoke -w @betterlabo/api"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

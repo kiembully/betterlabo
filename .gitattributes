@@ -1,0 +1,25 @@
+# Normalise line endings in the repository so a Windows checkout and a Linux CI
+# runner produce the same diff. Without this, the ETL scripts and the compiled
+# JSON churn between contributors for no reason.
+* text=auto eol=lf
+
+# Compiled data: byte-stable and content-hashed, so git must not touch it.
+apps/web/public/data/*.json text eol=lf
+apps/web/public/data/*.geojson text eol=lf -diff
+apps/web/public/data/**/*.geojson text eol=lf -diff
+apps/web/public/data/*.sha256 text eol=lf
+
+# Binary-ish assets
+*.xlsx binary
+*.parquet binary
+*.zip binary
+*.png binary
+*.ico binary
+
+# Marks generated files so GitHub collapses them in review
+apps/web/public/data/*.json linguist-generated=true
+apps/web/public/data/**/*.geojson linguist-generated=true
+package-lock.json linguist-generated=true
+
+# Release/status keep conventional-commit merges only
+.github/workflows/*.yml text eol=lf
