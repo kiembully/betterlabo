@@ -1,0 +1,37 @@
+# dependencies
+node_modules/
+.npm/
+
+# builds
+dist/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+
+# env — .env.example is the only env file that is tracked
+.env
+.env.*
+!.env.example
+
+# vercel
+.vercel/
+
+# ETL working directory: raw upstream sources live here and are never committed.
+# The compiled, cached JSON that the frontend consumes IS committed, under
+# apps/web/public/data/.
+data/sources/
+data/raw/
+tools/etl/.cache/
+
+# logs
+*.log
+npm-debug.log*
+logs/
+
+# editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
