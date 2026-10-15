@@ -1,0 +1,549 @@
+{
+  "municipality": "Labo",
+  "method": "A barangay is marked as exposed when a mapped hazard patch lies inside its boundary polygon, or when the barangay centre falls inside a hazard patch. The class reported is the highest class among the patches that matched. This asks \"is hazard mapped inside this barangay?\", which is deliberately coarser than a share-of-area calculation — the count of matching patches is published alongside so the strength of the signal is visible.",
+  "classLegend": {
+    "1": "Low",
+    "2": "Moderate",
+    "3": "High",
+    "4": "Very high"
+  },
+  "layers": [
+    {
+      "id": "flood_5yr",
+      "label": "Flood — 5-year return period"
+    }
+  ],
+  "counts": {
+    "barangays": 52,
+    "withAnyExposure": 36,
+    "withoutAnyExposure": 16,
+    "patchesTested": 65069
+  },
+  "barangays": [
+    {
+      "psgcCode": "0501606001",
+      "name": "Anameam",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606002",
+      "name": "Awitan",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 696
+      }
+    },
+    {
+      "psgcCode": "0501606003",
+      "name": "Baay",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 396
+      }
+    },
+    {
+      "psgcCode": "0501606004",
+      "name": "Bagacay",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 2828
+      }
+    },
+    {
+      "psgcCode": "0501606005",
+      "name": "Bagong Silang I",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606006",
+      "name": "Bagong Silang II",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606007",
+      "name": "Bakiad",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 549
+      }
+    },
+    {
+      "psgcCode": "0501606008",
+      "name": "Bautista",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1306
+      }
+    },
+    {
+      "psgcCode": "0501606009",
+      "name": "Bayabas",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606010",
+      "name": "Bayan-bayan",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1423
+      }
+    },
+    {
+      "psgcCode": "0501606011",
+      "name": "Benit",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 3210
+      }
+    },
+    {
+      "psgcCode": "0501606012",
+      "name": "Anahaw (Pob.)",
+      "exposure": {
+        "flood_5yr": 2
+      },
+      "patchCounts": {
+        "flood_5yr": 55
+      }
+    },
+    {
+      "psgcCode": "0501606013",
+      "name": "Gumamela (Pob.)",
+      "exposure": {
+        "flood_5yr": 2
+      },
+      "patchCounts": {
+        "flood_5yr": 35
+      }
+    },
+    {
+      "psgcCode": "0501606014",
+      "name": "San Francisco (Pob.)",
+      "exposure": {
+        "flood_5yr": 2
+      },
+      "patchCounts": {
+        "flood_5yr": 6
+      }
+    },
+    {
+      "psgcCode": "0501606015",
+      "name": "Kalamunding (Pob.)",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 94
+      }
+    },
+    {
+      "psgcCode": "0501606016",
+      "name": "Bulhao",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 694
+      }
+    },
+    {
+      "psgcCode": "0501606017",
+      "name": "Cabatuhan",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606018",
+      "name": "Cabusay",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 651
+      }
+    },
+    {
+      "psgcCode": "0501606019",
+      "name": "Calabasa",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 3119
+      }
+    },
+    {
+      "psgcCode": "0501606020",
+      "name": "Canapawan",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606021",
+      "name": "Daguit",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 4835
+      }
+    },
+    {
+      "psgcCode": "0501606022",
+      "name": "Dalas",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1240
+      }
+    },
+    {
+      "psgcCode": "0501606023",
+      "name": "Dumagmang",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606024",
+      "name": "Exciban",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606025",
+      "name": "Fundado",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1179
+      }
+    },
+    {
+      "psgcCode": "0501606026",
+      "name": "Guinacutan",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 935
+      }
+    },
+    {
+      "psgcCode": "0501606027",
+      "name": "Guisican",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606028",
+      "name": "Iberica",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1751
+      }
+    },
+    {
+      "psgcCode": "0501606030",
+      "name": "Lugui",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 2551
+      }
+    },
+    {
+      "psgcCode": "0501606031",
+      "name": "Mabilo I",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 3043
+      }
+    },
+    {
+      "psgcCode": "0501606032",
+      "name": "Mabilo II",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 2365
+      }
+    },
+    {
+      "psgcCode": "0501606033",
+      "name": "Macogon",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 567
+      }
+    },
+    {
+      "psgcCode": "0501606034",
+      "name": "Mahawan-hawan",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1366
+      }
+    },
+    {
+      "psgcCode": "0501606035",
+      "name": "Malangcao-Basud",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 4765
+      }
+    },
+    {
+      "psgcCode": "0501606036",
+      "name": "Malasugui",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1113
+      }
+    },
+    {
+      "psgcCode": "0501606037",
+      "name": "Malatap",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606038",
+      "name": "Malaya",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606039",
+      "name": "Malibago",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606040",
+      "name": "Maot",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 5770
+      }
+    },
+    {
+      "psgcCode": "0501606041",
+      "name": "Masalong",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1232
+      }
+    },
+    {
+      "psgcCode": "0501606042",
+      "name": "Matanlang",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1945
+      }
+    },
+    {
+      "psgcCode": "0501606043",
+      "name": "Napaod",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 2537
+      }
+    },
+    {
+      "psgcCode": "0501606044",
+      "name": "Pag-Asa",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606045",
+      "name": "Pangpang",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 1706
+      }
+    },
+    {
+      "psgcCode": "0501606046",
+      "name": "Pinya (Pob.)",
+      "exposure": {
+        "flood_5yr": 2
+      },
+      "patchCounts": {
+        "flood_5yr": 16
+      }
+    },
+    {
+      "psgcCode": "0501606047",
+      "name": "San Antonio",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 3110
+      }
+    },
+    {
+      "psgcCode": "0501606048",
+      "name": "Santa Cruz",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 714
+      }
+    },
+    {
+      "psgcCode": "0501606049",
+      "name": "Bagong Silang III (Silang)",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606050",
+      "name": "Submakin",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 2007
+      }
+    },
+    {
+      "psgcCode": "0501606051",
+      "name": "Talobatib",
+      "exposure": {
+        "flood_5yr": 3
+      },
+      "patchCounts": {
+        "flood_5yr": 2450
+      }
+    },
+    {
+      "psgcCode": "0501606052",
+      "name": "Tigbinan",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    },
+    {
+      "psgcCode": "0501606053",
+      "name": "Tulay Na Lupa",
+      "exposure": {
+        "flood_5yr": null
+      },
+      "patchCounts": {
+        "flood_5yr": 0
+      }
+    }
+  ],
+  "sources": [
+    "noah-hazard-maps"
+  ],
+  "dataHash": "a9c2916e79668fd42fde4653f11523ff045e10165247dafdd399d08bbb812639",
+  "generatedAt": "2026-10-15T21:31:18.118Z"
+}

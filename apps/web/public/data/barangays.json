@@ -1,0 +1,1104 @@
+{
+  "municipality": "Labo",
+  "municipalityPsgcCode": "0501606000",
+  "count": 52,
+  "barangays": [
+    {
+      "psgcCode": "0501606012",
+      "psgcId": "PH0501606012",
+      "name": "Anahaw (Pob.)",
+      "isPoblacion": true,
+      "areaSqKm": 0.390064277301,
+      "centroid": {
+        "lat": 14.150574568333374,
+        "lng": 122.83828832800009
+      },
+      "bbox": [
+        122.833906,
+        14.148363,
+        122.84048,
+        14.153324
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606001",
+      "psgcId": "PH0501606001",
+      "name": "Anameam",
+      "isPoblacion": false,
+      "areaSqKm": 11.6326645219,
+      "centroid": {
+        "lat": 14.163929819750052,
+        "lng": 122.59342161825009
+      },
+      "bbox": [
+        122.574805,
+        14.13674,
+        122.605819,
+        14.18891
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606002",
+      "psgcId": "PH0501606002",
+      "name": "Awitan",
+      "isPoblacion": false,
+      "areaSqKm": 5.72014996829,
+      "centroid": {
+        "lat": 14.215660738333364,
+        "lng": 122.84173162266673
+      },
+      "bbox": [
+        122.798349,
+        14.209903,
+        122.866333,
+        14.221664
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606003",
+      "psgcId": "PH0501606003",
+      "name": "Baay",
+      "isPoblacion": false,
+      "areaSqKm": 65.6523372626,
+      "centroid": {
+        "lat": 14.094487995764757,
+        "lng": 122.7435976030589
+      },
+      "bbox": [
+        122.686443,
+        14.030833,
+        122.794498,
+        14.137223
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606004",
+      "psgcId": "PH0501606004",
+      "name": "Bagacay",
+      "isPoblacion": false,
+      "areaSqKm": 9.96082714501,
+      "centroid": {
+        "lat": 14.201426171166721,
+        "lng": 122.83639726066673
+      },
+      "bbox": [
+        122.801357,
+        14.188789,
+        122.861334,
+        14.214812
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606005",
+      "psgcId": "PH0501606005",
+      "name": "Bagong Silang I",
+      "isPoblacion": false,
+      "areaSqKm": 6.79024820303,
+      "centroid": {
+        "lat": 14.174793145500056,
+        "lng": 122.62801170833342
+      },
+      "bbox": [
+        122.603494,
+        14.166052,
+        122.652194,
+        14.186727
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606006",
+      "psgcId": "PH0501606006",
+      "name": "Bagong Silang II",
+      "isPoblacion": false,
+      "areaSqKm": 8.03237202761,
+      "centroid": {
+        "lat": 14.19729008800006,
+        "lng": 122.59250621625009
+      },
+      "bbox": [
+        122.574805,
+        14.186727,
+        122.610761,
+        14.210225
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606049",
+      "psgcId": "PH0501606049",
+      "name": "Bagong Silang III (Silang)",
+      "isPoblacion": false,
+      "areaSqKm": 8.27812666911,
+      "centroid": {
+        "lat": 14.191323428250058,
+        "lng": 122.62704843025008
+      },
+      "bbox": [
+        122.606436,
+        14.175793,
+        122.646081,
+        14.203298
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606007",
+      "psgcId": "PH0501606007",
+      "name": "Bakiad",
+      "isPoblacion": false,
+      "areaSqKm": 3.89215000572,
+      "centroid": {
+        "lat": 14.170936371666718,
+        "lng": 122.84566052866676
+      },
+      "bbox": [
+        122.832403,
+        14.16155,
+        122.867018,
+        14.176727
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606008",
+      "psgcId": "PH0501606008",
+      "name": "Bautista",
+      "isPoblacion": false,
+      "areaSqKm": 4.52466702719,
+      "centroid": {
+        "lat": 14.133216877000052,
+        "lng": 122.84195235920008
+      },
+      "bbox": [
+        122.835076,
+        14.122666,
+        122.85771,
+        14.148062
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606009",
+      "psgcId": "PH0501606009",
+      "name": "Bayabas",
+      "isPoblacion": false,
+      "areaSqKm": 16.6161744135,
+      "centroid": {
+        "lat": 14.176878178750044,
+        "lng": 122.46698775125009
+      },
+      "bbox": [
+        122.451994,
+        14.141713,
+        122.481218,
+        14.208623
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606010",
+      "psgcId": "PH0501606010",
+      "name": "Bayan-bayan",
+      "isPoblacion": false,
+      "areaSqKm": 11.3138021469,
+      "centroid": {
+        "lat": 14.102727095285761,
+        "lng": 122.76177201914292
+      },
+      "bbox": [
+        122.741638,
+        14.084755,
+        122.782613,
+        14.128017
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606011",
+      "psgcId": "PH0501606011",
+      "name": "Benit",
+      "isPoblacion": false,
+      "areaSqKm": 10.2156417225,
+      "centroid": {
+        "lat": 14.140382074250041,
+        "lng": 122.79156700175005
+      },
+      "bbox": [
+        122.771953,
+        14.125669,
+        122.813347,
+        14.15994
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606016",
+      "psgcId": "PH0501606016",
+      "name": "Bulhao",
+      "isPoblacion": false,
+      "areaSqKm": 2.73857965378,
+      "centroid": {
+        "lat": 14.17085104625005,
+        "lng": 122.82714692975009
+      },
+      "bbox": [
+        122.819256,
+        14.158489,
+        122.837561,
+        14.178926
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606017",
+      "psgcId": "PH0501606017",
+      "name": "Cabatuhan",
+      "isPoblacion": false,
+      "areaSqKm": 35.0950767141,
+      "centroid": {
+        "lat": 14.137210099857198,
+        "lng": 122.5405167581429
+      },
+      "bbox": [
+        122.499401,
+        14.11674,
+        122.566136,
+        14.176534
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606018",
+      "psgcId": "PH0501606018",
+      "name": "Cabusay",
+      "isPoblacion": false,
+      "areaSqKm": 3.13612690936,
+      "centroid": {
+        "lat": 14.185193757250033,
+        "lng": 122.82892821525007
+      },
+      "bbox": [
+        122.811078,
+        14.176727,
+        122.840903,
+        14.189522
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606019",
+      "psgcId": "PH0501606019",
+      "name": "Calabasa",
+      "isPoblacion": false,
+      "areaSqKm": 10.1051664313,
+      "centroid": {
+        "lat": 14.152053673888936,
+        "lng": 122.75689575288895
+      },
+      "bbox": [
+        122.722622,
+        14.131411,
+        122.781063,
+        14.171101
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606020",
+      "psgcId": "PH0501606020",
+      "name": "Canapawan",
+      "isPoblacion": false,
+      "areaSqKm": 20.1324151779,
+      "centroid": {
+        "lat": 14.179454645333388,
+        "lng": 122.5564128358334
+      },
+      "bbox": [
+        122.53866,
+        14.15764,
+        122.581865,
+        14.208866
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606021",
+      "psgcId": "PH0501606021",
+      "name": "Daguit",
+      "isPoblacion": false,
+      "areaSqKm": 12.8171546718,
+      "centroid": {
+        "lat": 14.190867128428627,
+        "lng": 122.71982482357149
+      },
+      "bbox": [
+        122.673243,
+        14.181413,
+        122.749553,
+        14.205796
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606022",
+      "psgcId": "PH0501606022",
+      "name": "Dalas",
+      "isPoblacion": false,
+      "areaSqKm": 5.11079462137,
+      "centroid": {
+        "lat": 14.15122170225004,
+        "lng": 122.81315631600006
+      },
+      "bbox": [
+        122.797636,
+        14.142011,
+        122.827081,
+        14.162364
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606023",
+      "psgcId": "PH0501606023",
+      "name": "Dumagmang",
+      "isPoblacion": false,
+      "areaSqKm": 36.7517457448,
+      "centroid": {
+        "lat": 14.117982919461584,
+        "lng": 122.62047907076929
+      },
+      "bbox": [
+        122.595838,
+        14.066666,
+        122.659751,
+        14.148255
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606024",
+      "psgcId": "PH0501606024",
+      "name": "Exciban",
+      "isPoblacion": false,
+      "areaSqKm": 15.8536164543,
+      "centroid": {
+        "lat": 14.156090918100052,
+        "lng": 122.65043924570007
+      },
+      "bbox": [
+        122.631431,
+        14.106107,
+        122.662582,
+        14.200295
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606025",
+      "psgcId": "PH0501606025",
+      "name": "Fundado",
+      "isPoblacion": false,
+      "areaSqKm": 4.24442243799,
+      "centroid": {
+        "lat": 14.192390481250044,
+        "lng": 122.83058298500006
+      },
+      "bbox": [
+        122.811078,
+        14.186216,
+        122.850126,
+        14.200276
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606026",
+      "psgcId": "PH0501606026",
+      "name": "Guinacutan",
+      "isPoblacion": false,
+      "areaSqKm": 3.62846992999,
+      "centroid": {
+        "lat": 14.152912993857203,
+        "lng": 122.86293146828578
+      },
+      "bbox": [
+        122.853802,
+        14.139197,
+        122.872181,
+        14.173984
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606027",
+      "psgcId": "PH0501606027",
+      "name": "Guisican",
+      "isPoblacion": false,
+      "areaSqKm": 20.6634613532,
+      "centroid": {
+        "lat": 14.174882822166714,
+        "lng": 122.49362530450007
+      },
+      "bbox": [
+        122.474972,
+        14.13223,
+        122.506016,
+        14.208623
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606013",
+      "psgcId": "PH0501606013",
+      "name": "Gumamela (Pob.)",
+      "isPoblacion": true,
+      "areaSqKm": 0.279333289569,
+      "centroid": {
+        "lat": 14.156243513333399,
+        "lng": 122.83131323733339
+      },
+      "bbox": [
+        122.829698,
+        14.153133,
+        122.832403,
+        14.16155
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606028",
+      "psgcId": "PH0501606028",
+      "name": "Iberica",
+      "isPoblacion": false,
+      "areaSqKm": 5.54542658816,
+      "centroid": {
+        "lat": 14.12646529050005,
+        "lng": 122.85502960050005
+      },
+      "bbox": [
+        122.839896,
+        14.110025,
+        122.872297,
+        14.14097
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606015",
+      "psgcId": "PH0501606015",
+      "name": "Kalamunding (Pob.)",
+      "isPoblacion": true,
+      "areaSqKm": 0.349475150965,
+      "centroid": {
+        "lat": 14.157137911666723,
+        "lng": 122.82746651700002
+      },
+      "bbox": [
+        122.821195,
+        14.154047,
+        122.831506,
+        14.159773
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606030",
+      "psgcId": "PH0501606030",
+      "name": "Lugui",
+      "isPoblacion": false,
+      "areaSqKm": 47.0065626826,
+      "centroid": {
+        "lat": 14.06454852814291,
+        "lng": 122.80106199042864
+      },
+      "bbox": [
+        122.748072,
+        14.013752,
+        122.842653,
+        14.108616
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606031",
+      "psgcId": "PH0501606031",
+      "name": "Mabilo I",
+      "isPoblacion": false,
+      "areaSqKm": 7.52932666889,
+      "centroid": {
+        "lat": 14.11933351400005,
+        "lng": 122.81359320720006
+      },
+      "bbox": [
+        122.792653,
+        14.107015,
+        122.832635,
+        14.133222
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606032",
+      "psgcId": "PH0501606032",
+      "name": "Mabilo II",
+      "isPoblacion": false,
+      "areaSqKm": 5.81158946189,
+      "centroid": {
+        "lat": 14.136463124400052,
+        "lng": 122.82677997040007
+      },
+      "bbox": [
+        122.802594,
+        14.121227,
+        122.840396,
+        14.152975
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606033",
+      "psgcId": "PH0501606033",
+      "name": "Macogon",
+      "isPoblacion": false,
+      "areaSqKm": 6.85693233872,
+      "centroid": {
+        "lat": 14.174303978000054,
+        "lng": 122.66894020625008
+      },
+      "bbox": [
+        122.657076,
+        14.150584,
+        122.680922,
+        14.194016
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606034",
+      "psgcId": "PH0501606034",
+      "name": "Mahawan-hawan",
+      "isPoblacion": false,
+      "areaSqKm": 5.83423722077,
+      "centroid": {
+        "lat": 14.199925651800061,
+        "lng": 122.80301526600003
+      },
+      "bbox": [
+        122.788364,
+        14.179826,
+        122.818313,
+        14.214812
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606035",
+      "psgcId": "PH0501606035",
+      "name": "Malangcao-Basud",
+      "isPoblacion": false,
+      "areaSqKm": 12.3964139339,
+      "centroid": {
+        "lat": 14.18296513616672,
+        "lng": 122.76473598383338
+      },
+      "bbox": [
+        122.74509,
+        14.164946,
+        122.780532,
+        14.201608
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606036",
+      "psgcId": "PH0501606036",
+      "name": "Malasugui",
+      "isPoblacion": false,
+      "areaSqKm": 4.61047389967,
+      "centroid": {
+        "lat": 14.154619469000057,
+        "lng": 122.85266992880004
+      },
+      "bbox": [
+        122.833179,
+        14.141502,
+        122.862133,
+        14.166152
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606037",
+      "psgcId": "PH0501606037",
+      "name": "Malatap",
+      "isPoblacion": false,
+      "areaSqKm": 12.9293783719,
+      "centroid": {
+        "lat": 14.154973510000048,
+        "lng": 122.62619749640007
+      },
+      "bbox": [
+        122.603625,
+        14.141075,
+        122.649417,
+        14.175204
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606038",
+      "psgcId": "PH0501606038",
+      "name": "Malaya",
+      "isPoblacion": false,
+      "areaSqKm": 15.712208815,
+      "centroid": {
+        "lat": 14.112621575750055,
+        "lng": 122.57698443475005
+      },
+      "bbox": [
+        122.538911,
+        14.089548,
+        122.604652,
+        14.130238
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606039",
+      "psgcId": "PH0501606039",
+      "name": "Malibago",
+      "isPoblacion": false,
+      "areaSqKm": 12.4419999421,
+      "centroid": {
+        "lat": 14.140842970875049,
+        "lng": 122.58616397600005
+      },
+      "bbox": [
+        122.563968,
+        14.120391,
+        122.603459,
+        14.163416
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606040",
+      "psgcId": "PH0501606040",
+      "name": "Maot",
+      "isPoblacion": false,
+      "areaSqKm": 17.4532280459,
+      "centroid": {
+        "lat": 14.16370027300004,
+        "lng": 122.72551071640007
+      },
+      "bbox": [
+        122.706641,
+        14.136458,
+        122.74863,
+        14.185231
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606041",
+      "psgcId": "PH0501606041",
+      "name": "Masalong",
+      "isPoblacion": false,
+      "areaSqKm": 6.41611470091,
+      "centroid": {
+        "lat": 14.169087945500062,
+        "lng": 122.8090769336667
+      },
+      "bbox": [
+        122.797636,
+        14.155165,
+        122.826006,
+        14.187865
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606042",
+      "psgcId": "PH0501606042",
+      "name": "Matanlang",
+      "isPoblacion": false,
+      "areaSqKm": 5.97704716685,
+      "centroid": {
+        "lat": 14.139415078250067,
+        "lng": 122.76396815175008
+      },
+      "bbox": [
+        122.746635,
+        14.125139,
+        122.776909,
+        14.152927
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606043",
+      "psgcId": "PH0501606043",
+      "name": "Napaod",
+      "isPoblacion": false,
+      "areaSqKm": 7.80156260525,
+      "centroid": {
+        "lat": 14.112523931250053,
+        "lng": 122.78460259425006
+      },
+      "bbox": [
+        122.772527,
+        14.095909,
+        122.799715,
+        14.130642
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606044",
+      "psgcId": "PH0501606044",
+      "name": "Pag-Asa",
+      "isPoblacion": false,
+      "areaSqKm": 54.116633673,
+      "centroid": {
+        "lat": 14.105924511727318,
+        "lng": 122.69084866500006
+      },
+      "bbox": [
+        122.650766,
+        14.054057,
+        122.723891,
+        14.145532
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606045",
+      "psgcId": "PH0501606045",
+      "name": "Pangpang",
+      "isPoblacion": false,
+      "areaSqKm": 5.66032069689,
+      "centroid": {
+        "lat": 14.163234690600053,
+        "lng": 122.78376363540004
+      },
+      "bbox": [
+        122.766097,
+        14.152058,
+        122.800808,
+        14.174148
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606046",
+      "psgcId": "PH0501606046",
+      "name": "Pinya (Pob.)",
+      "isPoblacion": true,
+      "areaSqKm": 0.0783832925599,
+      "centroid": {
+        "lat": 14.152800225666718,
+        "lng": 122.82863674833338
+      },
+      "bbox": [
+        122.827209,
+        14.15184,
+        122.829698,
+        14.154047
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606047",
+      "psgcId": "PH0501606047",
+      "name": "San Antonio",
+      "isPoblacion": false,
+      "areaSqKm": 7.43827252354,
+      "centroid": {
+        "lat": 14.108395457750063,
+        "lng": 122.83625859450007
+      },
+      "bbox": [
+        122.815531,
+        14.090194,
+        122.851136,
+        14.124746
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606014",
+      "psgcId": "PH0501606014",
+      "name": "San Francisco (Pob.)",
+      "isPoblacion": true,
+      "areaSqKm": 0.080889295489,
+      "centroid": {
+        "lat": 14.151311890000065,
+        "lng": 122.83016007333337
+      },
+      "bbox": [
+        122.828578,
+        14.150196,
+        122.831839,
+        14.153133
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606048",
+      "psgcId": "PH0501606048",
+      "name": "Santa Cruz",
+      "isPoblacion": false,
+      "areaSqKm": 4.35680038765,
+      "centroid": {
+        "lat": 14.184686906400055,
+        "lng": 122.85502952240006
+      },
+      "bbox": [
+        122.837561,
+        14.174532,
+        122.867018,
+        14.195171
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606050",
+      "psgcId": "PH0501606050",
+      "name": "Submakin",
+      "isPoblacion": false,
+      "areaSqKm": 19.4684112021,
+      "centroid": {
+        "lat": 14.162003012250054,
+        "lng": 122.68757851400008
+      },
+      "bbox": [
+        122.659661,
+        14.14042,
+        122.709829,
+        14.184994
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606051",
+      "psgcId": "PH0501606051",
+      "name": "Talobatib",
+      "isPoblacion": false,
+      "areaSqKm": 7.58785803381,
+      "centroid": {
+        "lat": 14.185781420000058,
+        "lng": 122.78784760700005
+      },
+      "bbox": [
+        122.772589,
+        14.168118,
+        122.802118,
+        14.204274
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606052",
+      "psgcId": "PH0501606052",
+      "name": "Tigbinan",
+      "isPoblacion": false,
+      "areaSqKm": 14.569926122,
+      "centroid": {
+        "lat": 14.189945261000048,
+        "lng": 122.52131089525008
+      },
+      "bbox": [
+        122.498465,
+        14.172683,
+        122.54357,
+        14.206204
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    },
+    {
+      "psgcCode": "0501606053",
+      "psgcId": "PH0501606053",
+      "name": "Tulay Na Lupa",
+      "isPoblacion": false,
+      "areaSqKm": 7.10189590719,
+      "centroid": {
+        "lat": 14.079830016166719,
+        "lng": 122.78209060500006
+      },
+      "bbox": [
+        122.768063,
+        14.058707,
+        122.794498,
+        14.096549
+      ],
+      "population": null,
+      "populationSource": null,
+      "populationYear": null,
+      "hasGeometry": true
+    }
+  ],
+  "totalAreaSqKm": 628.706958,
+  "populationCoverage": 0,
+  "note": "No barangay population source is wired: PSA publishes barangay-level census data as publications, not as a dataset on data.bettergov.ph. Place data/sources/psa-population.csv (psgc_code,population,source,year) and re-run to attach it.",
+  "dataHash": "af7c8affacf6a5409519a19d0b25f9875bd70f67c741c0a2ea93638d9efae287",
+  "generatedAt": "2026-10-15T21:02:38.591Z"
+}

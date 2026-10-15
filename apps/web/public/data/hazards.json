@@ -1,0 +1,61 @@
+{
+  "municipality": "Labo",
+  "layers": [
+    {
+      "id": "flood_5yr",
+      "label": "Flood — 5-year return period",
+      "file": "hazards/labo-flood-5yr.geojson",
+      "featureCount": 3,
+      "mode": "static",
+      "remoteUrl": null,
+      "sourceId": "noah-hazard-maps",
+      "note": "Clipped from 3 province-level features; 0 were dropped after the bounding-box pass. 3 feature(s) fell back to a bounding-box clip because the upstream contour could not be intersected exactly (it self-intersects), so their outer boundary may include a sliver of a neighbouring municipality. 129317 polygon piece(s) whose interior point fell outside the Labo outline were discarded, so hazard belonging to neighbouring municipalities is not shown here. Simplified at 0.0003° tolerance to keep the layer under 8.388608 MB. Hazard classes follow the Project NOAH legend in the per-layer readme PDF that ships inside the province archive."
+    },
+    {
+      "id": "flood_25yr",
+      "label": "Flood — 25-year return period",
+      "file": null,
+      "featureCount": null,
+      "mode": "absent",
+      "remoteUrl": null,
+      "sourceId": "noah-hazard-maps",
+      "note": "Province archive could not be downloaded in this run (running with --cached-only and the archive is not in the ETL cache). Fetch it manually from https://huggingface.co/datasets/bettergovph/project-noah-hazard-maps/resolve/main/Flood/25yr/CamarinesNorte.zip into D:\\Github\\betterlabo\\data\\sources and re-run `npm run etl hazards`."
+    },
+    {
+      "id": "flood_100yr",
+      "label": "Flood — 100-year return period",
+      "file": null,
+      "featureCount": null,
+      "mode": "absent",
+      "remoteUrl": null,
+      "sourceId": "noah-hazard-maps",
+      "note": "Province archive could not be downloaded in this run (running with --cached-only and the archive is not in the ETL cache). Fetch it manually from https://huggingface.co/datasets/bettergovph/project-noah-hazard-maps/resolve/main/Flood/100yr/CamarinesNorte.zip into D:\\Github\\betterlabo\\data\\sources and re-run `npm run etl hazards`."
+    },
+    {
+      "id": "landslide",
+      "label": "Rain-induced landslide",
+      "file": null,
+      "featureCount": null,
+      "mode": "absent",
+      "remoteUrl": null,
+      "sourceId": "noah-hazard-maps",
+      "note": "Province archive could not be downloaded in this run (running with --cached-only and the archive is not in the ETL cache). Fetch it manually from https://huggingface.co/datasets/bettergovph/project-noah-hazard-maps/resolve/main/Landslide/LandslideHazards/CamarinesNorte.zip into D:\\Github\\betterlabo\\data\\sources and re-run `npm run etl hazards`."
+    },
+    {
+      "id": "storm_surge",
+      "label": "Storm surge (advisory 1)",
+      "file": null,
+      "featureCount": 0,
+      "mode": "none-in-area",
+      "remoteUrl": null,
+      "sourceId": "noah-hazard-maps",
+      "note": "The Camarines Norte archive was compiled and analysed, and no part of Labo falls inside this layer's hazard zones: all 3 province-level feature(s) were rejected by a point-in-polygon test against the municipal outline. This is a result, not a missing layer."
+    }
+  ],
+  "note": "Static clipped layers are served from /data/hazards/. A layer marked \"none-in-area\" was compiled and analysed and genuinely has no Labo coverage — that is a finding, not a gap. A layer marked \"remote\" is streamed from Project NOAH’s published tile archive by HTTP range request and is not a copy held in this repository.",
+  "sources": [
+    "noah-hazard-maps"
+  ],
+  "dataHash": "d6f474cb5e23d9a691e14a9f1de9717f7ec6696b7dfcb034a4ca09b9137407e1",
+  "generatedAt": "2026-10-15T21:28:20.885Z"
+}

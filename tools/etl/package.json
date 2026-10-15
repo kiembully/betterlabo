@@ -1,0 +1,28 @@
+{
+  "name": "@betterlabo/etl",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Build-time ETL: fetches open data about Labo, Camarines Norte and compiles it into cached static JSON under apps/web/public/data.",
+  "license": "MIT",
+  "main": "./src/cli.mjs",
+  "scripts": {
+    "run": "node src/cli.mjs",
+    "all": "node src/cli.mjs all",
+    "verify": "node src/cli.mjs verify"
+  },
+  "dependencies": {
+    "@turf/area": "^7.4.0",
+    "@turf/bbox": "^7.4.0",
+    "@turf/bbox-clip": "^7.4.0",
+    "@turf/center": "^7.4.0",
+    "@turf/centroid": "^7.4.0",
+    "@turf/helpers": "^7.4.0",
+    "@turf/intersect": "^7.4.0",
+    "@turf/simplify": "^7.4.0",
+    "adm-zip": "^0.6.1",
+    "exceljs": "^4.4.0",
+    "hyparquet": "^1.31.4",
+    "shpjs": "^6.2.0"
+  }
+}

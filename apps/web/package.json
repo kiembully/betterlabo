@@ -1,0 +1,37 @@
+{
+  "name": "@betterlabo/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "BetterLabo public portal — Next.js App Router, static-first, cached JSON data.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "typecheck": "tsc -p tsconfig.json --noEmit --pretty false",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@betterlabo/shared": "*",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.57.0",
+    "maplibre-gl": "^6.14.0",
+    "next": "^16.4.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^10.12.0",
+    "eslint-config-next": "^16.4.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  }
+}
