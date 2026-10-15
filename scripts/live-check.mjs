@@ -39,11 +39,21 @@ function check(label, condition, detail = '') {
   }
 }
 
-const child = spawn('npx', ['next', 'start', '-p', String(PORT)], {
-  cwd: join(repoRoot, 'apps', 'web'),
-  shell: true,
-  stdio: ['ignore', 'pipe', 'pipe'],
-});
+/**
+ * Spawn the Next binary directly rather than through `npx …` with `shell: true`.
+ * A shell wrapper means `child.kill()` kills the WRAPPER, the real server keeps
+ * the port, and the next run then either fails to bind or — worse — asserts
+ * against a server built from code that no longer exists on disk. Spawning node
+ * itself makes the kill exact.
+ */
+const child = spawn(
+  process.execPath,
+  [join(repoRoot, 'node_modules', 'next', 'dist', 'bin', 'next'), 'start', '-p', String(PORT)],
+  {
+    cwd: join(repoRoot, 'apps', 'web'),
+    stdio: ['ignore', 'pipe', 'pipe'],
+  },
+);
 let serverLog = '';
 child.stdout.on('data', (d) => {
   serverLog += d.toString();
@@ -64,7 +74,7 @@ function shutdown(code) {
 async function waitForServer() {
   for (let i = 0; i < 60; i += 1) {
     try {
-      const res = await fetch(`${BASE}/`);
+      const res = await fetch(`${BASE}/`, { signal: AbortSignal.timeout(5000) });
       if (res.status === 200) return true;
     } catch {
       /* not up yet */
@@ -75,7 +85,7 @@ async function waitForServer() {
 }
 
 async function get(path) {
-  const res = await fetch(`${BASE}${path}`);
+  const res = await fetch(`${BASE}${path}`, { signal: AbortSignal.timeout(15_000) });
   return { status: res.status, body: await res.text() };
 }
 
@@ -105,6 +115,8 @@ const PAGES = [
   ['/about', 'Not an emergency channel', 'about carries the emergency notice'],
   ['/about', 'independent', 'about carries the independence notice'],
   ['/projects', 'DPWH', 'projects page names the source'],
+  ['/projects', 'Daguit', 'projects page attributes a real barangay'],
+  ['/projects', '10,758', 'projects page renders the compiled contract total'],
   ['/report', 'Report', 'report page renders the intake heading'],
   ['/report/track', 'reference', 'track page renders the lookup form'],
   ['/map', 'Anahaw', 'map page server-renders its barangay summary'],

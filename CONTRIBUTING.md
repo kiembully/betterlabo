@@ -54,7 +54,7 @@ Full detail in [`docs/data-sources.md`](docs/data-sources.md).
 
 ```bash
 npm install
-npm run build:shared
+npm run build:shared && npm run build:api
 cp .env.example .env.local
 npm run etl all          # or a single task; see the README for fetch sizes
 npm run dev              # portal :3000, API :4000

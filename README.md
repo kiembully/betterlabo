@@ -6,8 +6,9 @@ BetterLGU](https://lgu.bettergov.ph/GUIDE) standards, with every figure traceabl
 to the government file it came from.
 
 **Status:** working portal, first public release. 52 barangays mapped · 31
-compiled fiscal sections from BLGF FY 2024 · Project NOAH flood layer clipped to
-the municipal outline · 43 automated data-integrity assertions.
+compiled fiscal sections from BLGF FY 2024 · 309 DPWH projects located inside
+Labo barangays (₱10.76 B, 2016–2025) · Project NOAH flood layer clipped to the
+municipal outline · 45 automated data-integrity assertions.
 
 > **Not an official website of the Municipality of Labo**, and not affiliated
 > with any political party or candidate. Independent, volunteer-built civic
@@ -77,7 +78,11 @@ a task to the ETL that produces it, with a source URL and a licence.
 ```bash
 # Node 22+ (developed on 26.7) and npm 11
 npm install
-npm run build:shared          # packages/shared must be built before anything
+# Both built workspaces must exist before anything can be typechecked or built:
+# packages/shared (imported by name) and apps/api (its `types` point at dist/,
+# so `apps/web` cannot typecheck without it). `npm run typecheck` also guards
+# this with a `pretypecheck` hook.
+npm run build:shared && npm run build:api
 cp .env.example .env.local    # every value has a default; nothing is required
 
 # 1. Compile the cached data (needs network; see "Fetch sizes" below)
@@ -118,7 +123,7 @@ portal reads static JSON and never calls the API. To exercise the reporting flow
 | --- | --- |
 | Philippine barangay boundaries | 67 MB + 6 MB (GitHub, fast) |
 | BLGF fiscal workbooks | 2 MB total |
-| DPWH Parquet | read over **HTTP range requests**, never fully downloaded |
+| DPWH Parquet (24 MB, 248,220 rows) | downloaded once, then read from disk; HTTP range reads as the fallback |
 | Project NOAH province archives | ~320 MB total (HuggingFace) |
 
 HuggingFace egress measured **~0.05 MB/s** from one development network, which
@@ -179,9 +184,16 @@ Full detail, including the exact file URLs and the transformations applied, is i
 ```bash
 npm run typecheck   # every workspace
 npm run build       # shared → api → web
-npm run etl:verify  # 43 assertions over the compiled data, offline
-npm run smoke       # API assertions against a real mongod
+npm run lint        # apps/web
+npm run etl:verify  # 45 assertions over the compiled data, offline
+npm run smoke       # 34 API assertions against a real mongod
+npm run check:live  # 27 assertions against the production build + the /api bridge
 ```
+
+`check:live` boots `next start` on a private port and asserts values only the
+compiled data can produce — the real National Tax Allotment, the computed 88.51%
+dependency ratio, a barangay's PSGC code and 0.390 km² area, the DPWH contract
+total — because a green `next build` with an empty page is a real failure mode.
 
 `etl:verify` is the one that matters for trust. It asserts, among other things,
 that the barangay index and the GeoJSON agree feature-for-feature, that the
