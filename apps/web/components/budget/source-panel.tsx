@@ -131,7 +131,7 @@ export function SourcePanel({
           ) : (
             <p className="mt-2 text-xs leading-relaxed text-ink-support">
               fiscal.json exists but the datasets registry does not describe it, so this page cannot
-              link the workbook it came from. Run the ETL's datasets task to restore the registry.
+              link the workbook it came from. Run the ETL’s datasets task to restore the registry.
             </p>
           )}
         </div>

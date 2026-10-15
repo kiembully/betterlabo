@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, useTransition } from 'react';
+import { useCallback, useEffect, useRef, useState, useTransition } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Printer, RotateCcw, Search, X } from 'lucide-react';
 
@@ -68,10 +68,15 @@ export function BudgetFilterBar({
     setQuery(filters.q);
   }, [filters.q]);
 
-  const navigate = (next: FiscalFilters) => {
-    const href = `${pathname}${buildQuery(next)}`;
-    startTransition(() => router.replace(href, { scroll: false }));
-  };
+  // Stable across renders, so the debounce effect below cannot be restarted by an
+  // unrelated re-render (a transition, a hover) and delay the navigation.
+  const navigate = useCallback(
+    (next: FiscalFilters) => {
+      const href = `${pathname}${buildQuery(next)}`;
+      startTransition(() => router.replace(href, { scroll: false }));
+    },
+    [pathname, router],
+  );
 
   // Debounced so typing does not issue a request per keystroke, and only when
   // the box disagrees with the URL.
@@ -79,7 +84,7 @@ export function BudgetFilterBar({
     if (query === filters.q) return;
     const timer = setTimeout(() => navigate({ ...filters, q: query }), 250);
     return () => clearTimeout(timer);
-  }, [query, filters, pathname, router]);
+  }, [query, filters, navigate]);
 
   const setAllDetails = (open: boolean) => {
     document

@@ -236,7 +236,7 @@ export function BudgetSection({
           <p className="mt-2.5 rounded-md border border-rule bg-surface-sunken px-3 py-2 text-[0.6875rem] leading-relaxed text-ink-support">
             The {sum.counted} listed row{sum.counted === 1 ? '' : 's'} add up to{' '}
             <span className="figure-num font-semibold text-ink">{formatPeso(sum.sum)}</span>; this
-            section's Total reads{' '}
+            section’s Total reads{' '}
             <span className="figure-num font-semibold text-ink">{formatPeso(sheet.total)}</span>
             {delta != null && delta !== 0 ? (
               <>

@@ -164,7 +164,7 @@ export function SupportingFigures({ sheets }: { sheets: FiscalSheet[] }) {
         ))}
       </dl>
       <p className="mt-3 text-[0.625rem] leading-relaxed text-ink-subtle">
-        Each row is that section's own published total — the sections are listed in full, with their
+        Each row is that section’s own published total — the sections are listed in full, with their
         basis, further down this page.
       </p>
     </div>

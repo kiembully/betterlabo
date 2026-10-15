@@ -156,7 +156,7 @@ export function FigureTable({ sheet, hideZeros, collisions }: Props) {
               <th scope="row" className="py-2 pr-2 text-left align-top font-bold text-ink">
                 Total as published
                 <span className="mt-0.5 block text-[0.625rem] font-normal text-ink-subtle">
-                  The source's own total cell, not a sum this portal computed
+                  The source’s own total cell, not a sum this portal computed
                 </span>
               </th>
               <td className="py-2 pr-2 text-right align-top font-semibold whitespace-nowrap">
