@@ -18,11 +18,27 @@ export interface ConnectOptions {
   serverSelectionTimeoutMS?: number;
 }
 
+/**
+ * Default server-selection timeout.
+ *
+ * 5s, not the 30s driver default and not the 10s this used to be. In a serverless
+ * container an unreachable cluster (wrong allow-list, paused Atlas project) means
+ * the driver retries server selection until the platform kills the invocation,
+ * which surfaces as an opaque `504 FUNCTION_INVOCATION_TIMEOUT` naming nothing.
+ * Timing out early lets `assertDatabaseConnected()` answer the designed
+ * `503 db_unavailable`, which is a legible failure with a real message. Local dev
+ * passes a longer value when it wants to wait.
+ */
+const DEFAULT_SERVER_SELECTION_TIMEOUT_MS = 5_000;
+
 export async function connectDatabase(uri: string, options: ConnectOptions = {}): Promise<void> {
   mongoose.set('strictQuery', true);
   await mongoose.connect(uri, {
     ...(options.dbName ? { dbName: options.dbName } : {}),
-    serverSelectionTimeoutMS: options.serverSelectionTimeoutMS ?? 10_000,
+    serverSelectionTimeoutMS: options.serverSelectionTimeoutMS ?? DEFAULT_SERVER_SELECTION_TIMEOUT_MS,
+    // Serverless: one attempt. A retry loop inside a function invocation only
+    // delays the timeout and burns the whole budget.
+    ...(process.env.VERCEL ? { retryWrites: true, maxPoolSize: 5 } : {}),
   });
   mongoose.connection.on('error', (err: unknown) => {
     log.error('mongodb connection error', { error: errorMessage(err) });

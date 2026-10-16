@@ -1,0 +1,38 @@
+# What the Vercel CLI must NOT upload.
+#
+# The CLI uploads the working tree, so anything git-ignored still rides along
+# unless it is named here. `data/sources/` alone holds 140 MB of cached upstream
+# archives (the 67 MB barangay GeoJSON, the 24 MB DPWH Parquet, NOAH zips) that
+# only the ETL needs — they are never read by a build, and uploading them turns
+# every deploy into a multi-minute transfer. `apps/web/.next` and `node_modules`
+# are rebuilt by the platform.
+#
+# Keep this file next to the repo root because the deployment is rooted at the
+# repo root (the project's Root Directory is `apps/web` and its install/build
+# commands `cd ../..`), so the workspace — and this file — must be in the snapshot.
+
+# Cached upstream downloads and partial transfers (ETL-only)
+data/sources
+**/*.part
+
+# ETL scratch: cached archive captures, probe scripts, run logs
+tools/etl/.cache
+
+# Local environment files. NEVER upload these — the deployment gets its values
+# from Vercel project settings, and `.env.local` holds a real database URI.
+.env
+.env.*
+!.env.example
+
+# The platform builds these itself
+node_modules
+**/node_modules
+.next
+**/.next
+**/dist
+.vercel
+
+# Local toolchain noise
+*.log
+.DS_Store
+Thumbs.db
