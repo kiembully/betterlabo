@@ -9,7 +9,7 @@
  * instead of inventing one.
  */
 import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import type { BarangayRecord } from '@betterlabo/shared';
 import { REPO_ROOT } from './env.js';
 import { errorMessage, log } from './logger.js';
@@ -38,6 +38,30 @@ function candidatePaths(): string[] {
   if (REPO_ROOT) {
     paths.push(join(REPO_ROOT, 'apps', 'web', 'public', 'data', 'barangays.json'));
     paths.push(join(REPO_ROOT, 'public', 'data', 'barangays.json'));
+  }
+  /**
+   * Serverless fallback.
+   *
+   * On Vercel this module runs from a traced bundle, so `REPO_ROOT` is `null` —
+   * it walks up looking for a directory holding BOTH `package.json` and `apps/`,
+   * and that marker does not exist inside a function. Without these candidates the
+   * registry silently loads nothing: `/api/health` reports
+   * `barangayIndex: { loaded: false, count: 0 }`, the
+   * "PSGC outside the municipality" guard switches itself off, and every report
+   * loses its barangay name.
+   *
+   * `apps/web/next.config.ts` traces the file into the function via
+   * `outputFileTracingIncludes`, and this walks up from the working directory to
+   * find it wherever the platform placed it, so the exact traced layout does not
+   * have to be hard-coded.
+   */
+  let dir = process.cwd();
+  for (let depth = 0; depth < 6; depth += 1) {
+    paths.push(join(dir, 'public', 'data', 'barangays.json'));
+    paths.push(join(dir, 'apps', 'web', 'public', 'data', 'barangays.json'));
+    const parent = dirname(dir);
+    if (parent === dir) break;
+    dir = parent;
   }
   return paths;
 }
