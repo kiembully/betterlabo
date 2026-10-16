@@ -35,10 +35,25 @@ export const LABO_MAP = {
   zoom: 10.4,
   minZoom: 8,
   maxZoom: 17,
-  /** OSM raster tiles. No API key, no per-request billing. */
-  rasterTileUrl: 'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+  /**
+   * Basemap, and why it is not CARTO any more.
+   *
+   * CARTO's `basemaps.cartocdn.com` endpoint used to serve keyless raster tiles.
+   * It now answers `200` with a 2 KB image that is entirely an "API KEY REQUIRED"
+   * watermark — the request succeeds, so nothing errors, and the map silently
+   * renders as a white rectangle with a watermark across it. Verified by fetching a
+   * real Labo tile: 2,049 bytes versus 18,109 for OSM's.
+   *
+   * OpenFreeMap is a keyless vector-tile basemap: no API key, no registration, no
+   * request limits, and it carries its own glyphs (so the barangay-label layer no
+   * longer needs a font download from MapLibre's demo server). Positron is a light,
+   * low-contrast style, which is what a data-overlay map wants.
+   */
+  basemapStyleUrl: 'https://tiles.openfreemap.org/styles/positron',
+  /** Keyless raster fallback, used when the vector basemap is switched off. */
+  rasterTileUrl: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
   rasterAttribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 } as const;
 
 /**

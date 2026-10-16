@@ -27,7 +27,7 @@ import {
   MAP_COLOURS,
   SOURCE_IDS,
   TOGGLE_LAYERS,
-  buildBasemapStyle,
+  resolveBasemapStyle,
   hazardMatchExpression,
   hazardVectorExpression,
   prepareHazardGeoJson,
@@ -53,6 +53,8 @@ export interface BarangayMapProps {
   maxBounds: [number, number, number, number] | null;
   rasterTileUrl: string;
   rasterAttribution: string;
+  /** Hosted vector basemap style; empty string falls back to the raster source. */
+  basemapStyleUrl: string;
   /** Optional glyph server — only the label layer needs it. */
   glyphsUrl: string | null;
   geojsonUrl: string;
@@ -84,6 +86,7 @@ export function BarangayMap(props: BarangayMapProps) {
     maxBounds,
     rasterTileUrl,
     rasterAttribution,
+    basemapStyleUrl,
     glyphsUrl,
     geojsonUrl,
     municipalityUrl,
@@ -135,6 +138,7 @@ export function BarangayMap(props: BarangayMapProps) {
     maxBounds,
     rasterTileUrl,
     rasterAttribution,
+    basemapStyleUrl,
     glyphsUrl,
     geojsonUrl,
     municipalityUrl,
@@ -227,10 +231,26 @@ export function BarangayMap(props: BarangayMapProps) {
       if (disposed) return;
       moduleRef.current = maplibre;
 
+      /**
+       * Point MapLibre at a worker we serve ourselves.
+       *
+       * Left to itself the library derives the worker URL from `import.meta.url`
+       * inside its own bundle; Turbopack does not rewrite that, so the request
+       * resolves against the document and comes back as this page's HTML —
+       * "non-JavaScript MIME type text/html" — and the worker never starts. The
+       * map then mounts its canvas and controls and draws nothing.
+       *
+       * `public/maplibre-gl-worker.mjs` is copied from the installed package by
+       * `apps/web/scripts/copy-maplibre-worker.mjs` on prebuild/predev, so the
+       * worker stays version-locked to the dependency.
+       */
+      maplibre.setWorkerUrl('/maplibre-gl-worker.mjs');
+
       try {
         map = new maplibre.Map({
           container,
-          style: buildBasemapStyle({
+          style: resolveBasemapStyle({
+            styleUrl: config.basemapStyleUrl,
             tileUrl: config.rasterTileUrl,
             attribution: config.rasterAttribution,
             glyphsUrl: config.glyphsUrl,
@@ -570,7 +590,28 @@ export function BarangayMap(props: BarangayMapProps) {
 
   return (
     <div className="relative h-full min-h-[24rem] w-full overflow-hidden rounded-card border border-rule bg-surface-sunken">
-      <div ref={containerRef} className="absolute inset-0" role="application" aria-label="Interactive barangay map of Labo" />
+      {/*
+        `h-full w-full`, deliberately NOT `absolute inset-0`.
+
+        MapLibre writes `maplibregl-map` onto this element, whose own stylesheet
+        sets `position: relative; overflow: hidden`. That is the same specificity as
+        Tailwind's `.absolute`, so whichever stylesheet lands later wins — and here
+        MapLibre's did. `inset-0` then does nothing on a relatively-positioned
+        element, the box has no in-flow content to size it, and it collapses to
+        height 0 while the parent is 672px tall. MapLibre's 300px canvas is still
+        created, and `overflow: hidden` clips it to nothing: a map that loads,
+        mounts, and is invisible.
+
+        Sizing the box with height/width percentages instead is immune to that
+        fight, because it does not depend on which stylesheet wins.
+      */}
+      <div
+        ref={containerRef}
+        className="size-full"
+        style={{ height: '100%', width: '100%' }}
+        role="application"
+        aria-label="Interactive barangay map of Labo"
+      />
 
       {phase === 'loading' ? (
         <div className="absolute inset-0 z-20 grid place-items-center bg-surface-sunken/90 px-6 text-center">

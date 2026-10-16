@@ -156,17 +156,34 @@ const PAGES = [
   ['/report', 'Report', 'report page renders the intake heading'],
   ['/report/track', 'reference', 'track page renders the lookup form'],
   ['/map', 'Anahaw', 'map page server-renders its barangay summary'],
+  ['/map', 'openfreemap', 'map page carries the keyless vector basemap URL'],
+  /* A regression guard for a failure that was invisible: CARTO's public endpoint
+     now answers 200 with an "API KEY REQUIRED" watermark image, so the map went
+     blank while every request succeeded. Anything pointing back at it is a bug. */
+  [
+    '/map',
+    'cartocdn',
+    'map page does NOT fall back to the key-required CARTO basemap',
+    'absent',
+  ],
   ['/console', 'console', 'console renders outside the public shell'],
 ];
 
 console.log(`== fetching ${new Set(PAGES.map(([p]) => p)).size} routes on :${PORT} ==`);
-for (const [path, needle, label] of PAGES) {
+for (const [path, needle, label, mode] of PAGES) {
   const { status, body } = await get(path);
   if (status !== 200) {
     check(`${label} (${path})`, false, `HTTP ${status}`);
     continue;
   }
-  check(`${label} (${path})`, body.includes(needle), `missing '${needle}'`);
+  const present = body.includes(needle);
+  // `mode: 'absent'` is for needles that must NOT appear — a dead basemap URL, a
+  // leaked token. Without it the assertion would silently invert.
+  if (mode === 'absent') {
+    check(`${label} (${path})`, !present, `found '${needle}' where it must not be`);
+  } else {
+    check(`${label} (${path})`, present, `missing '${needle}'`);
+  }
 }
 
 console.log('== /api/health through the loopback bridge ==');

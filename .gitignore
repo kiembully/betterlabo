@@ -35,3 +35,8 @@ Thumbs.db
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# MapLibre GL worker, copied out of node_modules by
+# apps/web/scripts/copy-maplibre-worker.mjs on prebuild/predev.
+apps/web/public/maplibre-gl-worker.mjs
+apps/web/public/maplibre-gl-worker.mjs.sha256

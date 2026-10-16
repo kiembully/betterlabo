@@ -6,7 +6,9 @@
   "description": "BetterLabo public portal — Next.js App Router, static-first, cached JSON data.",
   "license": "MIT",
   "scripts": {
+    "predev": "node scripts/copy-maplibre-worker.mjs",
     "dev": "next dev --port 3000",
+    "prebuild": "node scripts/copy-maplibre-worker.mjs",
     "build": "next build",
     "start": "next start --port 3000",
     "typecheck": "tsc -p tsconfig.json --noEmit --pretty false",

@@ -118,8 +118,11 @@ export default async function MapPage() {
         minZoom={LABO_MAP.minZoom}
         maxZoom={LABO_MAP.maxZoom}
         bounds={profile?.bounds ?? null}
-        rasterTileUrl={LABO_MAP.rasterTileUrl}
+        rasterTileUrl={process.env.NEXT_PUBLIC_BASEMAP_TILE_URL || LABO_MAP.rasterTileUrl}
         rasterAttribution={LABO_MAP.rasterAttribution}
+        basemapStyleUrl={
+          process.env.NEXT_PUBLIC_BASEMAP_STYLE_URL ?? LABO_MAP.basemapStyleUrl
+        }
         hazardOptions={hazardOptions}
         hasRegistry={hasRegistry}
         etlHint={ETL_HINT}
