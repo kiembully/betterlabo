@@ -3,7 +3,7 @@
  *
  *   node tools/etl/src/cli.mjs <task…> [flags]
  *
- * Tasks: barangays, profile, fiscal, projects, hazards, registry, verify, all
+ * Tasks: barangays, profile, fiscal, projects, lgu, hazards, registry, verify, all
  * Flags: --force (ignore cached downloads), --offline (never touch the network),
  *        --only=<file substring> for verify
  */
@@ -16,7 +16,7 @@ import { readRegistry, recordUnavailable, resetRegistry } from './lib/registry.m
 import { PENDING_FIELDS, SOURCES } from './lib/sources.mjs';
 import { writeStableJson } from './lib/write.mjs';
 
-const TASKS = ['barangays', 'profile', 'fiscal', 'projects', 'hazards', 'registry', 'verify'];
+const TASKS = ['barangays', 'profile', 'fiscal', 'projects', 'lgu', 'hazards', 'registry', 'verify'];
 
 function parseArgs(argv) {
   const tasks = [];
@@ -39,7 +39,7 @@ function parseArgs(argv) {
   }
   if (tasks.length === 0) tasks.push('all');
   // `profile` depends on the barangay index, and `registry` summarises them all.
-  const order = ['barangays', 'profile', 'fiscal', 'projects', 'hazards', 'registry', 'verify'];
+  const order = ['barangays', 'profile', 'fiscal', 'projects', 'lgu', 'hazards', 'registry', 'verify'];
   const unique = [...new Set(tasks)].sort((a, b) => order.indexOf(a) - order.indexOf(b));
   if (!unique.includes('registry') && unique.some((t) => t !== 'verify')) unique.push('registry');
   return { tasks: unique, flags };
@@ -61,6 +61,10 @@ async function taskFiscal() {
 }
 async function taskProjects() {
   const { run } = await import('./scripts/projects.mjs');
+  return run(ctx);
+}
+async function taskLgu() {
+  const { run } = await import('./scripts/lgu.mjs');
   return run(ctx);
 }
 async function taskHazards() {
@@ -93,6 +97,7 @@ const RUNNERS = {
   profile: taskProfile,
   fiscal: taskFiscal,
   projects: taskProjects,
+  lgu: taskLgu,
   hazards: taskHazards,
   registry: taskRegistry,
   verify: taskVerify,

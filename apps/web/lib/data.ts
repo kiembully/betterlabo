@@ -21,6 +21,8 @@ import type {
   DatasetRegistry,
   FiscalSnapshot,
   HazardRegistry,
+  LguDocumentIndex,
+  LguRecord,
   MunicipalityProfile,
   ProjectRecord,
 } from '@betterlabo/shared';
@@ -70,6 +72,16 @@ export async function getDatasetRegistry(): Promise<DatasetRegistry | null> {
   return readJson<DatasetRegistry>('datasets.json');
 }
 
+/** Compiled from the Municipality of Labo's own website, via the Wayback Machine. */
+export async function getLgu(): Promise<LguRecord | null> {
+  return readJson<LguRecord>('lgu.json');
+}
+
+/** ~1,500 entries and ~660 KB — deliberately its own file, fetched only by /documents. */
+export async function getLguDocuments(): Promise<LguDocumentIndex | null> {
+  return readJson<LguDocumentIndex>('lgu-documents.json');
+}
+
 /** The public path (not the filesystem path) of a compiled data file. */
 export function publicDataPath(file: string): string {
   return `/data/${file}`;
@@ -82,6 +94,8 @@ export const DATA_FILES = {
   profile: 'profile.json',
   fiscal: 'fiscal.json',
   projects: 'projects.json',
+  lgu: 'lgu.json',
+  lguDocuments: 'lgu-documents.json',
   hazards: 'hazards.json',
   barangayExposure: 'barangay-exposure.json',
   datasets: 'datasets.json',

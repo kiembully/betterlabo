@@ -1,0 +1,894 @@
+{
+  "municipality": "Labo",
+  "province": "Camarines Norte",
+  "source": {
+    "name": "Municipality of Labo official website",
+    "url": "https://labo.gov.ph/",
+    "publisher": "Municipal Government of Labo, Camarines Norte",
+    "license": "Public domain (per the site footer: \"All content is in the public domain unless otherwise stated.\")",
+    "accessedVia": "Internet Archive Wayback Machine — the live host answers every path with a Cloudflare challenge (403, Cf-Mitigated: challenge)."
+  },
+  "snapshots": {
+    "officials": {
+      "timestamp": "20260201231646",
+      "date": "2026-02-01",
+      "iso": "2026-02-01T23:16:46Z",
+      "url": "https://web.archive.org/web/20260201231646/https://labo.gov.ph/about/municipal-officials-and-department-heads/",
+      "liveUrl": "https://labo.gov.ph/about/municipal-officials-and-department-heads/"
+    },
+    "executiveNames": {
+      "timestamp": "20250516003912",
+      "date": "2025-05-16",
+      "url": "https://web.archive.org/web/20250516003912/https://labo.gov.ph/about/municipal-officials-and-department-heads/"
+    },
+    "legislative": {
+      "timestamp": "20260201232102",
+      "date": "2026-02-01",
+      "url": "https://web.archive.org/web/20260201232102/https://labo.gov.ph/about/legislative/",
+      "liveUrl": "https://labo.gov.ph/about/legislative/",
+      "namedCapture": {
+        "timestamp": "20250516001000",
+        "date": "2025-05-16",
+        "url": "https://web.archive.org/web/20250516001000/https://labo.gov.ph/about/legislative/"
+      }
+    },
+    "facts": {
+      "timestamp": "20260201231755",
+      "date": "2026-02-01",
+      "url": "https://web.archive.org/web/20260201231755/https://labo.gov.ph/about/facts-and-figures/",
+      "liveUrl": "https://labo.gov.ph/about/facts-and-figures/"
+    },
+    "departments": {
+      "timestamp": "20260215141435",
+      "date": "2026-02-15",
+      "url": "https://web.archive.org/web/20260215141435/https://labo.gov.ph/about/department-and-offices/",
+      "liveUrl": "https://labo.gov.ph/about/department-and-offices/"
+    }
+  },
+  "officials": {
+    "executive": [
+      {
+        "name": "Severino H. Francisco, Jr.",
+        "position": "Office of the Municipal Mayor",
+        "office": null,
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044",
+        "nameAsOf": "2025-05-16",
+        "nameSourceUrl": "https://web.archive.org/web/20250516003912/https://labo.gov.ph/about/municipal-officials-and-department-heads/",
+        "nameRemovedFromCurrentPage": true
+      },
+      {
+        "name": "Alvin G. Bardon",
+        "position": "Office of the Municipal Vice Mayor",
+        "office": null,
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": null,
+        "nameAsOf": "2025-05-16",
+        "nameSourceUrl": "https://web.archive.org/web/20250516003912/https://labo.gov.ph/about/municipal-officials-and-department-heads/",
+        "nameRemovedFromCurrentPage": true
+      }
+    ],
+    "departmentHeads": [
+      {
+        "name": "Renato E. Tenorio",
+        "position": "Municipal Administrator",
+        "office": "Municipal Administrator Office",
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Vivencio Z. Maigue",
+        "position": "Municipal Treasurer",
+        "office": "Municipal Treasurers Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Vilma V. Pardo",
+        "position": "Municipal Accountant",
+        "office": "Municipal Accountant Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Alex Galvez",
+        "position": "Municipal Budget Officer",
+        "office": "Municipal Budget Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Igmedio A. Estrella",
+        "position": "Municipal Assessor",
+        "office": "Municipal Assessor Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Alicia Sismundo",
+        "position": "Municipal Agriculturist",
+        "office": "Municipal Agriculture Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Dr. Nelson A. Guerra",
+        "position": "Municipal Health Officer",
+        "office": "Municipal Health Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Dra. Virginia Barasona",
+        "position": "Rural Health Unit II Head",
+        "office": "Rural Health Unit II",
+        "address": "Brgy. Tulay na Lupa, Labo, Camarines Norte",
+        "floor": null,
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Dra. Agnes Sina-on",
+        "position": "Rural Health Unit III Head",
+        "office": "Rural Health Unit III",
+        "address": "Brgy. Bagong Silang II, Labo, Camarines Norte",
+        "floor": null,
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Engr. Evaristo G.L. Pandi",
+        "position": "Municipal Planning Officer",
+        "office": "Municipal Planning and Development Office",
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Engr. Raul B. Jacela",
+        "position": "Municipal Engineer",
+        "office": "Municipal Engineering Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Ma. Lolita B. Acula",
+        "position": "Municipal Civil Registrar",
+        "office": "Municipal Civil Registrar",
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Elisa J. Capistrano",
+        "position": "Municipal Social Welfare Officer",
+        "office": "Municipal Social Welfare Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Suzette B. Pimentel",
+        "position": "Municipal Information Officer",
+        "office": "Municipal Information Office",
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Engr. Victor V. Zabala",
+        "position": "Municipal Environment and Natural Resources Officer",
+        "office": "Municipal Environment and Natural Resources Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Dolores A. Francisco",
+        "position": "Sangguniang Bayan Secretary",
+        "office": "Sangguning Bayan Office",
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Marilyn B. Campo",
+        "position": "General Services Officer",
+        "office": "General Services Office",
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Judy Y. Bermudez",
+        "position": "Human Resources Management Officer",
+        "office": "Human Resource Management Office",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Florida R. Quilas",
+        "position": "Public Employment Service Officer",
+        "office": "Public Employment Service Office",
+        "address": "2/F Labo Public Market, Brgy. Dalas, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Arjie Barco",
+        "position": "MDRRMO",
+        "office": "Municipal Disaster Risk Reduction Management Office",
+        "address": "3/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "3/F",
+        "phone": "(585) 2044"
+      }
+    ],
+    "sectionHeads": [
+      {
+        "name": "Sarah V. Londres",
+        "position": "Market Supervisor",
+        "office": "Economic Enterprise Office",
+        "address": "Labo Public Market, Brgy. Pinya, Labo, Camarines Norte",
+        "floor": null,
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Lualhati V. Badillio",
+        "position": "Licensing Officer",
+        "office": "Licensing Section",
+        "address": "1/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "1/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Jose Ramon B. Lagatuz",
+        "position": "Tourism Operation Officer",
+        "office": "Tourism Information Center",
+        "address": "Labo Peoples Park, Brgy. Pinya, Labo, Camarines Norte",
+        "floor": null,
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Veronica T. Cardiño",
+        "position": "Museum Researcher",
+        "office": "Museo de Labo",
+        "address": "Labo Public Market, Brgy. Pinya, Labo, Camarines Norte",
+        "floor": null,
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Bernadette A. Pardilla",
+        "position": "Station Manager",
+        "office": "DWLB-FM",
+        "address": "3/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "3/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Alita C. Oco",
+        "position": "Municipal Cooperative Development Officer",
+        "office": "Municipal Cooperative Development",
+        "address": "3/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "3/F",
+        "phone": "(585) 2044"
+      },
+      {
+        "name": "Salome A. Zabala",
+        "position": "Municipal Population Officer",
+        "office": "MUNICIPAL POPULATION OFFICE",
+        "address": "2/F Maharlika Highway, Municipal Building, Labo, Camarines Norte",
+        "floor": "2/F",
+        "phone": "(585) 2044"
+      }
+    ],
+    "counts": {
+      "executiveOffices": 2,
+      "departmentHeads": 20,
+      "sectionHeads": 7,
+      "named": 29
+    },
+    "notices": [
+      "The 2026-02-01 capture of the officials page names NO mayor and NO vice mayor — only \"Office of the Municipal Mayor\" and \"Office of the Municipal Vice Mayor\". Names shown here are the last ones the page stated (2025-05-16), with their date attached.",
+      "Department and section heads are as published in the 2026-02-01 capture."
+    ]
+  },
+  "legislative": {
+    "asOf": "2025-05-16",
+    "note": "The 2026-02-01 capture of the legislative page is an empty \"MUNICIPAL COUNCILORS\" heading with no names. The members below are the last ones the page stated, as of 2025-05-16.",
+    "members": [
+      {
+        "name": "Alvin G. Bardon",
+        "role": "Municipal Vice Mayor",
+        "roleAsPublished": "MUNICIPAL VICE MAYOR",
+        "kind": "vice-mayor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Rey Kenneth N. Oning",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Cherry Mae A. Masbate",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Dante V. Alaon",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Norman John O. Oco",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Elpidio E. Tenorio",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Nelson V. Villafuerte",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Ronel Laguador",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Eric Pasatiempo",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Reymon V. Samonte",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "councilor",
+        "exOfficioBody": null,
+        "asOf": "2025-05-16"
+      },
+      {
+        "name": "Kathrece Anne T. Caleon",
+        "role": "Municipal Councilor",
+        "roleAsPublished": "MUNICIPAL COUNCILOR",
+        "kind": "ex-officio",
+        "exOfficioBody": "Liga ng mga Barangay",
+        "asOf": "2025-05-16"
+      }
+    ],
+    "vacantSeats": [
+      {
+        "body": "Sangguniang Kabataan Federation",
+        "label": "REPRESENTATIVE, SK FEDERATION"
+      }
+    ],
+    "counts": {
+      "total": 11,
+      "councilors": 9,
+      "exOfficio": 1,
+      "vacantSeats": 1
+    }
+  },
+  "profile": {
+    "areaKm2": 648.84,
+    "provinceSharePercent": 25,
+    "agriculturalKm2": 390.39,
+    "barangays": [
+      "Anahaw (Poblacion)",
+      "Anameam",
+      "Awitan",
+      "Baay",
+      "Bagacay",
+      "Bagong Silang I",
+      "Bagong Silang II",
+      "Bagong Silang III",
+      "Bakiad",
+      "Bautista",
+      "Bayabas",
+      "Bayan-bayan",
+      "Benit",
+      "Bulhao",
+      "Cabatuhan",
+      "Cabusay",
+      "Calabasa",
+      "Canapawan",
+      "Daguit",
+      "Dalas",
+      "Dumagmang",
+      "Exciban",
+      "Fundado",
+      "Guinacutan",
+      "Guisican",
+      "Gumamela (Poblacion)",
+      "Iberica",
+      "Kalamunding (Poblacion)",
+      "Lugui",
+      "Mabilo I",
+      "Mabilo II",
+      "Macogon",
+      "Mahawan-hawan",
+      "Malangcao-Basud",
+      "Malasugui",
+      "Malatap",
+      "Malaya",
+      "Malibago",
+      "Maot",
+      "Masalong",
+      "Matanlang",
+      "Napaod",
+      "Pag-Asa",
+      "Pangpang",
+      "Pinya (Poblacion)",
+      "San Antonio",
+      "San Francisco (Poblacion)",
+      "Santa Cruz",
+      "Submakin",
+      "Talobatib",
+      "Tigbinan",
+      "Tulay Na Lupa"
+    ],
+    "sections": {
+      "geography": [
+        "The town of Labo is geographically located relatively at the center of the province of Camarines Norte. It is approximately 335 kilometers south of Manila and 15 kilometers away from Daet, the capital town of the province.",
+        "Its aggregate land area of 648.84 km² occupies more than 25% of the total land area of the province. Its 52 component barangays represent 18.44% of the total barangays of the province.",
+        "The surface of the municipality is generally rugged, rolling hills and mountainous terrain with relative small rollings and flat terrain. Mt. Cadig (736 meters above sea level), Mt. Labo(1544 meters above sea level), Mt. Bagacay (786 meters above sea level) and Mt. Nalisbitan (265 meters above sea level) form the Southern Cordillera. Boundaries of Camarines Norte, Camarines Sur, and Quezon provinces converge on Mt. Labo, which is the highest peak in the province. Mt. Bagacay serves as a boundary between municipalities of Paracale and Labo and it as well guards the municipality from strong north winds especially during typhoons. Mt. Labo, Mt. Bagacay, and Mt. Cadig are the three major known dormant volcanoes in the municipality."
+      ],
+      "climate": [
+        "There is no pronounced dry season and maximum rain period from December to January."
+      ],
+      "economy": [
+        "Labo being located at the center of the province and the most populous town serves as the agricultural center as well as potential investment destination and promotion center for business, trades, and secondary industrial growth center. It is abundant with natural resources such as gold, nickel, iron, magnetite sand, copper, lead and manganese. Most of the provincial water supplies are located at barangay Tulay na Lupa and Lugui which serves seven out of the 12 municipalities. Agriculture is the leading livelihood of the residents of Labo. Due to abundant forest products such as rattan and bamboo, local folks tend to manufacture and market handicrafts.",
+        "An area of 390.39 km² (65.17% of municipal’s land area) is devoted to agricultural crop production, 343.46 km² of which are coconut plantations. On the other hand, 18.47 km² is used for rice production. Banana production is also popular in the province, followed by Pineapple and Pili.",
+        "Tourism is also a good source of income for Labo, being surrounded by freshwater and mountains suitable for hikings.",
+        "Other community livelihood follows: pineapple and coco-based processing and preservation, pineapple weaving (Barong), jewelry making and accessories, foods manufacturing and beverages processing, other tourism related industries and wood and bamboo furniture making."
+      ],
+      "population": [
+        "As of 2015 census",
+        "• Total",
+        "101,082"
+      ],
+      "language": [
+        "Bicol Dialect and mostly Tagalog as their mode of communication and also speak English Language."
+      ],
+      "religion": [
+        "Majority is Roman Catholic. Other religions include Iglesia ni Cristo, United Church of Christ, Born Again Christians, Seventh Day Adventist Church of Christ of the Later Day Saints, Islam Jehovahs witness and many more.",
+        "CULTURE, TRADITION AND FOLKLORE",
+        "Social traditions and beliefs",
+        "– It is typical Filipino to be religious. They believe on spirits that affects the daily lives. These beliefs and traditions are passed through generations.",
+        "Conception and Giving Birth",
+        "– A pregnant woman is prohibited to frown or laugh at despicable things for the baby will acquire properties of the despised thing. She is also prohibited to go to isolated places because when a bad spirit sees her, she may give birth too soon.",
+        "Baptism",
+        "– It is important that a baby should be baptized on time. Unbaptized babies are closer to the devil because they are not holy to protect themselves. It is also important that the Godparents of the baby are good individuals because the baby will get such behavior from them.",
+        "Courting and Engagement",
+        "– There are instances that marriage is agreed by the parents while the boy and the girl are still babies. Unknowingly, a woman may have been agreed to be married to a specific man. Most of the time, a man who likes a lady, talks to the lady’s parent’s to win their approval. The man, helps with the household chores and avoids to do things perfectly, any mistake may mean failure.",
+        "These traditions and beliefs are still widely practiced. Despite the growth of modern technologies, almost everybody still believes in luck."
+      ],
+      "education": [
+        "Elementary Schools",
+        "Secondary Schools",
+        "Tertiary Schools",
+        "Public School",
+        "Private School"
+      ]
+    }
+  },
+  "offices": {
+    "note": "The LGU groups its departments into five clusters. Each cluster page lists the offices inside it, with the barangay in the address — which is what a citizen needs in order to show up at the right building.",
+    "clusters": [
+      {
+        "name": "Economic Development",
+        "slug": "economic-development",
+        "description": "The Economic Development Cluster is responsible for introducing economic growth and development in Labo. These departments & division shall secure that the town of Labo continuously progresses in terms of its economy."
+      },
+      {
+        "name": "Fiscal Management",
+        "slug": "fiscal-management",
+        "description": "The Fiscal Management Cluster takes charge in properly collecting the finances of the Local Government of Labo to support the program of the town. This cluster ensures that there is transparency between the Laboenos and the Local Government."
+      },
+      {
+        "name": "Infrastructure",
+        "slug": "infrastructure",
+        "description": "The Infrastructure cluster is responsible for the interconnectivity of the city and ensures the convenience of the Laboeños. The cluster focuses on the enhancement of the infrastructure development of the town by ensuring efficient and transparent management of its resources."
+      },
+      {
+        "name": "Public Administration",
+        "slug": "public-administration",
+        "description": "The Development Management and Public Administration ensures that the processes of the Local Government of Labo are properly alighed for convenience of the Laboeños. Also, this cluster takes charge in providing quality service for everyone."
+      },
+      {
+        "name": "Social Services",
+        "slug": "social-services",
+        "description": "The Social Services Cluster is composed of the various Local Government departments which cater to the basic needs of the Laboeños. This also includes services in education, health and security."
+      }
+    ],
+    "byCluster": [
+      {
+        "cluster": "economic-development",
+        "name": "Economic Development",
+        "sourceUrl": "https://labo.gov.ph/about/department-and-offices/economic-development/",
+        "snapshot": {
+          "date": "2025-04-24",
+          "url": "https://web.archive.org/web/20250424142957/https://labo.gov.ph/about/department-and-offices/economic-development/"
+        },
+        "officeCount": 6,
+        "note": null,
+        "offices": [
+          {
+            "name": "Office of the Municipal Agriculture",
+            "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Public Employment Service Office",
+            "address": "2/F Labo Public Market, Brgy. Dalas, Labo, Camarines Norte"
+          },
+          {
+            "name": "Municipal Cooperative Development Office",
+            "address": "2/F Labo Municipal Building, SB Session Hall, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Tourism Information Center",
+            "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte"
+          },
+          {
+            "name": "Museo de Labo",
+            "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte"
+          },
+          {
+            "name": "Labo Central Terminal",
+            "address": "Brgy. Bulhao, Labo, Camarines Norte"
+          }
+        ]
+      },
+      {
+        "cluster": "fiscal-management",
+        "name": "Fiscal Management",
+        "sourceUrl": "https://labo.gov.ph/about/department-and-offices/fiscal-management/",
+        "snapshot": {
+          "date": "2025-10-12",
+          "url": "https://web.archive.org/web/20251012115007/https://labo.gov.ph/about/department-and-offices/fiscal-management/"
+        },
+        "officeCount": 6,
+        "note": null,
+        "offices": [
+          {
+            "name": "Office of the Municipal Accountant",
+            "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Assessor",
+            "address": "2/F Labo Public Market, Brgy. Dalas, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Budget",
+            "address": "2/F Labo Municipal Building, SB Session Hall, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Treasurer",
+            "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte"
+          },
+          {
+            "name": "Economic Enterprise Division",
+            "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte"
+          },
+          {
+            "name": "Business Permit and Licensing Office",
+            "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte"
+          }
+        ]
+      },
+      {
+        "cluster": "infrastructure",
+        "name": "Infrastructure",
+        "sourceUrl": "https://labo.gov.ph/about/department-and-offices/infrastructure-2/",
+        "snapshot": {
+          "date": "2025-10-12",
+          "url": "https://web.archive.org/web/20251012105307/https://labo.gov.ph/about/department-and-offices/infrastructure-2/"
+        },
+        "officeCount": 2,
+        "note": null,
+        "offices": [
+          {
+            "name": "Office of the Municipal Engineer",
+            "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Assessor",
+            "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          }
+        ]
+      },
+      {
+        "cluster": "public-administration",
+        "name": "Public Administration",
+        "sourceUrl": "https://labo.gov.ph/about/department-and-offices/public-administration/",
+        "snapshot": {
+          "date": "2026-02-15",
+          "url": "https://web.archive.org/web/20260215142019/https://labo.gov.ph/about/department-and-offices/public-administration/"
+        },
+        "officeCount": 7,
+        "note": null,
+        "offices": [
+          {
+            "name": "Office of the Municipal Administrator",
+            "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Planning and Development Officer",
+            "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Sangguniang Bayan Office",
+            "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Human Resource Management Officer",
+            "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Environment and Natural Resources Officer",
+            "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Barangay Affairs Section",
+            "address": "3/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "General Services Office",
+            "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          }
+        ]
+      },
+      {
+        "cluster": "social-services",
+        "name": "Social Services",
+        "sourceUrl": "https://labo.gov.ph/about/department-and-offices/social-services/",
+        "snapshot": {
+          "date": "2025-04-25",
+          "url": "https://web.archive.org/web/20250425011059/https://labo.gov.ph/about/department-and-offices/social-services/"
+        },
+        "officeCount": 9,
+        "note": null,
+        "offices": [
+          {
+            "name": "Office of the Municipal Health Officer",
+            "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Rural Health Unit II",
+            "address": "Brgy. Tulay na Lupa, Labo, Camarines Norte"
+          },
+          {
+            "name": "Rural Health Unit III",
+            "address": "Brgy. Bagong Silang I, Labo, Camarines Norte"
+          },
+          {
+            "name": "Senior Citizens Office",
+            "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Civil Registrar",
+            "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Social Welfare and Development Officer",
+            "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Disaster Risk Reduction Management Officer",
+            "address": "3/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Office of the Municipal Population Officer",
+            "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte"
+          },
+          {
+            "name": "Public Safety Task Force",
+            "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte"
+          }
+        ]
+      }
+    ],
+    "count": 30,
+    "all": [
+      {
+        "name": "Office of the Municipal Agriculture",
+        "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "economic-development"
+      },
+      {
+        "name": "Public Employment Service Office",
+        "address": "2/F Labo Public Market, Brgy. Dalas, Labo, Camarines Norte",
+        "cluster": "economic-development"
+      },
+      {
+        "name": "Municipal Cooperative Development Office",
+        "address": "2/F Labo Municipal Building, SB Session Hall, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "economic-development"
+      },
+      {
+        "name": "Tourism Information Center",
+        "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte",
+        "cluster": "economic-development"
+      },
+      {
+        "name": "Museo de Labo",
+        "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte",
+        "cluster": "economic-development"
+      },
+      {
+        "name": "Labo Central Terminal",
+        "address": "Brgy. Bulhao, Labo, Camarines Norte",
+        "cluster": "economic-development"
+      },
+      {
+        "name": "Office of the Municipal Accountant",
+        "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "fiscal-management"
+      },
+      {
+        "name": "Office of the Municipal Assessor",
+        "address": "2/F Labo Public Market, Brgy. Dalas, Labo, Camarines Norte",
+        "cluster": "fiscal-management"
+      },
+      {
+        "name": "Office of the Municipal Budget",
+        "address": "2/F Labo Municipal Building, SB Session Hall, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "fiscal-management"
+      },
+      {
+        "name": "Office of the Municipal Treasurer",
+        "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte",
+        "cluster": "fiscal-management"
+      },
+      {
+        "name": "Economic Enterprise Division",
+        "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte",
+        "cluster": "fiscal-management"
+      },
+      {
+        "name": "Business Permit and Licensing Office",
+        "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte",
+        "cluster": "fiscal-management"
+      },
+      {
+        "name": "Office of the Municipal Engineer",
+        "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "infrastructure"
+      },
+      {
+        "name": "Office of the Municipal Assessor",
+        "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "infrastructure"
+      },
+      {
+        "name": "Office of the Municipal Administrator",
+        "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "public-administration"
+      },
+      {
+        "name": "Office of the Municipal Planning and Development Officer",
+        "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "public-administration"
+      },
+      {
+        "name": "Sangguniang Bayan Office",
+        "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "public-administration"
+      },
+      {
+        "name": "Office of the Municipal Human Resource Management Officer",
+        "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "public-administration"
+      },
+      {
+        "name": "Office of the Municipal Environment and Natural Resources Officer",
+        "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "public-administration"
+      },
+      {
+        "name": "Barangay Affairs Section",
+        "address": "3/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "public-administration"
+      },
+      {
+        "name": "General Services Office",
+        "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "public-administration"
+      },
+      {
+        "name": "Office of the Municipal Health Officer",
+        "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "social-services"
+      },
+      {
+        "name": "Rural Health Unit II",
+        "address": "Brgy. Tulay na Lupa, Labo, Camarines Norte",
+        "cluster": "social-services"
+      },
+      {
+        "name": "Rural Health Unit III",
+        "address": "Brgy. Bagong Silang I, Labo, Camarines Norte",
+        "cluster": "social-services"
+      },
+      {
+        "name": "Senior Citizens Office",
+        "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte",
+        "cluster": "social-services"
+      },
+      {
+        "name": "Office of the Municipal Civil Registrar",
+        "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "social-services"
+      },
+      {
+        "name": "Office of the Municipal Social Welfare and Development Officer",
+        "address": "1/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "social-services"
+      },
+      {
+        "name": "Office of the Municipal Disaster Risk Reduction Management Officer",
+        "address": "3/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "social-services"
+      },
+      {
+        "name": "Office of the Municipal Population Officer",
+        "address": "2/F Labo Municipal Building, Brgy. Gumamela, Labo, Camarines Norte",
+        "cluster": "social-services"
+      },
+      {
+        "name": "Public Safety Task Force",
+        "address": "Labo People's Park, Brgy. Pinya, Labo, Camarines Norte",
+        "cluster": "social-services"
+      }
+    ]
+  },
+  "barangayCrossCheck": {
+    "siteCount": 52,
+    "compiledCount": 52,
+    "matched": 52,
+    "onlyOnSite": [],
+    "onlyInPsgc": [],
+    "agrees": true,
+    "note": "Names are compared after stripping the \"(Poblacion)\"/\"(Pob.)\" and \"(Silang)\" suffixes, which the two sources spell differently."
+  },
+  "dataHash": "734c1673105927ce5e3350002e09b459d93b67f074424e708b955e112ff9577b",
+  "generatedAt": "2026-10-16T00:15:01.415Z"
+}

@@ -333,3 +333,133 @@ export interface MunicipalityProfile {
   /** Fields the brief asks for but no verified source has been wired yet. */
   pendingFields: Array<{ field: string; reason: string }>;
 }
+
+/** A snapshot reference, so every scraped value can name where and when it came from. */
+export interface LguSnapshotRef {
+  timestamp: string;
+  date: string | null;
+  iso?: string | null;
+  url: string;
+  liveUrl?: string;
+}
+
+/**
+ * A person or office on the LGU's own officials page.
+ *
+ * `name` is nullable on purpose: the current capture of that page names no mayor
+ * and no vice mayor, only their offices. When the name could only be recovered
+ * from an older capture, `nameAsOf` carries that older date and
+ * `nameRemovedFromCurrentPage` is true — the UI must never present it as current.
+ */
+export interface LguOfficial {
+  name: string | null;
+  position: string | null;
+  office: string | null;
+  address: string | null;
+  floor: string | null;
+  phone: string | null;
+  nameAsOf?: string | null;
+  nameSourceUrl?: string | null;
+  nameRemovedFromCurrentPage?: boolean;
+}
+
+export interface LguLegislativeMember {
+  name: string;
+  role: string | null;
+  roleAsPublished: string | null;
+  kind: 'vice-mayor' | 'councilor' | 'ex-officio';
+  exOfficioBody: string | null;
+  asOf: string | null;
+}
+
+export interface LguOffice {
+  name: string;
+  address: string | null;
+  cluster?: string;
+}
+
+/** `public/data/lgu.json` — compiled from labo.gov.ph via the Wayback Machine. */
+export interface LguRecord {
+  municipality: string;
+  province: string;
+  source: {
+    name: string;
+    url: string;
+    publisher: string;
+    license: string;
+    accessedVia: string;
+  };
+  snapshots: Record<string, LguSnapshotRef | null>;
+  officials: {
+    executive: LguOfficial[];
+    departmentHeads: LguOfficial[];
+    sectionHeads: LguOfficial[];
+    counts: {
+      executiveOffices: number;
+      departmentHeads: number;
+      sectionHeads: number;
+      named: number;
+    };
+    notices: string[];
+  };
+  legislative: {
+    asOf: string | null;
+    note: string;
+    members: LguLegislativeMember[];
+    vacantSeats: Array<{ body: string; label: string }>;
+    counts: { total: number; councilors: number; exOfficio: number; vacantSeats: number };
+  };
+  profile: {
+    areaKm2: number | null;
+    provinceSharePercent: number | null;
+    agriculturalKm2: number | null;
+    barangays: string[];
+    sections: Record<string, string[]>;
+  } | null;
+  offices: {
+    note: string;
+    clusters: Array<{ name: string; slug: string; description: string }>;
+    byCluster: Array<{
+      cluster: string;
+      name: string | null;
+      sourceUrl: string;
+      snapshot: { date: string | null; url: string } | null;
+      officeCount: number;
+      note: string | null;
+      offices: Array<{ name: string; address: string | null }>;
+    }>;
+    count: number;
+    all: LguOffice[];
+  };
+  barangayCrossCheck: {
+    siteCount: number;
+    compiledCount: number;
+    matched: number;
+    onlyOnSite: string[];
+    onlyInPsgc: string[];
+    agrees: boolean;
+    note: string;
+  } | null;
+  dataHash?: string;
+  generatedAt?: string;
+}
+
+/** `public/data/lgu-documents.json` — the LGU's published document index. */
+export interface LguDocumentIndex {
+  municipality: string;
+  note: string;
+  sourceIndex: string;
+  count: number;
+  byKind: Record<string, number>;
+  items: Array<{
+    slug: string;
+    title: string;
+    titleDerived: boolean;
+    kind: string;
+    path: string;
+    url: string;
+    lastSeen: string | null;
+  }>;
+  dataHash?: string;
+  generatedAt?: string;
+}

@@ -251,6 +251,80 @@ export async function run() {
     console.log('SKIP projects/not-compiled (run `npm run etl projects`)');
   }
 
+  /* ── lgu (the LGU's own website) ──────────────────────────────────────── */
+  const lgu = await readJson('apps/web/public/data/lgu.json');
+  if (!lgu.__error) {
+    check(
+      'lgu/executive-offices-are-present',
+      (lgu.officials?.executive?.length ?? 0) >= 2,
+      `executive=${lgu.officials?.executive?.length}`,
+    );
+    check(
+      'lgu/department-head-count-matches-its-own-count',
+      (lgu.officials?.departmentHeads?.length ?? -1) === (lgu.officials?.counts?.departmentHeads ?? -2),
+      `heads=${lgu.officials?.departmentHeads?.length} counts=${lgu.officials?.counts?.departmentHeads}`,
+    );
+    // The whole reason this dataset is trustworthy: it does not claim a current
+    // office-holder it cannot see. A name recovered from an older capture MUST
+    // carry the date it came from.
+    check(
+      'lgu/executive-names-off-the-current-page-carry-a-date',
+      (lgu.officials?.executive ?? []).every((e) => !e.nameRemovedFromCurrentPage || Boolean(e.nameAsOf)),
+      'a recovered name without the date it was stated would read as current',
+    );
+    check(
+      'lgu/legislative-roles-line-up-with-their-holder',
+      (lgu.legislative?.members ?? []).every((m) => typeof m.name === 'string' && m.name.length > 2),
+    );
+    check(
+      'lgu/at-most-one-vice-mayor',
+      (lgu.legislative?.members ?? []).filter((m) => m.kind === 'vice-mayor').length <= 1,
+      'the first parser read roles backwards and produced two',
+    );
+    check(
+      'lgu/legislative-counts-matches-the-member-list',
+      (lgu.legislative?.counts?.total ?? -1) === (lgu.legislative?.members?.length ?? -2),
+    );
+    check(
+      'lgu/every-snapshot-ref-has-a-date-and-a-url',
+      Object.values(lgu.snapshots ?? {})
+        .filter(Boolean)
+        .every((s) => typeof s.url === 'string' && s.url.includes('web.archive.org')),
+    );
+    // The cross-check is the strongest evidence in this file: an independent
+    // source (the LGU's own list) agreeing with the PSGC-compiled index.
+    check(
+      'lgu/lgu-barangay-list-agrees-with-the-psgc-index',
+      lgu.barangayCrossCheck?.compiledCount === EXPECTED_BARANGAYS && lgu.barangayCrossCheck?.matched === EXPECTED_BARANGAYS,
+      `matched=${lgu.barangayCrossCheck?.matched}/${lgu.barangayCrossCheck?.compiledCount}`,
+    );
+    check(
+      'lgu/offices-carry-an-address',
+      (lgu.offices?.all ?? []).every((o) => typeof o.name === 'string' && o.name.length > 2),
+    );
+  } else {
+    console.log('SKIP lgu/not-compiled (run `npm run etl lgu`)');
+  }
+
+  const lguDocuments = await readJson('apps/web/public/data/lgu-documents.json');
+  if (!lguDocuments.__error) {
+    check(
+      'lgu-documents/count-matches-the-item-list',
+      (lguDocuments.count ?? -1) === (lguDocuments.items?.length ?? -2),
+    );
+    check(
+      'lgu-documents/by-kind-totals-the-count',
+      Object.values(lguDocuments.byKind ?? {}).reduce((a, b) => a + b, 0) === (lguDocuments.count ?? -1),
+    );
+    check(
+      'lgu-documents/every-entry-is-marked-as-a-derived-title',
+      (lguDocuments.items ?? []).every((d) => d.titleDerived === true && d.url?.startsWith('https://labo.gov.ph/')),
+      'derived titles must never be presented as the document’s own heading',
+    );
+  } else {
+    console.log('SKIP lgu-documents/not-compiled (run `npm run etl lgu`)');
+  }
+
   /* ── every compiled file exists ───────────────────────────────────────── */
   for (const relPath of [
     'apps/web/public/data/barangays.json',
@@ -260,6 +334,8 @@ export async function run() {
     'apps/web/public/data/fiscal.json',
     'apps/web/public/data/hazards.json',
     'apps/web/public/data/datasets.json',
+    'apps/web/public/data/lgu.json',
+    'apps/web/public/data/lgu-documents.json',
   ]) {
     check(`file-exists:${rel(join(paths.repoRoot, relPath))}`, await exists(relPath), relPath);
   }
