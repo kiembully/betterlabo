@@ -11,539 +11,863 @@
     {
       "id": "flood_5yr",
       "label": "Flood — 5-year return period"
+    },
+    {
+      "id": "flood_25yr",
+      "label": "Flood — 25-year return period"
+    },
+    {
+      "id": "flood_100yr",
+      "label": "Flood — 100-year return period"
+    },
+    {
+      "id": "landslide",
+      "label": "Rain-induced landslide"
     }
   ],
   "counts": {
     "barangays": 52,
-    "withAnyExposure": 36,
-    "withoutAnyExposure": 16,
-    "patchesTested": 65069
+    "withAnyExposure": 52,
+    "withoutAnyExposure": 0,
+    "patchesTested": 411571
   },
   "barangays": [
     {
       "psgcCode": "0501606001",
       "name": "Anameam",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 2602,
+        "landslide": 3071
       }
     },
     {
       "psgcCode": "0501606002",
       "name": "Awitan",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 696
+        "flood_5yr": 696,
+        "flood_25yr": 834,
+        "flood_100yr": 913,
+        "landslide": 250
       }
     },
     {
       "psgcCode": "0501606003",
       "name": "Baay",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 396
+        "flood_5yr": 396,
+        "flood_25yr": 450,
+        "flood_100yr": 12888,
+        "landslide": 15012
       }
     },
     {
       "psgcCode": "0501606004",
       "name": "Bagacay",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 2828
+        "flood_5yr": 2828,
+        "flood_25yr": 2960,
+        "flood_100yr": 3027,
+        "landslide": 582
       }
     },
     {
       "psgcCode": "0501606005",
       "name": "Bagong Silang I",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 1238,
+        "landslide": 1001
       }
     },
     {
       "psgcCode": "0501606006",
       "name": "Bagong Silang II",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 2018,
+        "landslide": 1364
       }
     },
     {
       "psgcCode": "0501606007",
       "name": "Bakiad",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": null
       },
       "patchCounts": {
-        "flood_5yr": 549
+        "flood_5yr": 549,
+        "flood_25yr": 582,
+        "flood_100yr": 575,
+        "landslide": 0
       }
     },
     {
       "psgcCode": "0501606008",
       "name": "Bautista",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 1306
+        "flood_5yr": 1306,
+        "flood_25yr": 1365,
+        "flood_100yr": 1428,
+        "landslide": 5
       }
     },
     {
       "psgcCode": "0501606009",
       "name": "Bayabas",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 3469,
+        "landslide": 3954
       }
     },
     {
       "psgcCode": "0501606010",
       "name": "Bayan-bayan",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 1423
+        "flood_5yr": 1423,
+        "flood_25yr": 1484,
+        "flood_100yr": 3105,
+        "landslide": 655
       }
     },
     {
       "psgcCode": "0501606011",
       "name": "Benit",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 3210
+        "flood_5yr": 3210,
+        "flood_25yr": 3212,
+        "flood_100yr": 3195,
+        "landslide": 666
       }
     },
     {
       "psgcCode": "0501606012",
       "name": "Anahaw (Pob.)",
       "exposure": {
-        "flood_5yr": 2
+        "flood_5yr": 2,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": null
       },
       "patchCounts": {
-        "flood_5yr": 55
+        "flood_5yr": 55,
+        "flood_25yr": 44,
+        "flood_100yr": 46,
+        "landslide": 0
       }
     },
     {
       "psgcCode": "0501606013",
       "name": "Gumamela (Pob.)",
       "exposure": {
-        "flood_5yr": 2
+        "flood_5yr": 2,
+        "flood_25yr": 2,
+        "flood_100yr": 2,
+        "landslide": null
       },
       "patchCounts": {
-        "flood_5yr": 35
+        "flood_5yr": 35,
+        "flood_25yr": 41,
+        "flood_100yr": 34,
+        "landslide": 0
       }
     },
     {
       "psgcCode": "0501606014",
       "name": "San Francisco (Pob.)",
       "exposure": {
-        "flood_5yr": 2
+        "flood_5yr": 2,
+        "flood_25yr": 2,
+        "flood_100yr": 2,
+        "landslide": null
       },
       "patchCounts": {
-        "flood_5yr": 6
+        "flood_5yr": 6,
+        "flood_25yr": 3,
+        "flood_100yr": 4,
+        "landslide": 0
       }
     },
     {
       "psgcCode": "0501606015",
       "name": "Kalamunding (Pob.)",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": null
       },
       "patchCounts": {
-        "flood_5yr": 94
+        "flood_5yr": 94,
+        "flood_25yr": 92,
+        "flood_100yr": 94,
+        "landslide": 0
       }
     },
     {
       "psgcCode": "0501606016",
       "name": "Bulhao",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 694
+        "flood_5yr": 694,
+        "flood_25yr": 805,
+        "flood_100yr": 824,
+        "landslide": 69
       }
     },
     {
       "psgcCode": "0501606017",
       "name": "Cabatuhan",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 10085,
+        "landslide": 9829
       }
     },
     {
       "psgcCode": "0501606018",
       "name": "Cabusay",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 651
+        "flood_5yr": 651,
+        "flood_25yr": 698,
+        "flood_100yr": 697,
+        "landslide": 110
       }
     },
     {
       "psgcCode": "0501606019",
       "name": "Calabasa",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 3119
+        "flood_5yr": 3119,
+        "flood_25yr": 3315,
+        "flood_100yr": 3666,
+        "landslide": 721
       }
     },
     {
       "psgcCode": "0501606020",
       "name": "Canapawan",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 5237,
+        "landslide": 5585
       }
     },
     {
       "psgcCode": "0501606021",
       "name": "Daguit",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 4835
+        "flood_5yr": 4835,
+        "flood_25yr": 4555,
+        "flood_100yr": 4063,
+        "landslide": 709
       }
     },
     {
       "psgcCode": "0501606022",
       "name": "Dalas",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 1240
+        "flood_5yr": 1240,
+        "flood_25yr": 1041,
+        "flood_100yr": 974,
+        "landslide": 521
       }
     },
     {
       "psgcCode": "0501606023",
       "name": "Dumagmang",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 8258,
+        "landslide": 12445
       }
     },
     {
       "psgcCode": "0501606024",
       "name": "Exciban",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 3110,
+        "landslide": 2606
       }
     },
     {
       "psgcCode": "0501606025",
       "name": "Fundado",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 1179
+        "flood_5yr": 1179,
+        "flood_25yr": 1194,
+        "flood_100yr": 1271,
+        "landslide": 413
       }
     },
     {
       "psgcCode": "0501606026",
       "name": "Guinacutan",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": null
       },
       "patchCounts": {
-        "flood_5yr": 935
+        "flood_5yr": 935,
+        "flood_25yr": 901,
+        "flood_100yr": 875,
+        "landslide": 0
       }
     },
     {
       "psgcCode": "0501606027",
       "name": "Guisican",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 5681,
+        "landslide": 6052
       }
     },
     {
       "psgcCode": "0501606028",
       "name": "Iberica",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 1751
+        "flood_5yr": 1751,
+        "flood_25yr": 1833,
+        "flood_100yr": 1920,
+        "landslide": 140
       }
     },
     {
       "psgcCode": "0501606030",
       "name": "Lugui",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 2551
+        "flood_5yr": 2551,
+        "flood_25yr": 2859,
+        "flood_100yr": 8661,
+        "landslide": 5845
       }
     },
     {
       "psgcCode": "0501606031",
       "name": "Mabilo I",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 3043
+        "flood_5yr": 3043,
+        "flood_25yr": 3249,
+        "flood_100yr": 3490,
+        "landslide": 197
       }
     },
     {
       "psgcCode": "0501606032",
       "name": "Mabilo II",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 2365
+        "flood_5yr": 2365,
+        "flood_25yr": 2347,
+        "flood_100yr": 2368,
+        "landslide": 134
       }
     },
     {
       "psgcCode": "0501606033",
       "name": "Macogon",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 2,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 567
+        "flood_5yr": 567,
+        "flood_25yr": 408,
+        "flood_100yr": 1274,
+        "landslide": 796
       }
     },
     {
       "psgcCode": "0501606034",
       "name": "Mahawan-hawan",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 1366
+        "flood_5yr": 1366,
+        "flood_25yr": 1433,
+        "flood_100yr": 1536,
+        "landslide": 173
       }
     },
     {
       "psgcCode": "0501606035",
       "name": "Malangcao-Basud",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 4765
+        "flood_5yr": 4765,
+        "flood_25yr": 4775,
+        "flood_100yr": 4759,
+        "landslide": 700
       }
     },
     {
       "psgcCode": "0501606036",
       "name": "Malasugui",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": null
       },
       "patchCounts": {
-        "flood_5yr": 1113
+        "flood_5yr": 1113,
+        "flood_25yr": 1086,
+        "flood_100yr": 1151,
+        "landslide": 0
       }
     },
     {
       "psgcCode": "0501606037",
       "name": "Malatap",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 2765,
+        "landslide": 2363
       }
     },
     {
       "psgcCode": "0501606038",
       "name": "Malaya",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 5318,
+        "landslide": 8142
       }
     },
     {
       "psgcCode": "0501606039",
       "name": "Malibago",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 2926,
+        "landslide": 3138
       }
     },
     {
       "psgcCode": "0501606040",
       "name": "Maot",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 5770
+        "flood_5yr": 5770,
+        "flood_25yr": 6241,
+        "flood_100yr": 6587,
+        "landslide": 1072
       }
     },
     {
       "psgcCode": "0501606041",
       "name": "Masalong",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 1232
+        "flood_5yr": 1232,
+        "flood_25yr": 1454,
+        "flood_100yr": 1517,
+        "landslide": 294
       }
     },
     {
       "psgcCode": "0501606042",
       "name": "Matanlang",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 1945
+        "flood_5yr": 1945,
+        "flood_25yr": 1889,
+        "flood_100yr": 1941,
+        "landslide": 191
       }
     },
     {
       "psgcCode": "0501606043",
       "name": "Napaod",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 2537
+        "flood_5yr": 2537,
+        "flood_25yr": 2831,
+        "flood_100yr": 3137,
+        "landslide": 266
       }
     },
     {
       "psgcCode": "0501606044",
       "name": "Pag-Asa",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 12784,
+        "landslide": 18695
       }
     },
     {
       "psgcCode": "0501606045",
       "name": "Pangpang",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 1706
+        "flood_5yr": 1706,
+        "flood_25yr": 1634,
+        "flood_100yr": 1659,
+        "landslide": 77
       }
     },
     {
       "psgcCode": "0501606046",
       "name": "Pinya (Pob.)",
       "exposure": {
-        "flood_5yr": 2
+        "flood_5yr": 2,
+        "flood_25yr": 2,
+        "flood_100yr": 2,
+        "landslide": null
       },
       "patchCounts": {
-        "flood_5yr": 16
+        "flood_5yr": 16,
+        "flood_25yr": 13,
+        "flood_100yr": 12,
+        "landslide": 0
       }
     },
     {
       "psgcCode": "0501606047",
       "name": "San Antonio",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 3110
+        "flood_5yr": 3110,
+        "flood_25yr": 3276,
+        "flood_100yr": 3327,
+        "landslide": 498
       }
     },
     {
       "psgcCode": "0501606048",
       "name": "Santa Cruz",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 1
       },
       "patchCounts": {
-        "flood_5yr": 714
+        "flood_5yr": 714,
+        "flood_25yr": 621,
+        "flood_100yr": 482,
+        "landslide": 1
       }
     },
     {
       "psgcCode": "0501606049",
       "name": "Bagong Silang III (Silang)",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 2371,
+        "landslide": 1365
       }
     },
     {
       "psgcCode": "0501606050",
       "name": "Submakin",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 2007
+        "flood_5yr": 2007,
+        "flood_25yr": 1999,
+        "flood_100yr": 4037,
+        "landslide": 1794
       }
     },
     {
       "psgcCode": "0501606051",
       "name": "Talobatib",
       "exposure": {
-        "flood_5yr": 3
+        "flood_5yr": 3,
+        "flood_25yr": 3,
+        "flood_100yr": 3,
+        "landslide": 2
       },
       "patchCounts": {
-        "flood_5yr": 2450
+        "flood_5yr": 2450,
+        "flood_25yr": 2445,
+        "flood_100yr": 2392,
+        "landslide": 153
       }
     },
     {
       "psgcCode": "0501606052",
       "name": "Tigbinan",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 3717,
+        "landslide": 3912
       }
     },
     {
       "psgcCode": "0501606053",
       "name": "Tulay Na Lupa",
       "exposure": {
-        "flood_5yr": null
+        "flood_5yr": null,
+        "flood_25yr": null,
+        "flood_100yr": 3,
+        "landslide": 3
       },
       "patchCounts": {
-        "flood_5yr": 0
+        "flood_5yr": 0,
+        "flood_25yr": 0,
+        "flood_100yr": 563,
+        "landslide": 441
       }
     }
   ],
   "sources": [
     "noah-hazard-maps"
   ],
-  "dataHash": "a9c2916e79668fd42fde4653f11523ff045e10165247dafdd399d08bbb812639",
-  "generatedAt": "2026-10-15T21:31:18.118Z"
+  "dataHash": "b67eede7aa504d3734532714441f645bf8fe2add711d1cf5d7912f88e84e7c7a",
+  "generatedAt": "2026-10-16T23:37:46.542Z"
 }
