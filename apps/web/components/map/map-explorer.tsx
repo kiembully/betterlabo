@@ -33,6 +33,7 @@ export interface MapExplorerProps {
   bounds: [number, number, number, number] | null;
   rasterTileUrl: string;
   rasterAttribution: string;
+  basemapStyleUrl: string;
   hazardOptions: HazardOption[];
   hasRegistry: boolean;
   etlHint: string;
@@ -50,6 +51,7 @@ export function MapExplorer({
   bounds,
   rasterTileUrl,
   rasterAttribution,
+  basemapStyleUrl,
   hazardOptions,
   hasRegistry,
   etlHint,
@@ -138,6 +140,7 @@ export function MapExplorer({
               maxBounds={paddedBounds(bounds, 0.35)}
               rasterTileUrl={rasterTileUrl}
               rasterAttribution={rasterAttribution}
+              basemapStyleUrl={basemapStyleUrl}
               glyphsUrl={GLYPHS_URL}
               geojsonUrl="/data/labo-barangays.geojson"
               municipalityUrl="/data/labo-municipality.geojson"

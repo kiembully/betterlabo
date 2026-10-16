@@ -400,7 +400,24 @@ export interface BasemapInput {
 }
 
 /**
- * The whole basemap: one raster source. No sprite, no glyphs unless the label
+ * The basemap to hand to MapLibre: a remote vector style when one is configured,
+ * otherwise the built-in single raster source.
+ *
+ * Returning a style URL rather than a style object is deliberate — the overlay
+ * layers are added after `load` and reference only their own source/layer ids, so
+ * the basemap underneath is swappable, and a hosted vector style brings its own
+ * glyphs, sprites and attribution.
+ */
+export function resolveBasemapStyle(
+  input: BasemapInput & { styleUrl?: string | null },
+): StyleSpecification | string {
+  const styleUrl = input.styleUrl?.trim();
+  if (styleUrl) return styleUrl;
+  return buildBasemapStyle(input);
+}
+
+/**
+ * The raster basemap: one raster source. No sprite, no glyphs unless the label
  * layer is in play, so switching the map on costs a single tile request.
  */
 export function buildBasemapStyle({ tileUrl, attribution, glyphsUrl }: BasemapInput): StyleSpecification {
