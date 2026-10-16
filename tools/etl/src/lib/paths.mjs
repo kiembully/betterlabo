@@ -45,6 +45,8 @@ export const paths = {
   profile: join(publicDataDir, 'profile.json'),
   fiscal: join(publicDataDir, 'fiscal.json'),
   projects: join(publicDataDir, 'projects.json'),
+  lgu: join(publicDataDir, 'lgu.json'),
+  lguDocuments: join(publicDataDir, 'lgu-documents.json'),
   hazards: join(publicDataDir, 'hazards.json'),
   datasets: join(publicDataDir, 'datasets.json'),
 };

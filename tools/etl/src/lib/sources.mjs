@@ -157,6 +157,43 @@ export const SOURCES = {
       ),
     },
   },
+
+  /**
+   * The Municipality of Labo's own website — the LGU's official surface, and the
+   * only place that publishes the current roster of officials, their offices and
+   * their telephone numbers.
+   *
+   * Read through the Wayback Machine because the live host sits behind a
+   * Cloudflare interactive challenge (`403` + `Cf-Mitigated: challenge` on every
+   * path, including `/robots.txt` and `/wp-json/...`). Snapshots are timestamped,
+   * which is the honest way to cite a government page whose content changes —
+   * and this one has changed: the current capture names no mayor, vice mayor or
+   * councilor, so every section records the snapshot date it came from.
+   *
+   * Licence: the site's own footer states "All content is in the public domain
+   * unless otherwise stated."
+   */
+  lgu: {
+    id: 'labo-lgu-website',
+    title: 'Municipality of Labo official website',
+    publisher: 'Municipal Government of Labo, Camarines Norte',
+    portalDatasetId: null,
+    portalUrl: 'https://labo.gov.ph/',
+    license: 'Public domain (per the site footer: "All content is in the public domain unless otherwise stated.")',
+    licenseUrl: 'https://labo.gov.ph/',
+    attributionText:
+      'Municipal Government of Labo, Camarines Norte — official website (labo.gov.ph). Retrieved via the Internet Archive Wayback Machine; each section records its snapshot date.',
+    sourceUrl: 'https://labo.gov.ph/',
+    sourceVersion: null,
+    pages: {
+      officials: 'https://labo.gov.ph/about/municipal-officials-and-department-heads/',
+      legislative: 'https://labo.gov.ph/about/legislative/',
+      departments: 'https://labo.gov.ph/about/department-and-offices/',
+      facts: 'https://labo.gov.ph/about/facts-and-figures/',
+      mayorsProfile: 'https://labo.gov.ph/about/mayors-profile/',
+      citizensCharter: 'https://labo.gov.ph/services/citizens-charter/',
+    },
+  },
 };
 
 /**
@@ -182,7 +219,7 @@ export const PENDING_FIELDS = [
   {
     field: 'Elected and appointed officials',
     reason:
-      'No open dataset carries current Labo officials with contact details. Left out rather than transcribed from an unverifiable page.',
+      'COMPILED — see apps/web/public/data/lgu.json. Source: the Municipality of Labo\'s own website (labo.gov.ph) via the Wayback Machine, because the live host is behind a Cloudflare challenge. Every section carries the snapshot date it came from, because the current capture names no mayor, vice mayor or councilor.',
   },
   {
     field: 'Ordinance index',

@@ -8,7 +8,9 @@ to the government file it came from.
 **Status:** working portal, first public release. 52 barangays mapped · 31
 compiled fiscal sections from BLGF FY 2024 · 309 DPWH projects located inside
 Labo barangays (₱10.76 B, 2016–2025) · Project NOAH flood layer clipped to the
-municipal outline · 45 automated data-integrity assertions.
+municipal outline · the LGU's own roster of officials and offices, read from the
+municipal website · 1,501 published documents indexed · 59 automated
+data-integrity assertions.
 
 > **Not an official website of the Municipality of Labo**, and not affiliated
 > with any political party or candidate. Independent, volunteer-built civic
@@ -24,6 +26,8 @@ municipal outline · 45 automated data-integrity assertions.
 | **Local budget explorer (FDPP)** | `/budget` | BLGF FY 2024 Statement of Receipts and Expenditures, Annual Regular Income and Dependencies, Special Education Fund, LDRRMF |
 | **Barangay directory & profiles** | `/barangays` | PSGC codes, NAMRIA-derived land areas, centroids, per-barangay mapped hazard exposure |
 | **Public works projects** | `/projects` | DPWH Infrastructure Transparency Dataset, filtered to Labo |
+| **Officials & offices** | `/officials` | The LGU's own website (labo.gov.ph) via dated archive captures: the mayor, vice mayor, Sangguniang Bayan, department and section heads with office, floor and telephone, plus the office directory |
+| **Published documents** | `/documents` | Index of every document the LGU publishes under `/docs/` — procurement notices, awards, invitations to bid, requests for quotation |
 | **Citizen reporting** | `/report` | Express + MongoDB intake with rate limiting, Turnstile and a reference code |
 | **Provenance registry** | `/data` | Every source: publisher, licence, retrieval date, row count, checksum, outputs |
 | **Administrative console** | `/console` | Triage, status, priority and office assignment for incoming reports |
@@ -106,7 +110,7 @@ portal reads static JSON and never calls the API. To exercise the reporting flow
 | `npm run build` | shared → api → web, in that order |
 | `npm run typecheck` | every workspace, `tsc --noEmit` |
 | `npm run lint` | `eslint` for the web workspace |
-| `npm run etl <task…>` | `barangays`, `profile`, `fiscal`, `projects`, `hazards`, `registry`, `verify`, `all` |
+| `npm run etl <task…>` | `barangays`, `profile`, `fiscal`, `projects`, `lgu`, `hazards`, `registry`, `verify`, `all` |
 | `npm run etl:verify` | re-checks the compiled files against each other (offline) |
 | `npm run smoke` | end-to-end assertions against a real mongod |
 
@@ -125,11 +129,18 @@ portal reads static JSON and never calls the API. To exercise the reporting flow
 | BLGF fiscal workbooks | 2 MB total |
 | DPWH Parquet (24 MB, 248,220 rows) | downloaded once, then read from disk; HTTP range reads as the fallback |
 | Project NOAH province archives | ~320 MB total (HuggingFace) |
+| Municipality of Labo website | HTML only — read through dated Internet Archive captures, a few MB per run |
 
 HuggingFace egress measured **~0.05 MB/s** from one development network, which
 makes the landslide archive a 45-minute transfer. Every download is therefore
 resumable, a truncated archive is detected and replaced rather than trusted, and
 the CI job caches `data/sources/` between runs.
+
+`labo.gov.ph` is behind a Cloudflare interactive challenge — every path, including
+`/robots.txt` and `/wp-json/...`, answers `403` with `Cf-Mitigated: challenge` — so
+the `lgu` task reads dated captures from the Wayback Machine instead. It screens
+every candidate for archived challenge pages, which the Archive stores with a `200`
+and which otherwise read as "the page is empty".
 
 ---
 

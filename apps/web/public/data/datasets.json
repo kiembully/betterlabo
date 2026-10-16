@@ -48,6 +48,27 @@
       "unavailable": false
     },
     {
+      "id": "labo-lgu-website",
+      "title": "Municipality of Labo official website",
+      "publisher": "Municipal Government of Labo, Camarines Norte",
+      "portalDatasetId": null,
+      "portalUrl": "https://labo.gov.ph/",
+      "sourceUrl": "https://labo.gov.ph/",
+      "license": "Public domain (per the site footer: \"All content is in the public domain unless otherwise stated.\")",
+      "licenseUrl": "https://labo.gov.ph/",
+      "attributionText": "Municipal Government of Labo, Camarines Norte — official website (labo.gov.ph). Retrieved via the Internet Archive Wayback Machine; each section records its snapshot date.",
+      "retrievedAt": "2026-10-16T00:17:47.259Z",
+      "sourceVersion": "snapshot 2026-02-01",
+      "rowCount": 40,
+      "bytes": 193017,
+      "sha256": null,
+      "outputs": [
+        "apps/web/public/data/lgu.json"
+      ],
+      "notes": "Read from Wayback captures because the live host is Cloudflare-gated. Officials capture 2026-02-01; executive names last stated 2025-05-16; legislative roster as of 2025-05-16. 20 department heads, 7 section heads, 11 legislative members. The LGU's own barangay list cross-checks 52/52 against the PSGC-compiled index.",
+      "unavailable": false
+    },
+    {
       "id": "noah-hazard-maps",
       "title": "Project NOAH Hazard Maps",
       "publisher": "Project NOAH (Nationwide Operational Assessment of Hazards), DOST",
@@ -108,13 +129,13 @@
     },
     {
       "field": "Elected and appointed officials",
-      "reason": "No open dataset carries current Labo officials with contact details. Left out rather than transcribed from an unverifiable page."
+      "reason": "COMPILED — see apps/web/public/data/lgu.json. Source: the Municipality of Labo's own website (labo.gov.ph) via the Wayback Machine, because the live host is behind a Cloudflare challenge. Every section carries the snapshot date it came from, because the current capture names no mayor, vice mayor or councilor."
     },
     {
       "field": "Ordinance index",
       "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
     }
   ],
-  "dataHash": "12738c9cecd3eab99c8f27388b469c00c2331e32910e0ba350019a088ffed43a",
-  "generatedAt": "2026-10-15T23:22:52.997Z"
+  "dataHash": "caf71eb6acc7255e63e9f0d5c6e5ea196e1c06c3741026979ff5f7c342680939",
+  "generatedAt": "2026-10-16T00:17:47.277Z"
 }

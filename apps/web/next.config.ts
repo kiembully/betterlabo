@@ -20,6 +20,19 @@ const nextConfig: NextConfig = {
    */
   transpilePackages: ['@betterlabo/api', '@betterlabo/shared'],
   serverExternalPackages: ['mongoose', 'mongodb', 'bcryptjs', 'jsonwebtoken'],
+  /**
+   * The `/api/*` bridge reads the compiled barangay index off disk at runtime to
+   * validate the PSGC code on every citizen report. `public/` is served as static
+   * assets and is NOT traced into a serverless function by default, so without
+   * this the file is simply absent in production: `/api/health` reports
+   * `barangayIndex: { loaded: false, count: 0 }`, the "outside the municipality"
+   * guard disables itself, and each report stores no barangay name.
+   *
+   * Tracing verified against the live deployment, not assumed.
+   */
+  outputFileTracingIncludes: {
+    '/api/[...path]': ['./public/data/barangays.json'],
+  },
   async headers() {
     return [
       {

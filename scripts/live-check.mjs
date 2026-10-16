@@ -40,18 +40,50 @@ function check(label, condition, detail = '') {
 }
 
 /**
+ * Drop the throwaway database this check wrote into, so a run leaves nothing
+ * behind. Skipped entirely when no `MONGODB_URI` is configured — in that case the
+ * POST never persisted anything.
+ */
+async function dropCheckDb() {
+  try {
+    process.loadEnvFile(join(repoRoot, '.env.local'));
+  } catch {
+    return;
+  }
+  const uri = process.env['MONGODB_URI'] ?? '';
+  if (!uri) return;
+  try {
+    const { MongoClient } = await import('mongodb');
+    const client = new MongoClient(uri, { serverSelectionTimeoutMS: 10_000 });
+    await client.connect();
+    await client.db(CHECK_DB).dropDatabase();
+    await client.close();
+    console.log(`dropped the throwaway database '${CHECK_DB}'`);
+  } catch (err) {
+    console.log(`(could not drop '${CHECK_DB}': ${err.message})`);
+  }
+}
+
+/**
  * Spawn the Next binary directly rather than through `npx …` with `shell: true`.
  * A shell wrapper means `child.kill()` kills the WRAPPER, the real server keeps
  * the port, and the next run then either fails to bind or — worse — asserts
  * against a server built from code that no longer exists on disk. Spawning node
  * itself makes the kill exact.
+ *
+ * `MONGODB_DB` is overridden so this check can never write into the real
+ * database. It POSTs a report as part of exercising the intake path, and once a
+ * `MONGODB_URI` is configured that write would otherwise land in production data.
+ * A preset env var wins over `.env.local` (verified), so the override holds.
  */
+const CHECK_DB = process.env['LIVECHECK_DB'] ?? 'betterlabo_livecheck';
 const child = spawn(
   process.execPath,
   [join(repoRoot, 'node_modules', 'next', 'dist', 'bin', 'next'), 'start', '-p', String(PORT)],
   {
     cwd: join(repoRoot, 'apps', 'web'),
     stdio: ['ignore', 'pipe', 'pipe'],
+    env: { ...process.env, MONGODB_DB: CHECK_DB },
   },
 );
 let serverLog = '';
@@ -117,6 +149,10 @@ const PAGES = [
   ['/projects', 'DPWH', 'projects page names the source'],
   ['/projects', 'Daguit', 'projects page attributes a real barangay'],
   ['/projects', '10,758', 'projects page renders the compiled contract total'],
+  ['/officials', 'Sangguniang Bayan', 'officials page renders the legislature heading'],
+  ['/officials', 'Municipal Budget Officer', 'officials page renders a real department head'],
+  ['/officials', 'does not currently publish the names', 'officials page admits the mayor is unnamed rather than presenting an old name as current'],
+  ['/documents', 'Published documents', 'documents page renders its heading'],
   ['/report', 'Report', 'report page renders the intake heading'],
   ['/report/track', 'reference', 'track page renders the lookup form'],
   ['/map', 'Anahaw', 'map page server-renders its barangay summary'],
@@ -142,7 +178,7 @@ check(
 );
 check('the API resolved the 52-barangay registry', health.body.includes('"count":52'));
 
-console.log('== POST /api/reports with no database answers a clean 503 ==');
+console.log('== POST /api/reports — the intake path, in whatever DB mode is configured ==');
 const post = await fetch(`${BASE}/api/reports`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
@@ -150,17 +186,48 @@ const post = await fetch(`${BASE}/api/reports`, {
     category: 'flood_drainage',
     barangayPsgc: '0501606012',
     subject: 'Live check',
-    details: 'This submission is a live check against a deployment with no database attached.',
+    details: 'This submission is a live check. Writes go to a throwaway database (see LIVECHECK_DB).',
     locationLabel: 'Poblacion',
   }),
 });
 const postBody = await post.text();
-check(
-  'POST /api/reports answers 503 db_unavailable without a database',
-  post.status === 503 && postBody.includes('db_unavailable'),
-  `HTTP ${post.status} ${postBody.slice(0, 160)}`,
-);
+/**
+ * Two legitimate configurations, so the check adapts rather than asserting one:
+ * with a database attached the intake must accept the report (201 + a reference
+ * code); without one it must degrade to a clean `503 db_unavailable` instead of
+ * failing opaquely. Asserting only the no-database case made this check fail the
+ * moment a real `MONGODB_URI` was configured.
+ */
+if (post.status === 201) {
+  let ref = null;
+  try {
+    // Item responses are wrapped: `{ item: { … } }` (see apps/api/src/http.ts).
+    ref = JSON.parse(postBody).item?.referenceCode ?? null;
+  } catch {
+    /* not JSON */
+  }
+  check(
+    'POST /api/reports persists and returns a reference code',
+    typeof ref === 'string' && /^LB-\d{4}-\d{6}$/.test(ref),
+    postBody.slice(0, 200),
+  );
+  console.log(`  filed a report into '${CHECK_DB}': ${ref}`);
+
+  const lookup = await get(`/api/reports/lookup?referenceCode=${encodeURIComponent(ref ?? '')}`);
+  check(
+    'the report is retrievable by its reference code',
+    lookup.status === 200 && lookup.body.includes(ref ?? '\u0000'),
+    `HTTP ${lookup.status}`,
+  );
+} else {
+  check(
+    'POST /api/reports answers 503 db_unavailable without a database',
+    post.status === 503 && postBody.includes('db_unavailable'),
+    `HTTP ${post.status} ${postBody.slice(0, 160)}`,
+  );
+}
 
 console.log(`\n${pass} passed, ${fail} failed`);
 if (fail > 0) console.log(`--- server log tail ---\n${serverLog.slice(-1500)}`);
+await dropCheckDb();
 shutdown(fail > 0 ? 1 : 0);
