@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/primitives';
 import { ETL_HINT, getBarangayIndex, getDatasetRegistry, getFiscal, getProfile } from '@/lib/data';
 import { EMERGENCY_NOTICE, INDEPENDENCE_NOTICE } from '@/lib/site';
+import { LaboWeather } from '@/components/weather/labo-weather';
 
 export const metadata = {
   title: 'Overview',
@@ -302,6 +303,39 @@ export default async function HomePage() {
             />
           </div>
         )}
+      </section>
+
+      {/* ── Weather ──────────────────────────────────────────────────────── */}
+      <section className="container-page py-14">
+        <SectionHeading
+          eyebrow="Conditions"
+          title="Weather over Labo"
+          description="Live conditions and a five-day outlook for the municipal centre. The Busig-on and Labo river basin floods quickly — this is context, not a warning system."
+          action={
+            <Link
+              href="/map"
+              className="inline-flex items-center rounded-md border border-rule-strong bg-surface px-3.5 py-2 text-sm font-semibold text-ink transition-colors hover:border-brand-300"
+            >
+              Flood hazard map
+            </Link>
+          }
+        />
+        <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)]">
+          <LaboWeather />
+          <div className="rounded-card border border-rule bg-sunken p-5">
+            <p className="eyebrow">Why this is here</p>
+            <p className="mt-2 text-sm leading-relaxed text-ink-support">
+              Labo&rsquo;s lowlands along the Maharlika Highway flood first, and the upland barangays
+              around Mt. Labo drain into the same basin. Rain totals over a few days matter more here
+              than the temperature does.
+            </p>
+            <p className="mt-3 text-xs leading-relaxed text-ink-subtle">
+              This is the only live figure on the portal. Everything else is compiled from government
+              sources at build time — a forecast is the one thing that would be worse for being
+              cached.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* ── Provenance ───────────────────────────────────────────────────── */}

@@ -80,7 +80,7 @@ function ProjectCard({ project }: { project: ProjectRecord }) {
 function ProjectTableRow({ project }: { project: ProjectRecord }) {
   return (
     <tr className="border-b border-rule align-top last:border-b-0 hover:bg-brand-50">
-      <th scope="row" className="py-3 pr-3 text-left font-normal">
+      <th scope="row" className="py-3 pl-4 pr-3 text-left font-normal">
         <span className="block max-w-xl text-sm font-semibold text-ink">{project.description}</span>
         <span className="mt-0.5 block text-xs text-ink-subtle">{projectMeta(project)}</span>
       </th>

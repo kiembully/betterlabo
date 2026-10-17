@@ -77,7 +77,7 @@ export function BarangayTableRow({
 }) {
   return (
     <tr className="border-b border-rule last:border-b-0 hover:bg-brand-50">
-      <th scope="row" className="py-2.5 pr-3 text-left font-normal">
+      <th scope="row" className="py-2.5 pl-4 pr-3 text-left font-normal">
         <Link
           href={`/barangays/${record.psgcCode}`}
           className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 font-semibold text-ink hover:text-brand-800 hover:underline"
