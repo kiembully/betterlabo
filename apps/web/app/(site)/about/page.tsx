@@ -2,8 +2,9 @@ import Link from 'next/link';
 
 import { formatArea, formatNumber } from '@betterlabo/shared';
 
+import { BriefHistory } from '@/components/history/brief-history';
 import { DefRow, Eyebrow, SectionHeading } from '@/components/ui/primitives';
-import { getBarangayIndex, getProfile } from '@/lib/data';
+import { getBarangayIndex, getHistory, getProfile } from '@/lib/data';
 import { EMERGENCY_NOTICE, INDEPENDENCE_NOTICE, SITE } from '@/lib/site';
 
 export const metadata = {
@@ -36,7 +37,11 @@ const PRINCIPLES = [
 ] as const;
 
 export default async function AboutPage() {
-  const [profile, index] = await Promise.all([getProfile(), getBarangayIndex()]);
+  const [profile, index, history] = await Promise.all([
+    getProfile(),
+    getBarangayIndex(),
+    getHistory(),
+  ]);
 
   return (
     <div className="container-page py-12">
@@ -142,6 +147,22 @@ export default async function AboutPage() {
           </a>
           . Corrections are welcome: an error in a figure is a bug, not a matter of opinion.
         </p>
+      </section>
+
+      {/* ── History ─────────────────────────────────────────────────────────── */}
+      <section className="mt-14 border-t border-rule pt-12">
+        <SectionHeading
+          eyebrow="History"
+          title="A brief history of Labo"
+          description="From the earliest Spanish records to the present municipality. Where the sources disagree — including on the founding date — both versions are given rather than one being chosen."
+        />
+        {history ? (
+          <BriefHistory history={history} className="mt-8" />
+        ) : (
+          <p className="mt-6 text-sm text-ink-subtle">
+            The history has not been compiled on this deployment.
+          </p>
+        )}
       </section>
     </div>
   );

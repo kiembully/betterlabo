@@ -7,6 +7,13 @@
  * could identify a reporter is touched.
  */
 import type { ReportCategory, ReportStats, ReportStatus } from '@betterlabo/shared';
+import type {
+  AppointmentPurpose,
+  AppointmentStats,
+  AppointmentStatus,
+} from '@betterlabo/shared';
+import { manilaDateAfter, manilaToday } from '@betterlabo/shared';
+import { AppointmentModel } from '../models/appointment.js';
 import { ReportModel } from '../models/report.js';
 
 /** Statuses that still need someone to act. */
@@ -74,5 +81,79 @@ export async function computeReportStats(now: Date = new Date()): Promise<Report
       barangayName: group._id.name,
       count: group.count,
     })),
+  };
+}
+
+/* ───────────────────────────── appointments ───────────────────────────── */
+
+/** Statuses that still need someone at the municipal hall to act. */
+export const APPOINTMENT_OPEN_STATUSES: AppointmentStatus[] = [
+  'requested',
+  'confirmed',
+  'rescheduled',
+];
+
+const UPCOMING_HORIZON_DAYS = 7;
+
+interface AppointmentStatusGroup {
+  _id: AppointmentStatus;
+  count: number;
+}
+
+interface AppointmentPurposeGroup {
+  _id: AppointmentPurpose;
+  count: number;
+}
+
+/**
+ * Appointment counts for the console dashboard.
+ *
+ * `upcoming7Days` is measured on the *effective* date — the booked slot once one
+ * has been set, otherwise the date the resident asked for — because an operator
+ * asking "what is coming up?" means both. Dates are compared as the
+ * `YYYY-MM-DD` strings they are stored as, in Asia/Manila, never as instants.
+ */
+export async function computeAppointmentStats(
+  now: Date = new Date(),
+): Promise<AppointmentStats> {
+  const today = manilaToday(now);
+  const horizon = manilaDateAfter(UPCOMING_HORIZON_DAYS, now);
+
+  const [total, requested, confirmed, cancelled, upcomingGroups, statusGroups, purposeGroups] =
+    await Promise.all([
+      AppointmentModel.countDocuments({}).exec(),
+      AppointmentModel.countDocuments({ status: 'requested' }).exec(),
+      AppointmentModel.countDocuments({ status: 'confirmed' }).exec(),
+      AppointmentModel.countDocuments({ status: 'cancelled' }).exec(),
+      AppointmentModel.aggregate<{ count: number }>([
+        { $match: { status: { $in: [...APPOINTMENT_OPEN_STATUSES] } } },
+        {
+          $addFields: {
+            effectiveDate: { $ifNull: ['$scheduledDate', '$preferredDate'] },
+          },
+        },
+        { $match: { effectiveDate: { $gte: today, $lte: horizon } } },
+        { $count: 'count' },
+      ]).exec(),
+      AppointmentModel.aggregate<AppointmentStatusGroup>([
+        { $group: { _id: '$status', count: { $sum: 1 } } },
+      ]).exec(),
+      AppointmentModel.aggregate<AppointmentPurposeGroup>([
+        { $group: { _id: '$purpose', count: { $sum: 1 } } },
+      ]).exec(),
+    ]);
+
+  return {
+    total,
+    requested,
+    confirmed,
+    upcoming7Days: upcomingGroups[0]?.count ?? 0,
+    cancelled,
+    byStatus: statusGroups
+      .map((group) => ({ status: group._id, count: group.count }))
+      .sort(byCountDesc),
+    byPurpose: purposeGroups
+      .map((group) => ({ purpose: group._id, count: group.count }))
+      .sort(byCountDesc),
   };
 }

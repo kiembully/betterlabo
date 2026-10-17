@@ -7,13 +7,25 @@
  *   GET    /api/admin/reports/:id     full record (includes contact + history)
  *   PATCH  /api/admin/reports/:id     status / priority / office / resolution
  *   DELETE /api/admin/reports/:id     remove a spam or duplicate report
+ *   GET    /api/admin/appointments    list + filter + search
+ *   GET    /api/admin/appointments/stats   appointment counts for the dashboard
+ *   GET    /api/admin/appointments/:id     full record (includes contact + history)
+ *   PATCH  /api/admin/appointments/:id     status / schedule / office
+ *   DELETE /api/admin/appointments/:id     remove a spam or duplicate request
  *   GET    /api/admin/stats           dashboard aggregates
  *
  * Everything below `/session` is behind `requireAdmin`, which accepts either the
  * long-lived admin token or a signed session token.
  */
 import { Router } from 'express';
-import { createReportSchema, listReportsQuerySchema, updateReportSchema } from '@betterlabo/shared';
+import {
+  createAppointmentSchema,
+  createReportSchema,
+  listAppointmentsQuerySchema,
+  listReportsQuerySchema,
+  updateAppointmentSchema,
+  updateReportSchema,
+} from '@betterlabo/shared';
 import type { Request } from 'express';
 import type { AppConfig } from '../config.js';
 import type { BarangayRegistry } from '../barangays.js';
@@ -21,10 +33,18 @@ import { assertDatabaseConnected } from '../db.js';
 import { fail } from '../errors.js';
 import { sendItem, sendList, sendOk } from '../http.js';
 import { asyncHandler } from '../lib/async-handler.js';
-import { computeReportStats } from '../lib/stats.js';
+import { computeAppointmentStats, computeReportStats } from '../lib/stats.js';
 import { zodIssues } from '../lib/validation.js';
 import { adminTokenMatches, clearSessionCookie, isAdminRequest, issueAdminSession, requireAdmin, setSessionCookie } from '../middleware/auth.js';
+import { toAppointment } from '../models/appointment.js';
 import { toReport } from '../models/report.js';
+import {
+  createAppointment,
+  deleteAppointment,
+  findAppointmentById,
+  listAppointments,
+  updateAppointment,
+} from '../services/appointment-service.js';
 import {
   createReport,
   deleteReport,
@@ -185,7 +205,104 @@ export function createAdminRouter(deps: AdminRoutesDeps): Router {
     '/stats',
     asyncHandler(async (_req, res) => {
       assertDatabaseConnected();
-      res.json(await computeReportStats());
+      const [reports, appointments] = await Promise.all([
+        computeReportStats(),
+        computeAppointmentStats(),
+      ]);
+      // Enveloped like every other single-object response in this API. It used to
+      // return a bare object, which broke its own consumer: the console reads
+      // `res.item`, so the dashboard's report tiles rendered nothing at all.
+      sendItem(res, { ...reports, appointments });
+    }),
+  );
+
+  /* ── appointments ─────────────────────────────────────────────────────── */
+
+  router.post(
+    '/appointments',
+    asyncHandler(async (req, res) => {
+      assertDatabaseConnected();
+
+      const parsed = createAppointmentSchema.safeParse(req.body);
+      if (!parsed.success) {
+        throw fail.validationFailed(
+          'The appointment request was not accepted as submitted.',
+          zodIssues(parsed.error),
+        );
+      }
+
+      const doc = await createAppointment(parsed.data, {
+        registry: deps.registry,
+        source: 'console',
+      });
+      sendItem(res, toAppointment(doc), 201);
+    }),
+  );
+
+  router.get(
+    '/appointments',
+    asyncHandler(async (req, res) => {
+      assertDatabaseConnected();
+
+      const parsed = listAppointmentsQuerySchema.safeParse(req.query);
+      if (!parsed.success) {
+        throw fail.validationFailed('Those list filters are not valid.', zodIssues(parsed.error));
+      }
+
+      const result = await listAppointments(parsed.data);
+      sendList(res, result.items.map(toAppointment), result.total, result.limit, result.offset);
+    }),
+  );
+
+  /**
+   * Registered BEFORE `/appointments/:id`. Otherwise "stats" is matched as an id,
+   * fails the ObjectId test and answers a misleading 404.
+   */
+  router.get(
+    '/appointments/stats',
+    asyncHandler(async (_req, res) => {
+      assertDatabaseConnected();
+      sendItem(res, await computeAppointmentStats());
+    }),
+  );
+
+  router.get(
+    '/appointments/:id',
+    asyncHandler(async (req, res) => {
+      assertDatabaseConnected();
+
+      const id = pathParam(req, 'id');
+      const doc = await findAppointmentById(id);
+      if (!doc) throw fail.notFound(`No appointment with id "${id}".`);
+
+      sendItem(res, toAppointment(doc));
+    }),
+  );
+
+  router.patch(
+    '/appointments/:id',
+    asyncHandler(async (req, res) => {
+      assertDatabaseConnected();
+
+      const parsed = updateAppointmentSchema.safeParse(req.body);
+      if (!parsed.success) {
+        throw fail.validationFailed('That update is not valid.', zodIssues(parsed.error));
+      }
+
+      const id = pathParam(req, 'id');
+      const { doc } = await updateAppointment(id, parsed.data);
+      sendItem(res, toAppointment(doc));
+    }),
+  );
+
+  router.delete(
+    '/appointments/:id',
+    asyncHandler(async (req, res) => {
+      assertDatabaseConnected();
+
+      const id = pathParam(req, 'id');
+      await deleteAppointment(id);
+      sendOk(res);
     }),
   );
 

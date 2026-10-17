@@ -22,9 +22,26 @@ export interface ReportWebhookPayload {
   createdAt: string;
 }
 
+export interface AppointmentWebhookPayload {
+  event: 'appointment.created' | 'appointment.updated';
+  referenceCode: string;
+  purpose: string;
+  status: string;
+  barangay: string;
+  preferredDate: string;
+  preferredSlot: string;
+  scheduledDate: string | null;
+  scheduledSlot: string | null;
+  assignedOffice: string | null;
+  createdAt: string;
+}
+
+/** Anything this module knows how to forward. Both carry a `referenceCode`. */
+export type WebhookPayload = ReportWebhookPayload | AppointmentWebhookPayload;
+
 export async function forwardToWebhook(
   webhookUrl: string | null,
-  payload: ReportWebhookPayload,
+  payload: WebhookPayload,
 ): Promise<boolean> {
   if (!webhookUrl) return false;
   try {

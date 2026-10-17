@@ -115,7 +115,8 @@ export function createPublicReportsRouter(deps: PublicRoutesDeps): Router {
     '/reports/stats',
     asyncHandler(async (_req, res) => {
       assertDatabaseConnected();
-      res.json(await computeReportStats());
+      // Enveloped like every other single-object response in this API.
+      sendItem(res, await computeReportStats());
     }),
   );
 

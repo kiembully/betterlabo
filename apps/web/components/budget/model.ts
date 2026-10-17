@@ -356,7 +356,7 @@ export function resolveFiscalDataset(
     if (match) return match;
   }
   return (
-    datasets.find((dataset) => dataset.outputs.some((output) => output.includes(publicPath))) ?? null
+    datasets.find((dataset) => (dataset.outputs ?? []).some((output) => output.includes(publicPath))) ?? null
   );
 }
 

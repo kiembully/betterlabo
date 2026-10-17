@@ -1,0 +1,849 @@
+{
+  "services": [
+    {
+      "name": "Timely Registration of Birth of a Child (Married Parents) - within 30 days from date of birth",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Duly accomplished Form 102 (if born in hospitals / lying-ins / clinics)",
+        "Marriage Contract of Parents",
+        "Signatures of Attendant-at-Birth, Informant, Father or Mother"
+      ],
+      "fee": "Issuance Fee - P75.00 (Legitimate Child). Label published in the charter: 'FEES - Legitimate Child, Issuance Fee - P75.00'.",
+      "processingTime": "No single total published. Charter's per-step times total about 35 minutes: accept/encode 20 min; pay 5 min; endorse 5 min; review/sign 3 min + 2 min; record & release.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Application for Marriage License",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Birth Certificate of Applicants",
+        "CENOMAR (Certificate of No Marriage Record) for ages 21 and above",
+        "Parental Consent (if contracting parties are between 18 and 21)",
+        "Parental Advice (if contracting parties are between 21 and 25)",
+        "Marriage Counseling / Family Planning Certificate",
+        "Foreign applicant (in addition): Certificate of Legal Capacity to Contract Marriage issued by their Diplomatic or Consular Officials, and Divorce Papers, if any",
+        "Widowed applicant (in addition): Death Certificate of the deceased husband/wife"
+      ],
+      "fee": "Filing Fee P700.00 + Marriage License P2.00 = Total P702.00 (as printed).",
+      "processingTime": "No single total published. Per-step times: receive/interview/prepare 30 min; prepare for signature 5 min; pay 2 min; endorse to MCR 3 min; review & approve 3 min; advise client 1 min. Plus a ten-day posting period before release. License valid 120 days from issue.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Registration of Marriage Certificate (timely and delayed)",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Certificate of Marriage duly signed by the contracting parties, solemnizing officer and witnesses",
+        "Notarized request of the contracting parties if the ceremony was held in a place other than the Solemnizing Officer's area of jurisdiction",
+        "Marriage Settlement, if any",
+        "Affidavit for Delayed Registration of Marriage Certificate executed by the Solemnizing Officer, Parish Clerk, contracting parties or other concerned person",
+        "Delayed: 15 days for ordinary marriage and 30 days for marriage exempt from license requirements (as printed)"
+      ],
+      "fee": "Registration Fee P150.00.",
+      "processingTime": "No single total published. Per-step times: accept & assess 3 min; pay 5 min; review & approve 1 min; release & sign 1 min.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Request for PSA (formerly NSO) copies of Birth / Marriage / Death / CENOMAR through MCRO-Labo BREQS",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Fully accomplished application form",
+        "Identification Card",
+        "Authorization, if applicable",
+        "Only the document owner, spouse/parent/sibling/child or legal guardian or institution legally in charge (if minor), or any person legally authorized by the document owner may request"
+      ],
+      "fee": "Birth/Marriage/Death - P155 NSO + P125 LGU = P280.00; CENOMAR - P210 NSO + P120 LGU = P330.00 (as printed).",
+      "processingTime": "No single total published. Per-step times: 1 min + 5 min + 3 min + 1 min. Charter states requests are submitted to PSA every 3rd week of the month and retrieved every 4th week of the month.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Delayed Registration of Birth",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Secure first a PSA Negative Certificate if the person to be registered is 18 years old and above",
+        "Any two of the following supporting documents: Baptismal record; School Record; Medical Record; Voter's Registration Record; SSS/GSIS/Service Record; Marriage Certificate of Registrant (if already married); Marriage Certificate of Parents; Affidavit of two disinterested persons; Barangay Certification"
+      ],
+      "fee": "Issuance Fee - P145.00.",
+      "processingTime": "No single total published. Per-step times: evaluate & prepare 15 min; pay 5 min; issue claim slip 5 min; release 1 min. Plus a 10-day posting period before release.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Legitimation / Registration of Legitimation of an Illegitimate Child",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Child was previously registered and not acknowledged by the father: Affidavit of Admission of Paternity; Affidavit of Legitimation of Parents; Marriage Contract of Parents; CENOMAR of Parents",
+        "Child's birth is for registration simultaneous to legitimation: Marriage Contract of Parents; CENOMAR of Parents; Affidavit of Legitimation of Parents; Requirements for delayed registration of birth"
+      ],
+      "fee": "Itemised as printed: Issuance Fees for Late Registration P160.00; Legitimation Fee P50.00; Oath Fee P50.00; Processing Fee P50.00; Registration of legitimation P100.00 (the charter prints a group total of P250.00 for these items; the itemised amounts do not sum to that figure).",
+      "processingTime": "No single total published. Per-step times: check documents 5 min; prepare legitimation processes 30 min + 5 min; pay & receipt; issue claim slip 2 min; release 1 min. Charter states documents are processed within 10 working days.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Availment of R.A. 9255 - Authority to Use the Surname of the Father (AUSF)",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Birth Certificate of the Child",
+        "AUSF executed by the Mother if the child is below 7 years of age",
+        "AUSF executed by the child who is 7 years old but below 18",
+        "AUSF executed by the Mother (4th item as printed)",
+        "Attestation of the mother if the child who executed the AUSF is below 18",
+        "Service applies to illegitimate children born on or after 19 March 2004, previously registered and acknowledged by the father but under the surname of the mother"
+      ],
+      "fee": "AUSF P150.00, Oath Fee P100.00, Processing Fee P100.00 = P350.00 (as printed).",
+      "processingTime": "No single total published. Per-step times: receive COLB/execute AUSF 15 min; prepare & assess 5 min + 5 min; pay; supply registry number & prepare certificate 3 min; review/approve & release 3 min.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Registration of a Foundling (Certificate of Foundling)",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Affidavit of the Finder",
+        "Certification of the Punong Barangay or Police Authority regarding the report made by the finder"
+      ],
+      "fee": "NOT PUBLISHED - the charter's FEES section for this service is blank.",
+      "processingTime": "No single total published. Per-step times: receive certification & prepare Certificate of Foundling 10 min; review/approve 5 min; supply registry number & release 5 min.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Registration of Death, Burial Permit and Cadaver Entrance/Transfer/Exhumation",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Duly accomplished Certificate of Death",
+        "Permit to transfer the Cadaver, if to be buried in another municipality",
+        "Official Receipt (Entrance or Transfer of Cadaver)",
+        "Burial Permit"
+      ],
+      "fee": "Entrance of Cadaver P100.00; Burial Permit P100.00; Transfer to other municipality / foreign country P200.00 (listed in the charter under 'Exhumation/Disinterment Removal of Cadaver').",
+      "processingTime": "No single total published. Per-step times: receive & assess 3 min; pay 5 min; attach OR & endorse 1 min; review/approve 1 min; supply registry number & release 3 min.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Delayed Registration of Death",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Duly accomplished Certificate of Death",
+        "Affidavit for delayed registration at the back of the Certificate of Death, executed by the nearest kin of the deceased",
+        "Authenticated copy of the Certificate of Burial or other proof of death"
+      ],
+      "fee": "Late Registration P100.00.",
+      "processingTime": "No single total published. Per-step times: 3 min + 5 min + 1 min + 1 min + 3 min. Charter notes a 10-day posting period.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Out-of-Town Reporting of Civil Registry Documents",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Requirements stated under timely or delayed registration of Birth, Marriage and Death",
+        "Negative Certification issued by PSA",
+        "Affidavit for out-of-town reporting executed by the informant"
+      ],
+      "fee": "Processing Fee P150.00 + Endorsement Fee P150.00 = P300.00 (as printed).",
+      "processingTime": "No single total published. Per-step times: 15 min + 5 min + 1 min + 3 min + 3 min + 1 min. Documents are mailed or handed to the client for mailing.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Registration of Court Order (corrections/changes not covered by R.A. 9048)",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Certified copies of court order - 4 copies",
+        "Certificate of finality - 4 copies",
+        "Court cases covered as printed: gender, civil status, nationality, annulment of marriage, cancellation of registration of civil registry documents, and error in the Certificate of Live Birth affecting legitimacy"
+      ],
+      "fee": "Registration of Court Order P500.00 + Processing Fee P150.00 + Endorsement Fee P150.00 = P800.00 (as printed).",
+      "processingTime": "No single total published. Per-step times: accept/review/prepare 30 min; pay 5 min; review & sign 10 min; record OR & release 5 min.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Correction of Clerical Error (CCE) and Change of First Name (CFN) under R.A. 9048",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Best documents: Baptismal Certificate; School Record; Marriage Contract (if married); SSS/GSIS Membership; Service Record; Insurance Policy Contract",
+        "Additional requirements: Barangay Clearance; Police Clearance; NBI Clearance (issued within 6 months); Employer's Clearance (for employed document owner); Affidavit of Non-Employment (for self-employed or unemployed document owner); Affidavit of Publisher (newspaper of general circulation) with clipping of two-week publication of the petition; Official Receipt of Filing Fee; Medical Record",
+        "For correction of clerical error: as stated in the first column for CFN, plus ascendant's valid documents if the error pertains to the middle and/or last names of the document owner's father/mother/both, plus Official Receipt of Filing Fee"
+      ],
+      "fee": "CCE: Filing Fee P1,000.00 + Registration of MCR's decision P100.00 + Oath Fee P25.00 + Processing Fee P50.00 + Endorsement Fee P50.00 = P1,225.00. CFN: Filing Fee P3,000.00 + Registration of MCR's decision P100.00 + Oath Fee P25.00 + Processing Fee P50.00 + Endorsement Fee P50.00 = P3,225.00 (as printed).",
+      "processingTime": "No single total published as a clock time; charter states a 10-working-day posting period and a 5-working-day decision-making period. Per-step times: review/assess/process 2 min; pay 5 min; notify client 1 min.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "Issuance of Certified Machine Copy / Transcription from the Civil Registry Books (Birth, Marriage, Death, Legal Matters)",
+      "category": "Certificates & Vital Records",
+      "office": "Municipal Civil Registrar's Office (MCRO)",
+      "requirements": [
+        "Document owner and any member of immediate family - Identification Card (ID)",
+        "Authorized Representative - Authorization Letter and ID",
+        "Concerned Offices/Agencies - Letter Request by Authorized Official",
+        "The document owner, spouse/parent/sibling/child, legal guardian or institution legally in charge (if minor), any person legally authorized by the document owner or by order of a competent court may avail"
+      ],
+      "fee": "Issuance Fee - P230.00.",
+      "processingTime": "No single total published. Per-step times: accept/verify/prepare & assess 5 min; pay 5 min; log & forward 1 min; review & sign 1 min + 1 min; release.",
+      "whereToGo": "Municipal Civil Registrar's Office - for more information contact Mrs. Noemi V. Pareja, Municipal Civil Registrar, Tel. (054) 585-2365. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+    },
+    {
+      "name": "New Business License and Mayor's Permit (application)",
+      "category": "Business, Trade & Investment",
+      "office": "Office of the Municipal Treasurer (MTO) - Licensing Division",
+      "requirements": [
+        "Accomplished Application form for Business Permit",
+        "DTI Registration",
+        "Barangay Clearance",
+        "Occupancy Permit",
+        "Zoning Clearance",
+        "Charter states applications for Business Permit are available at the Treasurer's Office Licensing Division"
+      ],
+      "fee": "No single fee - published schedule. Business Taxes by line of business, e.g. P217.80 manufacturers/repackers/processors and brewers/distillers/rectifiers/compounders of liquors, distilled spirits and wines or manufacturers of any article of commerce; P290.40 wholesalers, distributors or dealers of any article of commerce; P137.94 for cafes, cafeterias, ice cream and other refreshment parlors, restaurants, soda fountain bars, carenderia or food caterers, bakery and bakeshop; P137.94 business establishments principally rendering or offering services and many other listed lines; percentages of rate for exporters/manufacturers/millers/producers and for retailers (2% of 1%); 50% of 1% for banks and financial institutions. Mayor's Permit Fee is based on the line of business and on the adopted enterprise scale (Micro-Industry P150,000 and below; Cottage above P150,000 to P1.5M; Small-scale above P1.5M to P15M; Medium-scale above P15M to P60M; Large-scale above P60M), and per the printed schedule is e.g. P200.00 Micro / P300.00 Cottage / P500.00 Small / P1,000.00 Medium / P2,000.00 Large for manufacturers-importers-producers, and P1,000 / P3,000 / P5,000 for banks. The permit fee is based on asset size or number of workers, whichever yields the higher fee.",
+      "processingTime": "NOT PUBLISHED as a total - the charter lists only per-step staff times (review of application 5 min / 15 min / 10 min at different staff, then assessment, approval and release).",
+      "whereToGo": "Office of the Municipal Treasurer - for more information contact Mr. Vivencio Z. Maigue, Jr., Municipal Treasurer, Tel. (054) 585-2157. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf"
+    },
+    {
+      "name": "Renewal of Business License and Mayor's Permit",
+      "category": "Business, Trade & Investment",
+      "office": "Office of the Municipal Treasurer (MTO) - Licensing Division",
+      "requirements": [
+        "Accomplished Application form for Business Permit",
+        "BIR Clearance (ITR or 1701Q)",
+        "Barangay Clearance",
+        "Renewal must be made from January 1 to 20 every year; penalty of 2% per month and 25% surcharge per quarter is imposed after this period"
+      ],
+      "fee": "No single fee - published schedule. Taxes for succeeding years are computed on gross receipts/sales; regulatory fees are collected for new business. Additional published charges: Sanitary Inspection Fee - house for rent P300.00; apartment P100.00/room; each commercial, industrial or agricultural establishment P75.00 (25-50 sq.m), P150.00 (50-100 sq.m), P200.00 (100-200 sq.m), P300.00 (200-500 sq.m), P350.00 (500-1000 sq.m), P400.00 (1000 sq.m or more). Garbage collection service fee per establishment type P300.00-P900.00. Medical Fee P100.00; Medical Certificate P230.00; Business Plate (new firms) P150.00; Business Sticker (renewal) P50.00.",
+      "processingTime": "NOT PUBLISHED as a total.",
+      "whereToGo": "Office of the Municipal Treasurer - for more information contact Mr. Vivencio Z. Maigue, Jr., Municipal Treasurer, Tel. (054) 585-2157. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf"
+    },
+    {
+      "name": "Issuance of Community Tax Certificate (Cedula)",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Treasurer (MTO) - Licensing Division",
+      "requirements": [
+        "Accomplished Assessment Form",
+        "The charter lists the transactions that require a CTC: acknowledging a document before a notary public; taking an oath of office upon election or appointment; receiving any license, certificate or permit from any public authority; paying any tax or fee; receiving money from any public fund; transacting other official business; receiving any salary or wage"
+      ],
+      "fee": "For Individuals: Basic tax P5.00 + P1.00 for every P1,000.00 of gross income but not to exceed P5,000.00. For Corporations: P500.00 + P2.00 for every P5,000.00 of the Assessed Value of its Real Property or gross receipts, not to exceed P10,000.00.",
+      "processingTime": "No single total published. Per-step times: fill up CTC, compute fees and inform client 3 min; accept payment and issue CTC 2 min.",
+      "whereToGo": "Office of the Municipal Treasurer - for more information contact Mr. Vivencio Z. Maigue, Jr., Municipal Treasurer, Tel. (054) 585-2157. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf"
+    },
+    {
+      "name": "Registration of Individual Brand for Large Cattle",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Treasurer (MTO) - Licensing Division",
+      "requirements": [
+        "Proposed design for individual brand",
+        "Proof of ownership of a large cattle, if any",
+        "Charter note: an individual brand for large cattle must be registered in the Municipal Treasurer's Office prior to branding"
+      ],
+      "fee": "Registration of Individual brand - P65.00 (printed as '65.00' without peso sign in the charter's fee line).",
+      "processingTime": "No single total published. Per-step times: record iron individual brand design and prepare certification 30 min; accept payment 5 min; sign certification 2 min; release certification 1 min.",
+      "whereToGo": "Office of the Municipal Treasurer - for more information contact Mr. Vivencio Z. Maigue, Jr., Municipal Treasurer, Tel. (054) 585-2157. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf"
+    },
+    {
+      "name": "Registration of Ownership of Large Cattle and Branding (Municipal Brand)",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Treasurer (MTO) - Licensing Division",
+      "requirements": [
+        "Certificate of registration of individual brand or the individual brand itself",
+        "Mother certificate of large cattle",
+        "The large cattle",
+        "Charter note: owners of one (1) year old large cattle are required to register ownership with the Municipal Treasurer; the animal is branded with the registered individual brand and the municipal brand"
+      ],
+      "fee": "Published as a printed fee list whose two columns are interleaved in the PDF, so amounts cannot be matched reliably to each item. Amounts printed: P50.00, P50.00 (Ownership doc.), P3.00 (Registration of large cattle), P50.00 (Livestock development fund), P50.00 (Certificate of transfer document), P50.00 (Transfer Fee), P100.00 (Registration of private brand), P50.00 (Penalty for late registration of large cattle per brand), P50.00 (Branding fee per head).",
+      "processingTime": "No single total published. Per-step times: verify history/brand/prepare certificate 25 min; receive payment 5 min; sign certificate 2 min; issue certificate 5 min.",
+      "whereToGo": "Office of the Municipal Treasurer - for more information contact Mr. Vivencio Z. Maigue, Jr., Municipal Treasurer, Tel. (054) 585-2157. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf"
+    },
+    {
+      "name": "Payment of Real Property Tax (Amilyar)",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Treasurer (MTO) - Licensing Division",
+      "requirements": [
+        "Copy of latest Real Property Tax Declaration",
+        "Previous receipts",
+        "Taxable value is based on the Municipal Assessor's assessed value; taxpayers may pay annually or quarterly"
+      ],
+      "fee": "2% of Assessed Value plus penalties (if late payment) minus discount (if prompt payment).",
+      "processingTime": "No single total published. Per-step times: verify records and compute taxes 20 min; receive payment 5 min; post payment to the RPTAR 3 min.",
+      "whereToGo": "Office of the Municipal Treasurer - for more information contact Mr. Vivencio Z. Maigue, Jr., Municipal Treasurer, Tel. (054) 585-2157. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf"
+    },
+    {
+      "name": "Payment at the Municipal Treasurer's Office of Fees for Police Clearance and Other Transactions",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Treasurer (MTO) - Licensing Division",
+      "requirements": [
+        "For Police Clearance: Community Tax Certificate; Barangay Clearance",
+        "For other transactions: Assessment of Payment from the concerned office",
+        "Charter note: payments must be made at the Municipal Treasurer's Office prior to issuance of certifications, clearances and other transactions with fees of the concerned department/offices within the LGU"
+      ],
+      "fee": "Police clearance P200.00 for each of: employment, scholarship, study grant and other purposes; change of name; application for Filipino Citizenship; passport and VISA application; firearms permit application; PLEB clearance. For other transactions: fees are based on the assessment from the concerned office.",
+      "processingTime": "No single total published. Per-step time: issue official receipt, accept payment and advise client to return to the concerned office 5 min.",
+      "whereToGo": "Office of the Municipal Treasurer - for more information contact Mr. Vivencio Z. Maigue, Jr., Municipal Treasurer, Tel. (054) 585-2157. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf"
+    },
+    {
+      "name": "Issuance of Separate Tax Declarations per Approved Subdivision / Consolidation Plan",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Assessor",
+      "requirements": [
+        "Written request",
+        "Approved Survey Plan",
+        "Certificate of Tax Payment"
+      ],
+      "fee": "Revision Fee - P100.00 per Lot.",
+      "processingTime": "No single total published. Per-step times: 5 min + 5 min + 20 min + 5 min + 10 min.",
+      "whereToGo": "Office of the Municipal Assessor - for more information contact Mr. Roberto T. Villaflores, Municipal Assessor, Tel. (054) 585-2395. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MAO.pdf"
+    },
+    {
+      "name": "Transfer of Ownership of Real Property (Tax Declaration)",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Assessor",
+      "requirements": [
+        "Mode of Conveyance (Deed of Sale, Donation, Extra-judicial settlement, Waiver of Rights)",
+        "BIR Clearance",
+        "Certificate of Tax Payment and Transfer Tax",
+        "Transfer fee receipt",
+        "DAR Clearance",
+        "Certified copy of title, if titled property"
+      ],
+      "fee": "Transfer fee - P100.00 per Tax Declaration.",
+      "processingTime": "No single total published. Per-step times: 3 min + 5 min + 20 min + 10 min + 10 min.",
+      "whereToGo": "Office of the Municipal Assessor - for more information contact Mr. Roberto T. Villaflores, Municipal Assessor, Tel. (054) 585-2395. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MAO.pdf"
+    },
+    {
+      "name": "Issuance of Certification of Real Property Holdings",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Assessor",
+      "requirements": [
+        "Authorization if the person requesting is not the owner of the real property",
+        "Certification Fee Receipt"
+      ],
+      "fee": "Research fee - P100.00; Certification fee - P100.00; Documentary stamp - P30.00.",
+      "processingTime": "No single total published. Per-step times: 3 min + 3 min + 15 min + 5 min + 1 min.",
+      "whereToGo": "Office of the Municipal Assessor - for more information contact Mr. Roberto T. Villaflores, Municipal Assessor, Tel. (054) 585-2395. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MAO.pdf"
+    },
+    {
+      "name": "Issuance of Certified True Copy of Tax Declaration",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Assessor",
+      "requirements": [
+        "Authorization if the person requesting is not the owner of the real property",
+        "Certification Fee Receipt",
+        "Certification of Land Tax Payment / Real Property Tax Receipt"
+      ],
+      "fee": "Research fee - P100.00; Certified true/machine copy - P100.00; Documentary stamp - P30.00.",
+      "processingTime": "No single total published. Per-step times: 3 min + 5 min + 5 min + 5 min + 3 min + 2 min.",
+      "whereToGo": "Office of the Municipal Assessor - for more information contact Mr. Roberto T. Villaflores, Municipal Assessor, Tel. (054) 585-2395. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MAO.pdf"
+    },
+    {
+      "name": "Adjustment / Correction of Assessment - Ocular Inspection",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Assessor",
+      "requirements": [
+        "Written request for ocular inspection addressed to the Municipal Assessor",
+        "Approved Notice of Inspection"
+      ],
+      "fee": "Inspection fee - P150.00 (Outside Poblacion); P75.00 (Within the Poblacion).",
+      "processingTime": "No single total published. Per-step times: 3 min + 5 min; conduct of ocular inspection 1 day (depending on the location); recommend to provincial assessor 10 min.",
+      "whereToGo": "Office of the Municipal Assessor - for more information contact Mr. Roberto T. Villaflores, Municipal Assessor, Tel. (054) 585-2395. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MAO.pdf"
+    },
+    {
+      "name": "Tax Map Verification / History of Real Property per Tax Declaration",
+      "category": "Taxation & Payments",
+      "office": "Office of the Municipal Assessor",
+      "requirements": [
+        "Authorization if the person requesting is not the owner of the real property",
+        "Research Fee Receipt",
+        "Service enables clients to identify real property, its ownership and location in the tax map at the Municipal Assessor's Office"
+      ],
+      "fee": "Research fee - P100.00; History per Tax Declaration - P25.00.",
+      "processingTime": "No single total published. Per-step times: 3 min + 5 min + 120 min + 1 min + 2 min.",
+      "whereToGo": "Office of the Municipal Assessor - for more information contact Mr. Roberto T. Villaflores, Municipal Assessor, Tel. (054) 585-2395. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MAO.pdf"
+    },
+    {
+      "name": "Zoning / Locational Clearance (Real Properties)",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Planning & Development Coordinator Office (MPDC)",
+      "requirements": [
+        "TWO (2) copies for each document: Lot Plan with Vicinity Map",
+        "Tax Declaration",
+        "Certificate of Real Property Tax Payment (updated)",
+        "Deed of Absolute Sale / Certificate of Title / Lease-Contract",
+        "ECC for special project",
+        "Zoning Certifications Fee"
+      ],
+      "fee": "Published schedule: (a) Single residential structure attached or detached - P100,000 and below P288.00; over P100,000 to 200,000 P576.00; over P200,000 P720.00 + 1/10 of 1% in excess of P200,000. (b) Apartments/Townhouses - P500,000 and below P1,440.00; over P500,000 to P2M P2,160.00; over P2M P3,600.00 + 1/10 of 1% of cost in excess of P2M. (c) Dormitories - P2M and below P3,600.00; over P2M P3,600.00 + 1/10 of 1% of cost in excess of P2M. (d) Institutional - below P2M P2,800.00 (charter also prints P2,000.00 + 1/10 of 1% for over P2M). (e) Commercial, industrial and agro-industrial - below P100,000 P1,440.00; over P100,000 to P500,000 P2,160.00; over P500,000 to P1M P2,880.00; over P1M to P2M P4,320.00; over P2M P7,200.00 + 1/10 of 1% of cost in excess of P2M. (f) Special uses / special projects (gasoline station, cellsites, slaughter house, treatment plant, etc.) - P7,200.00 + 1/10 of 1% of cost in excess of P2M. (g) Alteration/expansion (affected areas/cost only) - same as original application.",
+      "processingTime": "No single total published. Per-step times: log in & submit documents; examine requirements and prepare locational clearance and issue assessment 5 min; pay 5 min; prepare/record/forward 5 min; approve 1 min; release 1 min.",
+      "whereToGo": "Municipal Planning & Development Coordinator Office - for more information contact Evaristo GL Pandi, Municipal Planning & Development Officer, Tel. (054) 585-2340. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MPDC.pdf"
+    },
+    {
+      "name": "Zoning / Locational Clearance for Building Permit",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Planning & Development Coordinator Office (MPDC)",
+      "requirements": [
+        "Perspective View with Site Development Plan and Vicinity Map, signed and sealed by the Engineer who prepared it and approved by the owner - 2 copies",
+        "Bill of Materials and Cost Estimates, signed and sealed by the Engineer and approved by the owner - 2 copies",
+        "Lot Plan with Vicinity Map - 2 copies",
+        "Tax Declaration - 2 copies",
+        "Certificate of Real Property Tax Payment (updated) - 2 copies",
+        "Deed of Absolute Sale / Certificate of Title / Lease-Contract - 2 copies",
+        "ECC for special project - 2 copies",
+        "Zoning Certifications Fee - 2 copies",
+        "Requirement: all enterprises and private persons seeking to construct/expand/alter/erect/modify a new building, or applying for expansion/renovation, must secure a zoning clearance with the Building Permit application"
+      ],
+      "fee": "Same published Zoning/Locational Clearance schedule as for real properties (P288.00 up to P7,200.00 + 1/10 of 1% depending on structure type and project cost).",
+      "processingTime": "No single total published. Per-step times: entertain client and provide list of requirements 2 min; examine requirements, prepare clearance and compute fee 5 min; pay; prepare/record/forward 5 min; approve 1 min; release 1 min.",
+      "whereToGo": "Municipal Planning & Development Coordinator Office - for more information contact Evaristo GL Pandi, Municipal Planning & Development Officer, Tel. (054) 585-2340. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MPDC.pdf"
+    },
+    {
+      "name": "Provision of Planning Data and Documents to Researchers (demographics and physical profile of the LGU)",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Planning & Development Coordinator Office (MPDC)",
+      "requirements": [
+        "Letter Request must be approved by the Mayor",
+        "Identification card or any valid ID of the researcher"
+      ],
+      "fee": "NOT REPORTABLE - the charter prints a fee column listing amounts (P50.00, P25.00, P100.00 etc.) beside a lettered list of document types (a. per page typewritten; b. certificate of correctness; c. certifying official act of the Municipal Judge; d. certified copies of papers/records/decrees/judgments; e. photocopy per page; f. reproduction of maps/sketches; g. research fee per document; h. oath fee per document; i. certification fee; j. processing fee per document; k. dry seal document; l. endorsement fee; m. certificate of training; n. transcript of records), but the amounts do not align one-to-one with the listed types in the published PDF.",
+      "processingTime": "No single total published. Per-step times: receive letter request 1 min; research and print documents 15 min; issue assessment 5 min; certify authenticity 1 min; release 1 min.",
+      "whereToGo": "Municipal Planning & Development Coordinator Office - for more information contact Evaristo GL Pandi, Municipal Planning & Development Officer, Tel. (054) 585-2340. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MPDC.pdf"
+    },
+    {
+      "name": "Electrical Permit",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Engineer's Office (MEO)",
+      "requirements": [
+        "Electrical Permit Application Form signed by a professional Electrical Engineer",
+        "Electrical Plans",
+        "Electrical Specifications",
+        "Bill of Materials and Cost Estimates",
+        "Required before putting up new or additional, or altering electrical installation involving at least 20 outlets or capacity of 4 Kw; for new buildings it forms part of the requirements for a Building Permit application"
+      ],
+      "fee": "Published electrical fee schedule, e.g. each switch, lighting and/or convenience outlet P1.50; each remote control master switch P3.00; each special purpose outlet of 20 amperes capacity or more P3.00; each range or heater up to 1 KW P3.00 and every KW in excess of 1 KW P1.50; each refrigerator or freezer P5.00; motors and controlling apparatus per unit P5.00 (up to .2 KW) rising to P40.00 (above 10 KW up to 20 KW) and P2.00 every KW above 20 KW; approved pole location plan permit P30.00 per pole; approved attachment location plan permit P30.00 per attachment; electric meter residential P60.00, commercial/industrial P120.00, institutional P90.00.",
+      "processingTime": "NOT PUBLISHED as a total - the charter lists only per-step staff times (evaluate application and assess fees 5 min; issue receipt 5 min; forward to Bureau of Fire Protection for fire safety clearance; issue permit 5 min).",
+      "whereToGo": "Municipal Engineer's Office - for more information contact Engr. Raul B. Jacela, Municipal Engineer, Tel. (054) 585-2440. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf"
+    },
+    {
+      "name": "Mechanical Permit",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Engineer's Office (MEO)",
+      "requirements": [
+        "Mechanical Permit Application Form signed by a professional Mechanical Engineer",
+        "Mechanical Plans",
+        "Mechanical Specifications",
+        "Bill of Materials and Cost Estimates",
+        "Required before the installation, addition, removal or alteration of machinery of at least 20 Hp; for new buildings it forms part of the requirements for a Building Permit application"
+      ],
+      "fee": "Published mechanical fee schedule, e.g. air conditioning systems P40.00 per window-type unit; P25.00 per ton for the first 100 tons; elevators P500.00 passenger per unit, P400.00 freight, P50.00 motor-driven dumbwaiters, P40.00 construction elevators for materials, P500.00 car elevators, plus P50.00 every landing above the first five; boilers P400.00 up to 7.5 KW rising to P900.00 for 67-74 KW and P4.00 every KW above 74; standby ICE-generator sets P50.00 per KW up to 10 KW, P110.00 above 10 KW up to 30 KW.",
+      "processingTime": "NOT PUBLISHED as a total - the charter lists only per-step staff times.",
+      "whereToGo": "Municipal Engineer's Office - for more information contact Engr. Raul B. Jacela, Municipal Engineer, Tel. (054) 585-2440. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf"
+    },
+    {
+      "name": "Sanitary / Plumbing Permit",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Engineer's Office (MEO)",
+      "requirements": [
+        "Sanitary/Plumbing Permit Application Form signed by a Sanitary or Master Plumber",
+        "Sanitary/Plumbing Plans",
+        "Sanitary/Plumbing Specifications",
+        "Bill of Materials and Cost Estimates",
+        "Required before the construction of new, additional or altering existing plumbing installations, water supply, storm drainage, water purification and sewerage treatment plants; for new buildings it forms part of the requirements for a Building Permit application"
+      ],
+      "fee": "Published plumbing fee schedule: installation fee per UNIT composed of one water closet, two floor drains, one lavatory, one sink with ordinary trap, three faucets and one shower head - P24.00 (a partial part is charged as the whole unit); every fixture in excess of one unit - each water closet P7.00, floor drain P3.00, sink P3.00, lavatory P7.00, faucet P2.00, shower head P2.00; special plumbing fixtures P2.00-P10.00 each; water meter 12-25 mm dia. P24.00, above 25 mm P7.00; septic vault up to 5 cu.m of digestion chamber P24.00 and every cu.m in excess P7.00.",
+      "processingTime": "NOT PUBLISHED as a total - the charter lists only per-step staff times.",
+      "whereToGo": "Municipal Engineer's Office - for more information contact Engr. Raul B. Jacela, Municipal Engineer, Tel. (054) 585-2440. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf"
+    },
+    {
+      "name": "Building Permit",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Engineer's Office (MEO)",
+      "requirements": [
+        "Accomplished Application Form (5 copies each) for: a) Building Permit, b) Electrical Permit, c) Sanitary Plumbing Permit, d) Mechanical Permit (Industrial), e) Zoning/Location Clearance",
+        "If applicant is the Registered Owner of the lot: Certified true copy of Certificate of Title (5 copies); Tax Declaration (3 copies); Current Real Property Tax Receipt (3 copies)",
+        "If applicant is not the Registered Owner: Duly notarized copy of the Contract of Lease / Deed of Absolute Sale / Contract of Sale (5 copies)",
+        "Five (5) sheets of Plans and Specifications prepared, signed and sealed by: duly licensed architect or Civil Engineer (architectural and structural plan); duly licensed Sanitary Engineer or Master Plumber (sanitary/plumbing plans); duly licensed Professional Electrical Engineer (electrical plans); duly licensed Professional Mechanical Engineer (mechanical plans)",
+        "Lot plan signed and sealed by Geodetic Engineer (3 copies)",
+        "Mayor's Permit",
+        "Zoning/Location Clearance",
+        "Barangay Clearance",
+        "Seven (7) sets of Bill of Materials and Cost Estimates",
+        "Five (5) sets of Construction Specifications",
+        "Three (3) copies of Structural Design Analysis, signed and sealed by Civil/Structural Engineer",
+        "Construction Logbook, signed and sealed by Civil Engineer/Structural Engineer",
+        "Three (3) copies brown envelope (long)",
+        "Fire Safety and Control Requirements (Fire Department)",
+        "Building Permit Fee",
+        "Environmental Compliance Certificate (DENR) - for commercial and industrial only",
+        "Clearance from DPWH - for buildings to be constructed along the National Highway",
+        "Required prior to construction, alteration, major repair, renovation, conversion, demolition, extension and erection of any building/structure"
+      ],
+      "fee": "Published schedule. Line and Grade: fronting road or creek for first 10 meters P250.00, and P5.00 for every meter in excess of 10 meters. Residential (single detached dwelling unit for the exclusive use of the owner) per sq.m of construction/addition/renovation: first 20 sq.m P2.00; additional/renovation/alteration up to 20 sq.m P2.50; above 20 to 50 sq.m P3.50; above 50 to 100 sq.m P5.00; above 100 to 150 sq.m P6.00; above 150 sq.m P7.50; P3.00 per cubic meter of the building affected for every meter in excess of 8.00 m in height; P6.00 per sq.m of floor area subject to demolition and removal. Commercial and Industrial per sq.m by area: up to 500 P23.00, above 500-600 P22.00, 600-700 P20.50, 700-800 P19.50, 800-900 P18.00, 900-1,000 P17.00, 1,000-1,500 P16.00, 1,500-2,000 P15.00, 2,000-3,000 P14.00, above 3,000 P12.00. Social and Institutional per sq.m by area: up to 500 P12.00, 500-600 P11.00, 600-700 P10.20, 700-800 P9.60, 800-900 P9.00, 900-1,000 P8.40, 1,000-1,500 P7.20, 1,500-2,000 P6.60, 2,000-3,000 P6.00. Building Inspection Fees: P150.00 per unit up to 3.00 cu.m; P120.00 floor area to 100 sq.m; P240.00 above 100 to 200 sq.m; P80.00 above 200 to 350 sq.m (as printed); P720.00 above 350 to 500 sq.m; P960.00 above 500 to 750 sq.m; P1,200.00 above 750 to 1,000 sq.m and every 1,000 sq.m or portion in excess; P60.00 annual plumbing fee per plumbing unit. Electrical Inspection Fees: one-time electrical inspection fee equal to 10% of Total Electrical Permit Fees. Annual Mechanical Inspection Fees: P25.00 up to 100 tons capacity; P20.00 above 100 up to 150 tons; P15.00 above 150 up to 300 tons; P10.00 above 300 up to 500 tons; P5.00 every ton or fraction above 500 tons.",
+      "processingTime": "No single total published. Per-step times: review completeness of documents and assess fees 30 min; pay 5 min; forward documents to the Bureau of Fire Protection for fire safety clearance 3 min; accept, review, prepare and issue building permit 5 min.",
+      "whereToGo": "Municipal Engineer's Office - for more information contact Engr. Raul B. Jacela, Municipal Engineer, Tel. (054) 585-2440. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf"
+    },
+    {
+      "name": "Certificate of Use or Occupancy",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Engineer's Office (MEO)",
+      "requirements": [
+        "NOT PUBLISHED as a document list - the charter prints only the fee schedule (Table 11.6.2 for fixed costing) for this certificate"
+      ],
+      "fee": "Residential: costing up to P150,000.00 P100.00; more than P150,000.00 up to P400,000.00 P200.00; more than P400,000.00 up to P850,000.00 P400.00; more than P850,000.00 up to P1,200,000.00 P800.00. Commercial/Institutional/Industrial: costing up to P150,000.00 P200.00; more than P150,000.00 up to P400,000.00 P400.00; more than P400,000.00 up to P850,000.00 P800.00; more than P850,000.00 up to P1,200,000.00 P1,000.00; every million or portion thereof in excess of P1,200,000.00 P1,000.00.",
+      "processingTime": "NOT PUBLISHED.",
+      "whereToGo": "Municipal Engineer's Office - for more information contact Engr. Raul B. Jacela, Municipal Engineer, Tel. (054) 585-2440. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf"
+    },
+    {
+      "name": "Fencing Permit",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Engineer's Office (MEO)",
+      "requirements": [
+        "NOT PUBLISHED as a document list - the charter prints only the fencing fee schedule"
+      ],
+      "fee": "Made of masonry, metal, concrete up to one point eighty (1.80) m in height, per lineal m or fraction thereof P3.00; in excess of 1.80 m in height, per lineal m or fraction thereof P4.00; made of indigenous materials, barbed, chicken or hog wires, per lineal m P2.40.",
+      "processingTime": "NOT PUBLISHED.",
+      "whereToGo": "Municipal Engineer's Office - for more information contact Engr. Raul B. Jacela, Municipal Engineer, Tel. (054) 585-2440. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf"
+    },
+    {
+      "name": "Preparation of Program of Works / Bill of Materials and Detailed Cost Estimates",
+      "category": "Infrastructure & Public Works",
+      "office": "Municipal Engineer's Office (MEO)",
+      "requirements": [
+        "Resolution/request duly approved by the Mayor",
+        "Needed before the implementation of a project"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published per-step: accept request and schedule Site Inspection 1 min; conduct Site Inspection 1 day; prepare Program of Works/Bill of Materials 2 hours; verify, check and sign 5 min + 1 min; release.",
+      "whereToGo": "Municipal Engineer's Office - for more information contact Engr. Raul B. Jacela, Municipal Engineer, Tel. (054) 585-2440. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf"
+    },
+    {
+      "name": "Pre-Marriage Certificate / Pre-Marriage Counseling",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "Fill up the application form",
+        "Attend the Pre-Marriage Certificate seminar conducted by the PMC team (trained PMC Counsellor from MSWDO staff and MHO)",
+        "Prerequisite in securing a marriage license; seminars are held on the 2nd and last Thursday of the month"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published per-step: accept the filled-up application form 10 minutes; conduct Pre-Marriage Certificate seminar 1 day; issue Pre-Marriage Certificate 1 minute.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Certificate of Indigency",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "Barangay Certificate of Indigency",
+        "Document attests to the economic situation of the family to access free services of government line agencies"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published per-step: assessment of client's eligibility and completeness of documents and preparation of certification 10 minutes; sign and release the certification 2 minutes.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Burial Assistance for Deceased Senior Citizen and Person with Disability",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "Death certificate with registry number or certified photo copy (2 copies)",
+        "Original OSCA ID and 3 photo copies",
+        "Proof of relationship to the deceased (Marriage Certificate, Birth Certificate, Certification of Barangay)",
+        "Photo copy of Valid ID of Claimant",
+        "Per Municipal Ordinance No. 226-2007"
+      ],
+      "fee": "NOT PUBLISHED - the charter states it is a financial assistance payable to bereaved immediate family members but prints no amount or rate.",
+      "processingTime": "Published per-step: assess eligibility, review documents and prepare petty cash voucher 15 minutes; review/sign voucher 3 minutes; approve 3 minutes; release.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Financial Assistance / Cash Assistance to Senior Citizens and Persons with Disability",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "Photo copy of OSCA ID with signature (2 copies)",
+        "If not personally claimed, an authorization duly signed must be presented by the nearest relatives (2 copies)",
+        "Photo copy of valid ID of the claimant (2 copies)",
+        "Cash assistance to individuals aged 60 years old and above and persons with disability"
+      ],
+      "fee": "NOT PUBLISHED - the charter prints no amount or rate.",
+      "processingTime": "Published per-step: assess eligibility, review documents and prepare petty cash voucher 15 minutes; review/sign voucher 3 minutes; approve 3 minutes; release and receive petty cash 2 minutes.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Shelter Assistance (financial assistance for shelter needs of disaster victims and the vulnerable)",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "For victims of disaster: Certificate of Indigency; Disaster incident Report (BFP and barangay); Photo copy of Damaged Houses; Photo copy of valid ID of Claimant",
+        "Intervention provided to individuals and families in difficult circumstances affected by natural or man-made disaster"
+      ],
+      "fee": "NOT PUBLISHED - the charter prints no amount or rate.",
+      "processingTime": "Published per-step: assess eligibility, review documents and prepare disbursement voucher 15 minutes; review, sign and advise clients 3 minutes.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Issuance of Solo Parent ID, Senior Citizen ID and PWD ID",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "Solo Parent: Fully accomplished Application form; 2 pcs 1x1 ID picture; Residence certificate stating circumstances of being a Solo Parent; 2 photocopies of Death Certificate if deceased spouse; Photo copy of birth certificate of minor children",
+        "Senior Citizen: Fully accomplished Application form; 2 pcs 1x1 ID picture; 2 pcs 2x2 ID picture; Birth Certificate or any documents showing birthdate",
+        "PWD: Fully accomplished Application form; 2 pcs 1x1 ID picture; 2 pcs 2x2 ID picture; Birth Certificate; Doctor's Certification if non-physical disability; Barangay Certification if physical disability; Barangay Residency",
+        "Identification card issued to access services under R.A. 8972 (Solo Parent Act of 2004) and for senior citizens and PWDs"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published per-step: assess eligibility and completeness of documents and issue the Identification Card 15 minutes.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Assistance to Families with Special Needs (Medical Assistance and Assistive Device)",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "For Medical Assistance: Updated original Medical Certificate duly signed by the attending Physician with License No. and basic information of patient; Updated doctor's prescription / request for laboratory duly signed by the attending physician with license number and basic information of patient; Updated certificate of indigency named after the client; Photo copy of Valid Identification card of Claimant",
+        "For Assistive Device: Updated Medical Certificate signed by the attending Physician with license no. and basic information of the client; Certification from barangay as to the physical disability; Pictures of Patient or client with disability; Photo copy of valid ID of the claimant"
+      ],
+      "fee": "NOT PUBLISHED - the charter prints no amount or rate.",
+      "processingTime": "Published per-step: assess eligibility, review documents and prepare disbursement voucher 15 minutes; review, sign and advise clients 3 minutes.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Social Case Study Report (SCR)",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "Regular Client: Request from the agency/institution offering services; Updated Medical Certificate / Medical Abstract; Certificate of indigency named after the client",
+        "Client needing judicial intervention (CICL, child abuse and other court-related cases): NSO birth certificate of the child; Police Report; Barangay Certification; Court Order, if necessary",
+        "Required written document by a charitable institution/agency to access the services needed by the client; an assessment of the family situation and of the child's situation"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published: 4 hours for assessment, review and preparation of the Social Case Study Report (regular client), plus 5 minutes to review/sign and 1 minute to release. For clients needing judicial intervention: 3 hours assessment and accomplishment of assessment tool, then 7 working days for home visit, collateral interviews, preparation of the Social Case Study Report and submission to the court.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Financial Assistance for Medical, Burial, Transportation and Subsistence",
+      "category": "Social Services & Assistance",
+      "office": "Municipal Social Welfare & Development Office (MSWDO)",
+      "requirements": [
+        "For Medical Assistance: Updated original Medical Certificate duly signed by the attending Physician with License No. and basic information of patient; Updated doctor's prescription / request for laboratory duly signed by the attending physician with license number and basic information of patient; Updated certificate of indigency named after the client; Photo copy of Valid Identification card of Claimant",
+        "For Burial Assistance of Regular Clients: Death certificate with registry number and certified photo copy; Original Certificate of indigency named after the client; Photo copy of valid Identification of claimant",
+        "For Transportation and Subsistence: Referral letter or Blotter Report; Certificate of indigency; Photo copy of valid ID of claimant"
+      ],
+      "fee": "NOT PUBLISHED - the charter prints no amount or rate.",
+      "processingTime": "Published per-step: assess eligibility, review documents and prepare petty cash voucher 15 minutes; review/sign voucher 3 minutes; approve 3 minutes; release the financial assistance 3 minutes.",
+      "whereToGo": "Municipal Social Welfare & Development Office - for more information contact Mrs. Lorelie Villanueva, Municipal Social Welfare Dev't. Officer I, Tel. (054) 585-2250. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf"
+    },
+    {
+      "name": "Assistance on Illegal Recruitment Cases / Anti-Illegal Recruitment Program (POEA-LGU Memorandum of Understanding)",
+      "category": "Social Services & Assistance",
+      "office": "Public Employment Service Office (PESO)",
+      "requirements": [
+        "Documents/OR as evidence of illegal recruitment conducted, if any",
+        "Required to execute a Sworn Statement including witnesses",
+        "Program with an executed Memorandum of Understanding between the POEA and LGU Labo to address illegal recruitment and maintain an illegal-recruitment-free local government unit"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service despite the step 'Pays the necessary fees' appearing in the printed steps.",
+      "processingTime": "Published per-step: interview the client regarding the illegal recruitment, report to POEA by phone call, prepare and send a written report by e-mail, accompany the client to the nearest CIDG, execute affidavit if necessary and turn over the client to CIDG - 15 minutes.",
+      "whereToGo": "Public Employment Service Office - for more information contact Ms. Florida Quilas, PESO Manager, Tel. (054) 585-2395. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/PESO.pdf"
+    },
+    {
+      "name": "Assistance in Online Appointments and Online Requests (Passport, NBI Clearance, Overseas Employment Certificate, PSA Birth Certificate and Marriage Contract)",
+      "category": "Social Services & Assistance",
+      "office": "Public Employment Service Office (PESO)",
+      "requirements": [
+        "PSA birth certificate and marriage contract for married women",
+        "2 valid IDs",
+        "3 pcs. passport size photos",
+        "PESO provides information and guidance needed by applicants"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published per-step: assist the client in online appointment and online request, print and release the confirmation - 10 minutes.",
+      "whereToGo": "Public Employment Service Office - for more information contact Ms. Florida Quilas, PESO Manager, Tel. (054) 585-2395. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/PESO.pdf"
+    },
+    {
+      "name": "Release of Reviewed Barangay Annual and/or Supplemental Budget",
+      "category": "Taxation & Payments",
+      "office": "Municipal Budget Office",
+      "requirements": [
+        "Copy of Indorsement Letter",
+        "Presence of the requesting party",
+        "Copy of the approved copy of the annual and/or Supplemental Budget",
+        "After the barangay budgets (annual or supplemental) have been reviewed by the Sangguniang Bayan they are returned to the barangay through the Office of the Municipal Budget Officer"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published per-step: release of documents 5 minutes.",
+      "whereToGo": "Office of the Municipal Budget - for more information contact Mr. Alex Galvez, Municipal Budget Office, Tel. (054) 585-2319. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MBO.pdf"
+    },
+    {
+      "name": "Preliminary Review of Barangay Annual and/or Supplemental Budget",
+      "category": "Taxation & Payments",
+      "office": "Municipal Budget Office",
+      "requirements": [
+        "Copy of Annual or Supplemental Budget of client barangay",
+        "Presence of the Barangay Official concerned to shed light if there are things that need to be clarified"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published per-step: accept the budget and endorse to the budget officer 2 minutes; review the annual and/or supplemental budget including attachments 25 minutes per budget; prepare endorsement letter to the Sangguniang Bayan 5 minutes; sign 1 minute; transmit to the Sangguniang Bayan and copy furnish the client by mail 5 minutes.",
+      "whereToGo": "Office of the Municipal Budget - for more information contact Mr. Alex Galvez, Municipal Budget Office, Tel. (054) 585-2319. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MBO.pdf"
+    },
+    {
+      "name": "Certification of Availability of Appropriation (Obligation Request)",
+      "category": "Taxation & Payments",
+      "office": "Municipal Budget Office",
+      "requirements": [
+        "Obligation Request Voucher",
+        "Program of Works and/or Resolution/Request and other necessary documents"
+      ],
+      "fee": "NOT PUBLISHED - the charter lists no fee for this service.",
+      "processingTime": "Published per-step: search for available appropriation 3 minutes; record the obligation and put an obligation number 3 minutes; sign the Obligation Request 2 minutes; transmit the voucher with attachments to the Accounting Office.",
+      "whereToGo": "Office of the Municipal Budget - for more information contact Mr. Alex Galvez, Municipal Budget Office, Tel. (054) 585-2319. The charter publishes no floor, building name or barangay.",
+      "sourceUrl": "https://labo.gov.ph/wp-content/uploads/2019/12/MBO.pdf"
+    }
+  ],
+  "servicePagesSeen": [
+    "https://labo.gov.ph/citizens-charter/",
+    "https://web.archive.org/web/20251212064957/https://labo.gov.ph/citizens-charter/",
+    "https://web.archive.org/web/20200803205016/https://labo.gov.ph/citizens-charter/",
+    "https://labo.gov.ph/services/",
+    "https://web.archive.org/web/20200803204932/https://labo.gov.ph/services/",
+    "https://labo.gov.ph/services/citizens-charter/",
+    "https://labo.gov.ph/services/key-services/",
+    "https://labo.gov.ph/services/downloadable-forms/",
+    "https://web.archive.org/web/20260214051205/https://labo.gov.ph/services/downloadable-forms/",
+    "https://labo.gov.ph/about/department-and-offices/",
+    "https://web.archive.org/web/2025/https://labo.gov.ph/about/department-and-offices/",
+    "https://labo.gov.ph/knowledge-base/office-of-the-civil-registrar/",
+    "https://web.archive.org/web/20220718102118/https://labo.gov.ph/knowledge-base/office-of-the-civil-registrar/",
+    "https://labo.gov.ph/knowledge-base/office-of-the-treasurer/",
+    "https://web.archive.org/web/20220718101528/https://labo.gov.ph/knowledge-base/office-of-the-treasurer/",
+    "https://labo.gov.ph/knowledge-base/office-of-the-assessor/",
+    "https://web.archive.org/web/20210225103558/https://labo.gov.ph/knowledge-base/office-of-the-assessor/",
+    "https://labo.gov.ph/knowledge-base/city-planning-and-development-office/",
+    "https://web.archive.org/web/20220718095835/https://labo.gov.ph/knowledge-base/city-planning-and-development-office/",
+    "https://labo.gov.ph/knowledge-base/office-of-the-social-welfare-and-development/",
+    "https://web.archive.org/web/20220718102506/https://labo.gov.ph/knowledge-base/office-of-the-social-welfare-and-development/",
+    "https://labo.gov.ph/knowledge-base/budget-office/",
+    "https://web.archive.org/web/20220718100426/https://labo.gov.ph/knowledge-base/budget-office/",
+    "https://labo.gov.ph/knowledge-base/permits-and-licenses-division/",
+    "https://web.archive.org/web/20220718101722/https://labo.gov.ph/knowledge-base/permits-and-licenses-division/",
+    "https://labo.gov.ph/knowledge-base/health-office/",
+    "https://web.archive.org/web/20250424071413/https://labo.gov.ph/knowledge-base/health-office/",
+    "https://labo.gov.ph/knowledge-base/labo-hospital/",
+    "https://web.archive.org/web/20220718102903/https://labo.gov.ph/knowledge-base/labo-hospital/",
+    "https://labo.gov.ph/knowledge-base/menro/",
+    "https://labo.gov.ph/knowledge-base/veterinary-office/",
+    "https://labo.gov.ph/knowledge-base/general-services-office/",
+    "https://web.archive.org/web/20220718100846/https://labo.gov.ph/knowledge-base/general-services-office/",
+    "https://labo.gov.ph/knowledge-base/human-resource-management-office/",
+    "https://web.archive.org/web/20220718100036/https://labo.gov.ph/knowledge-base/human-resource-management-office/",
+    "https://labo.gov.ph/knowledge-base/office-of-the-secretary-to-the-sanggunian/",
+    "https://web.archive.org/web/20220718100230/https://labo.gov.ph/knowledge-base/office-of-the-secretary-to-the-sanggunian/",
+    "https://labo.gov.ph/knowledge-base/disaster-risk-reduction-and-management-office/",
+    "https://web.archive.org/web/20220718101048/https://labo.gov.ph/knowledge-base/disaster-risk-reduction-and-management-office/",
+    "https://labo.gov.ph/knowledge-base/internal-audit-service/",
+    "https://web.archive.org/web/20220718102312/https://labo.gov.ph/knowledge-base/internal-audit-service/",
+    "https://labo.gov.ph/knowledge-base/tourism-services-unit/",
+    "https://web.archive.org/web/20220718101920/https://labo.gov.ph/knowledge-base/tourism-services-unit/",
+    "https://labo.gov.ph/knowledge-base/office-of-the-accountant/",
+    "https://web.archive.org/web/20220804051853/https://labo.gov.ph/knowledge-base/office-of-the-accountant/",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf",
+    "https://web.archive.org/web/20220804053556/https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf",
+    "https://web.archive.org/web/20220804052738/https://labo.gov.ph/wp-content/uploads/2019/12/MTO-1.pdf",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/MAO.pdf",
+    "https://web.archive.org/web/20220804052443/https://labo.gov.ph/wp-content/uploads/2019/12/MAO.pdf",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/MPDC.pdf",
+    "https://web.archive.org/web/20220804045946/https://labo.gov.ph/wp-content/uploads/2019/12/MPDC.pdf",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf",
+    "https://web.archive.org/web/20220804045015/https://labo.gov.ph/wp-content/uploads/2019/12/meo.pdf",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf",
+    "https://web.archive.org/web/20220804054225/https://labo.gov.ph/wp-content/uploads/2019/12/MSWDO.pdf",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/PESO.pdf",
+    "https://web.archive.org/web/20220804045625/https://labo.gov.ph/wp-content/uploads/2019/12/PESO.pdf",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/MBO.pdf",
+    "https://web.archive.org/web/20220804051352/https://labo.gov.ph/wp-content/uploads/2019/12/MBO.pdf",
+    "https://labo.gov.ph/wp-content/uploads/2019/12/Organizational_Chart.pdf"
+  ],
+  "notPublished": [
+    "Consolidated Citizen's Charter document: the LGU publishes no single Citizen's Charter PDF or full-text charter page. /services/citizens-charter/ (canonical /citizens-charter/) is only a BetterDocs index of office tiles; it carries no fees, requirements or processing times.",
+    "https://labo.gov.ph/services/citizens-charter/ and https://labo.gov.ph/services/key-services/ could not be retrieved: neither path appears anywhere in the Wayback CDX index for labo.gov.ph (never archived), and the live site returns HTTP 403 behind Cloudflare. Their content is therefore NOT represented here.",
+    "https://labo.gov.ph/services/downloadable-forms/ is listed in the site menu but both archived snapshots (2025-10-15, 2026-02-14) are Cloudflare challenge pages, so its contents are unknown. /services/ and /services/embed/ archived snapshots are likewise Cloudflare challenge pages.",
+    "No service charter published for these offices (their /knowledge-base/<office>/ pages embed only the generic Organizational_Chart.pdf): Office of the Mayor, Office of the Municipal Administrator, Office of the Cooperative Development, Urban Poor Affairs Office, Human Resource Management Office, Office of the Secretary to the Sanggunian, General Services Office, Disaster Risk Reduction and Management Office, Internal Audit Service, Tourism Services Unit, Permits and Licenses Division, Office of the Accountant, Veterinary Office, Labo Hospital, Health Office, MENRO.",
+    "Health & Wellness: nothing published - no service, requirement, fee or processing time for the Health Office / Municipal Health Office or Labo Hospital. (The Health Office knowledge-base page embeds the Organizational Chart only.)",
+    "Environment & Natural Resources: nothing published - no charter document or service listing for MENRO.",
+    "Agriculture & Economic Development: nothing published. Note the charter file named MAO.pdf is the Municipal ASSESSOR's Office charter, not the Agriculture Office; no Agriculture Office service document exists in the LGU's uploads.",
+    "Education & Scholarship: nothing published - no scholarship or education service, requirement or fee found anywhere on labo.gov.ph.",
+    "Public Safety & Security: nothing published. The only related item is the Municipal Treasurer collecting police-clearance fees (P200.00); no police/security service, requirement or processing time is published.",
+    "Where-to-go detail: the charter PDFs name the office and a contact person plus telephone number only. No floor, building name or barangay is published for any office, so no 'where to go' detail beyond the office name can be given.",
+    "Processing times are not published as service totals for almost every service - the charters print per-step staff times only (and many steps have no time at all). Totals given in this dataset are sums of the printed per-step times and are labelled as such.",
+    "Total processing time for Business Permit (new and renewal): not published - only per-step staff times.",
+    "Total fee for Business Permit / Mayor's Permit: cannot be published as a single figure - business tax depends on line of business and gross receipts/sales, and the Mayor's Permit Fee depends on the adopted enterprise scale and on whichever of asset size or number of workers yields the higher fee.",
+    "Municipal Social Welfare & Development Office: no fee published for any of its ten services (pre-marriage certificate, certificate of indigency, burial assistance, senior citizen/PWD cash assistance, shelter assistance, Solo Parent/Senior Citizen/PWD IDs, assistance to families with special needs, social case study report, medical/burial/transportation/subsistence assistance).",
+    "Public Employment Service Office: no fee published for either of its two services. (The printed step 'Pays the necessary fees' appears with no corresponding fee.)",
+    "Municipal Budget Office: no fee published for any of its three services.",
+    "Municipal Civil Registrar: fee not published for Registration of a Foundling (Certificate of Foundling) - the FEES section of that charter page is blank.",
+    "Municipal Civil Registrar - Legitimation: the charter prints a group total of P250.00 that does not equal the sum of its own itemised fees (P160.00 + P50.00 + P50.00 + P50.00 + P100.00 = P410.00), so no reliable legitimation total can be reported.",
+    "Municipal Treasurer - Registration of Ownership of Large Cattle and Branding: the charter's two-column fee list is printed interleaved, so the amounts (P50.00, P50.00, P3.00, P50.00, P50.00, P100.00, P50.00, P50.00) cannot be reliably matched to individual fee items.",
+    "Municipal Planning & Development Coordinator - Provision of planning data to researchers: the charter's fee column does not align one-to-one with the lettered list of document types, so no per-document fee can be reliably reported.",
+    "Municipal Engineer's Office - Certificate of Use or Occupancy and Fencing Permit: fees are published but the required documents are not.",
+    "Municipal Engineer's Office - Preparation of Program of Works: no fee published.",
+    "Municipal Engineer's Office - Electrical, Mechanical and Sanitary/Plumbing permits: no total processing time published (per-step times only).",
+    "Detailed breakdown of the late-renewal penalty beyond the published '2% per month and 25% surcharge per quarter' for business permit renewal: not published.",
+    "Municipal Budget Office services (barangay budget review/release, certification of availability of appropriation) are internal fiscal/governance services that do not fit any of the ten service categories cleanly; they have been filed under 'Taxation & Payments' as the closest available grouping.",
+    "Any service delivered by the Office of the Mayor, the Sangguniang Bayan, the Municipal Administrator, the Cooperative Development Office, the Urban Poor Affairs Office, or the Municipal Accountant: no requirements, fees or processing times published."
+  ]
+}

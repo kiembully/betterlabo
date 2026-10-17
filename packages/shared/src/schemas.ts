@@ -1,6 +1,10 @@
 import { z } from 'zod';
 
 import {
+  APPOINTMENT_LIMITS,
+  APPOINTMENT_PURPOSES,
+  APPOINTMENT_SLOTS,
+  APPOINTMENT_STATUSES,
   REPORT_CATEGORIES,
   REPORT_LIMITS,
   REPORT_PRIORITIES,
@@ -168,4 +172,135 @@ export const datasetRegistrySchema = z.object({
   generatedAt: isoDateSchema,
   municipality: z.string().min(1),
   datasets: z.array(datasetProvenanceSchema),
+});
+
+/* ─────────────────────────── appointments ─────────────────────────── */
+
+/**
+ * Calendar dates are plain `YYYY-MM-DD` strings, deliberately never instants.
+ * A booking is a day at the municipal hall, and an instant would make the
+ * validity of a date depend on the server's timezone.
+ */
+const dateOnlySchema = z
+  .string()
+  .trim()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, 'Use a date in the form YYYY-MM-DD')
+  .refine(isRealCalendarDate, 'That is not a real calendar date');
+
+function isRealCalendarDate(value: string): boolean {
+  const parts = value.split('-').map((part) => Number.parseInt(part, 10));
+  const [year, month, day] = parts;
+  if (year === undefined || month === undefined || day === undefined) return false;
+  if (!Number.isInteger(year) || !Number.isInteger(month) || !Number.isInteger(day)) return false;
+  const probe = new Date(Date.UTC(year, month - 1, day));
+  return (
+    probe.getUTCFullYear() === year &&
+    probe.getUTCMonth() === month - 1 &&
+    probe.getUTCDate() === day
+  );
+}
+
+const MANILA_DATE = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Manila',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+
+/**
+ * "Today" in Asia/Manila as `YYYY-MM-DD`.
+ *
+ * The municipal hall runs on Philippine time. Using the server clock's local
+ * date would reject a valid submission from a resident filling the form at
+ * 07:00 PHT on a server running in UTC.
+ */
+export function manilaToday(now: Date = new Date()): string {
+  return MANILA_DATE.format(now);
+}
+
+/** `manilaToday()` plus `days`, as `YYYY-MM-DD`. */
+export function manilaDateAfter(days: number, now: Date = new Date()): string {
+  const today = manilaToday(now);
+  const parts = today.split('-').map((part) => Number.parseInt(part, 10));
+  const [year, month, day] = parts;
+  if (year === undefined || month === undefined || day === undefined) return today;
+  return new Date(Date.UTC(year, month - 1, day + days)).toISOString().slice(0, 10);
+}
+
+/** Weekdays only: the municipal hall is closed at weekends. */
+function isWeekday(value: string): boolean {
+  const dow = new Date(`${value}T00:00:00Z`).getUTCDay();
+  return dow >= 1 && dow <= 5;
+}
+
+/**
+ * What a resident may ask for: today or later, on a weekday. The error message
+ * is the copy the form shows, so it states the rule rather than the failure.
+ */
+export const appointmentDateSchema = dateOnlySchema
+  .refine((value) => value >= manilaToday(), 'Choose today or a later date')
+  .refine(
+    isWeekday,
+    'The municipal hall is closed at weekends — choose a Monday to Friday date',
+  );
+
+export const appointmentPurposeSchema = z.enum(APPOINTMENT_PURPOSES);
+export const appointmentStatusSchema = z.enum(APPOINTMENT_STATUSES);
+export const appointmentSlotSchema = z.enum(APPOINTMENT_SLOTS);
+
+/** The console may set or move a booking to any real calendar date. */
+export const appointmentScheduleDateSchema = dateOnlySchema;
+
+export const createAppointmentSchema = z
+  .object({
+    fullName: meaningfulText(2, APPOINTMENT_LIMITS.fullNameMax, 'Full name'),
+    /** One of the two: an email address or a Philippine mobile number. */
+    contact: contactSchema,
+    barangayPsgc: psgcCodeSchema,
+    purpose: appointmentPurposeSchema,
+    preferredDate: appointmentDateSchema,
+    preferredSlot: appointmentSlotSchema,
+    notes: z
+      .string()
+      .trim()
+      .max(APPOINTMENT_LIMITS.notesMax)
+      .nullish()
+      .transform((v) => (v === '' || v == null ? null : v)),
+    turnstileToken: z.string().max(4096).nullish(),
+    /** Honeypot. Any non-empty value means a bot. */
+    website: z.string().max(200).nullish(),
+  })
+  .refine((v) => !v.website || v.website.trim() === '', {
+    message: 'Rejected',
+    path: ['website'],
+  });
+
+export type CreateAppointmentRequest = z.input<typeof createAppointmentSchema>;
+
+export const updateAppointmentSchema = z
+  .object({
+    status: appointmentStatusSchema.optional(),
+    scheduledDate: appointmentScheduleDateSchema.nullish(),
+    scheduledSlot: appointmentSlotSchema.nullish(),
+    assignedOffice: z.string().trim().max(160).nullish(),
+  })
+  .refine((v) => Object.values(v).some((x) => x !== undefined), {
+    message: 'Provide at least one field to update',
+  });
+
+export const listAppointmentsQuerySchema = z.object({
+  status: appointmentStatusSchema.optional(),
+  from: dateOnlySchema.optional(),
+  to: dateOnlySchema.optional(),
+  q: z.string().trim().max(160).optional(),
+  limit: z.coerce.number().int().min(1).max(100).default(20),
+  offset: z.coerce.number().int().min(0).default(0),
+});
+
+export const lookupAppointmentSchema = z.object({
+  referenceCode: z
+    .string()
+    .trim()
+    .toUpperCase()
+    .regex(/^APT-\d{4}-\d{6}$/, 'Reference codes look like APT-2026-000001'),
 });

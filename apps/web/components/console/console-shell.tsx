@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import {
+  CalendarClock,
   ClipboardList,
   ExternalLink,
   LayoutDashboard,
@@ -17,6 +18,7 @@ import { cn } from '@/lib/cn';
 const CONSOLE_NAV = [
   { href: '/console', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/console/reports', label: 'Reports', icon: ClipboardList },
+  { href: '/console/appointments', label: 'Appointments', icon: CalendarClock },
 ] as const;
 
 /**

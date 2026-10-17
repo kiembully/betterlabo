@@ -21,10 +21,14 @@ import type {
   DatasetRegistry,
   FiscalSnapshot,
   HazardRegistry,
+  HotlineBoard,
+  LaboHistory,
   LguDocumentIndex,
   LguRecord,
+  LguUpdates,
   MunicipalityProfile,
   ProjectRecord,
+  ServicesDirectory,
 } from '@betterlabo/shared';
 
 const DATA_DIR = join(process.cwd(), 'public', 'data');
@@ -82,6 +86,26 @@ export async function getLguDocuments(): Promise<LguDocumentIndex | null> {
   return readJson<LguDocumentIndex>('lgu-documents.json');
 }
 
+/** The Municipal Services Directory, compiled from the LGU's own Citizen's Charter PDFs. */
+export async function getServices(): Promise<ServicesDirectory | null> {
+  return readJson<ServicesDirectory>('services.json');
+}
+
+/** Emergency and public-safety numbers, each carrying the source it was read from. */
+export async function getHotlines(): Promise<HotlineBoard | null> {
+  return readJson<HotlineBoard>('hotlines.json');
+}
+
+/** The brief history of Labo. */
+export async function getHistory(): Promise<LaboHistory | null> {
+  return readJson<LaboHistory>('history.json');
+}
+
+/** News posts from the LGU's own site, filtered against the injected-content blocklist. */
+export async function getLguUpdates(): Promise<LguUpdates | null> {
+  return readJson<LguUpdates>('lgu-updates.json');
+}
+
 /** The public path (not the filesystem path) of a compiled data file. */
 export function publicDataPath(file: string): string {
   return `/data/${file}`;
@@ -99,6 +123,10 @@ export const DATA_FILES = {
   hazards: 'hazards.json',
   barangayExposure: 'barangay-exposure.json',
   datasets: 'datasets.json',
+  services: 'services.json',
+  hotlines: 'hotlines.json',
+  history: 'history.json',
+  lguUpdates: 'lgu-updates.json',
 } as const;
 
 /** Shapes an empty state can point at, so the fix is always one command away. */
