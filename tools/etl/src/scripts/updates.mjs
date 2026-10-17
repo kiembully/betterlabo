@@ -46,7 +46,26 @@ const SPAM_TERMS = [
   'zgarnij', 'otzyvy', 'karty-do-gry', 'ice-casino', 'isrobloxsafe', 'roblox',
   'supercat', 'how-to-calcu', '8-ways-to-cr', 'xyhetorax', 'qw1-jpg', 'qw2-jpg',
   'qw3-jpg', 'qw4-jpg', 'qw5-jpg', 'qw6-jpg', 'all-right-casino', '4500-9',
+  // Found by auditing a real compile — a blocklist written from a URL index alone
+  // is always incomplete. Other-language gambling spam is the common case.
+  'kasyno', 'topkasyno', 'betrug', 'royal-pa', 'lll-royal', 'online-dating',
+  'ultimate-guide', 'google-maps', 'hello-world', 'news-1', 'news-2', 'news1',
 ];
+
+/**
+ * A post must look like MUNICIPAL news to be published.
+ *
+ * A blocklist cannot be complete against a site that is actively being injected
+ * into — the first version of this file let through German and Polish casino
+ * affiliate posts and an "Ultimate Guide To Online Dating", because nobody had
+ * written those words down yet. So exclusion is a two-part test: known spam is
+ * rejected outright, and everything else must show at least one positive signal of
+ * being about this municipality or its services. Publishing a casino link under the
+ * municipality's name is far worse than dropping a genuine post, so the burden of
+ * proof sits on inclusion.
+ */
+const LGU_SIGNAL =
+  /(labo|barangay|brgy|mayor|vice|municipal|sanggunian|muni|lgu|cam(arines)?[ -]?norte|bicol|advisory|notice|hiring|vacant|posisyon|benepisyaryo|katao|bayan|program|serbisyo|tulong|payout|pay-out|assistance|covid|health|nutri|vaccin|school|eskwela|brigada|scholar|landfill|interruption|power|peso|tesdamayan|kasalang|kislak|kislap|festival|fiesta|independence|environmental|tree[ -]?planting|graduation|ground[ -]?breaking|budget|ordinance|resolution|assembl|disaster|flood|relief|distribut|award|congratulat|announcement|update|schedule|ceremony|landmark|tourism|infrastructure|road|bridge|sanitary|water|drainage)/i;
 
 /** WordPress auto-drafts and page-builder leftovers that are not editorial content. */
 function isAutoDraft(slug) {
@@ -59,11 +78,13 @@ function isAutoDraft(slug) {
   );
 }
 
-function exclusionReason(slug, title) {
+export function exclusionReason(slug, title) {
   const haystack = `${slug} ${title}`.toLowerCase();
   const term = SPAM_TERMS.find((t) => haystack.includes(t));
   if (term) return `spam:${term}`;
   if (isAutoDraft(slug)) return 'auto-draft';
+  // The positive test. See LGU_SIGNAL for why inclusion carries the burden of proof.
+  if (!LGU_SIGNAL.test(`${slug} ${title}`)) return 'no-lgu-signal';
   return null;
 }
 
@@ -122,9 +143,17 @@ function postIds(urls) {
   return [...ids].sort((a, b) => b - a);
 }
 
+export function plainText(html) {
+  return plain(html);
+}
+
 function plain(html) {
   return String(html ?? '')
     .replace(/<[^>]+>/g, ' ')
+    // Named entities first, then NUMERIC ones generically — WordPress emits
+    // `&#038;` for a plain ampersand, which was rendering literally in a title.
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
     .replace(/&#8217;|&#039;|&rsquo;/g, '’')
     .replace(/&#8220;|&#8221;|&quot;/g, '"')
     .replace(/&#8211;|&ndash;/g, '–')

@@ -1,7 +1,7 @@
 {
   "municipality": "Labo",
   "province": "Camarines Norte",
-  "note": "News posts published by the Municipality of Labo on its own website, read through the site’s WordPress REST API as archived by the Internet Archive. Posts matching the injection blocklist are excluded; see `excluded` for every omission and its reason.",
+  "note": "News posts published by the Municipality of Labo on its own website, read through the site’s WordPress REST API as archived by the Internet Archive. Posts matching the injection blocklist are excluded; see `excluded` for every omission and its reason. Filtering is two-part: known injected content is rejected outright, and a post must also show a positive signal of being municipal news — a blocklist alone proved leaky.",
   "source": {
     "host": "https://labo.gov.ph",
     "api": "https://labo.gov.ph/wp-json/wp/v2/posts",
@@ -9,27 +9,40 @@
     "facebook": "https://www.facebook.com/LGULaboCamNorte",
     "protocol": "Wayback Machine snapshots of the WordPress REST API (the live host challenges scripts)"
   },
-  "count": 2,
+  "count": 18,
   "byYear": {
+    "2020": 8,
+    "2021": 4,
+    "2022": 4,
     "2025": 2
   },
-  "excludedCount": 8,
+  "excludedCount": 40,
   "unreachableCount": 0,
   "excluded": [
     {
-      "id": 16567,
-      "slug": "lgu-labo-vacant-position-2",
-      "reason": "auto-draft"
+      "id": 12114,
+      "slug": "16-ideal-bitcoin-crypto-casinos-usa-jan-2024-compared-reviews-ratings",
+      "reason": "spam:bitcoin"
     },
     {
-      "id": 13760,
-      "slug": "plinko-si-vince-veramente",
-      "reason": "spam:plinko"
+      "id": 1766,
+      "slug": "4500-9",
+      "reason": "spam:4500-9"
     },
     {
-      "id": 13686,
-      "slug": "casumo-bonus-3-codes-and-kupon-ohne-einzahlung",
-      "reason": "spam:casumo"
+      "id": 2687,
+      "slug": "8-ways-to-create-an-amazing-online-dating-profile-5",
+      "reason": "spam:8-ways-to-cr"
+    },
+    {
+      "id": 1645,
+      "slug": "all-right-casino-2022",
+      "reason": "spam:casino"
+    },
+    {
+      "id": 7661,
+      "slug": "azrbaycanda-rsmi-say-5",
+      "reason": "spam:azrbaycan"
     },
     {
       "id": 12773,
@@ -37,9 +50,64 @@
       "reason": "spam:casino"
     },
     {
-      "id": 12114,
-      "slug": "16-ideal-bitcoin-crypto-casinos-usa-jan-2024-compared-reviews-ratings",
+      "id": 1551,
+      "slug": "bitcoin-price-today-btc-to-usd-live-marketcap-and",
       "reason": "spam:bitcoin"
+    },
+    {
+      "id": 1743,
+      "slug": "bukmacher-1xbet-czy-jest-na-terytorium-polski",
+      "reason": "spam:bukmacher"
+    },
+    {
+      "id": 1641,
+      "slug": "bukmeker-parimatch-v-kazahstane",
+      "reason": "spam:bukmeker"
+    },
+    {
+      "id": 13686,
+      "slug": "casumo-bonus-3-codes-and-kupon-ohne-einzahlung",
+      "reason": "spam:casumo"
+    },
+    {
+      "id": 856,
+      "slug": "covid-19-positive-labo-cn-as-of-august-26-2021",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 946,
+      "slug": "covid-19-positive-labo-cn-as-of-august-29-2021",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 1154,
+      "slug": "covid-19-positive-labo-cn-as-of-august-29-2021-copy",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 1568,
+      "slug": "en-yi-bahis-siteleri-listesi",
+      "reason": "spam:bahis"
+    },
+    {
+      "id": 1562,
+      "slug": "five-steps-to-repair-windows-10-without-losing-2",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 1639,
+      "slug": "google-maps-application-programming-interface",
+      "reason": "spam:google-maps"
+    },
+    {
+      "id": 1,
+      "slug": "hello-world",
+      "reason": "spam:hello-world"
+    },
+    {
+      "id": 1564,
+      "slug": "hepsibahis-7-yeni-giri-adresi-hepsibahis7-com",
+      "reason": "spam:bahis"
     },
     {
       "id": 8593,
@@ -47,9 +115,104 @@
       "reason": "spam:how-to-calcu"
     },
     {
-      "id": 7661,
-      "slug": "azrbaycanda-rsmi-say-5",
-      "reason": "spam:azrbaycan"
+      "id": 1643,
+      "slug": "ice-casino-opinie",
+      "reason": "spam:casino"
+    },
+    {
+      "id": 1576,
+      "slug": "isrobloxsafe-for-kids-2",
+      "reason": "spam:isrobloxsafe"
+    },
+    {
+      "id": 1570,
+      "slug": "karty-do-gry-kolekcja-coca-cola-national",
+      "reason": "spam:casino"
+    },
+    {
+      "id": 1228,
+      "slug": "kasalang-bayan-2022",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 16567,
+      "slug": "lgu-labo-vacant-position-2",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 2175,
+      "slug": "lll-royal-panda-betrug-oder-nicht-test-auf",
+      "reason": "spam:betrug"
+    },
+    {
+      "id": 1737,
+      "slug": "lokalne-kasyno-online-pod-topkasynoonline",
+      "reason": "spam:kasyno"
+    },
+    {
+      "id": 1741,
+      "slug": "mr-green-kasyno",
+      "reason": "spam:mr-green"
+    },
+    {
+      "id": 133,
+      "slug": "news-2",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 135,
+      "slug": "news-3",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 131,
+      "slug": "news1",
+      "reason": "spam:news1"
+    },
+    {
+      "id": 1572,
+      "slug": "otzyvy-o-bukmekerskaja-kontora-liga-stavok-rossija-5",
+      "reason": "spam:bukmeker"
+    },
+    {
+      "id": 1770,
+      "slug": "page-539",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 1735,
+      "slug": "parimatch-online-casino-anmeldelse",
+      "reason": "spam:casino"
+    },
+    {
+      "id": 13760,
+      "slug": "plinko-si-vince-veramente",
+      "reason": "spam:plinko"
+    },
+    {
+      "id": 1637,
+      "slug": "supercat-casino-online-recenzja-kasyna-ocena-oraz",
+      "reason": "spam:casino"
+    },
+    {
+      "id": 1560,
+      "slug": "the-ultimate-guide-to-online-dating",
+      "reason": "spam:online-dating"
+    },
+    {
+      "id": 2177,
+      "slug": "vulkanbet-25-euro-bonus-ohne-einzahlung",
+      "reason": "spam:vulkanbet"
+    },
+    {
+      "id": 1574,
+      "slug": "whatever-happened-to-mapquest-4",
+      "reason": "auto-draft"
+    },
+    {
+      "id": 1553,
+      "slug": "xyhetoraxopyxyja",
+      "reason": "spam:xyhetorax"
     },
     {
       "id": 5815,
@@ -85,8 +248,222 @@
         7,
         1
       ]
+    },
+    {
+      "id": 2689,
+      "slug": "happy-birthday-mayor-jojo-francisco",
+      "title": "Happy Birthday Mayor Jojo Francisco",
+      "date": "2022-10-14T15:16:59",
+      "url": "https://labo.gov.ph/happy-birthday-mayor-jojo-francisco/",
+      "excerpt": "We wish you much success not only today but also in your entire life. Thank you for being such a great leader and father of us Laboeños. May you have a Tremendous birthday. Enjoy your day.",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/2697",
+      "archivedAt": "2025-04-14T00:29:03Z",
+      "categoryIds": [
+        30,
+        7
+      ]
+    },
+    {
+      "id": 1848,
+      "slug": "congratulations-lgu-labo",
+      "title": "Congratulations LGU Labo",
+      "date": "2022-07-12T15:23:31",
+      "url": "https://labo.gov.ph/congratulations-lgu-labo/",
+      "excerpt": "Municipality of Labo nakakuha ng 92.5% High Functional National Performance Audit Results of Anti-Drug Abuse Council for 2021",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/8",
+      "archivedAt": "2025-04-14T07:34:38Z",
+      "categoryIds": [
+        7
+      ]
+    },
+    {
+      "id": 1619,
+      "slug": "newly-proclaimed-mayor-vice-mayor-councilors-of-municipality-of-labo",
+      "title": "Newly Proclaimed Mayor, Vice Mayor & Councilors of Municipality of Labo",
+      "date": "2022-05-11T13:02:44",
+      "url": "https://labo.gov.ph/newly-proclaimed-mayor-vice-mayor-councilors-of-municipality-of-labo/",
+      "excerpt": "At exactly 1am, May 11, 2022, the following newly elected municipal officials of Labo were PROCLAIMED by the Municipal Board of Canvassers: Mayor-Elect: Jojo FranciscoVice Mayor-Elect: Alvin BardonSangguniang Bayan Members-Elect:Kenneth OningMay AsisDante AlaonNorman John OcoElpidio TenorioCap VillafuerteRonel Laguador",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/1620",
+      "archivedAt": "2025-04-14T01:06:52Z",
+      "categoryIds": [
+        7,
+        1
+      ]
+    },
+    {
+      "id": 1353,
+      "slug": "2-bakanteng-posisyon-ng-sangguniang-bayan-pinunan-na-ng-dilg-matapos-ang-pagsuspinde-sa-mayor-at-vice-mayor-ng-bayan-ng-labo",
+      "title": "2 BAKANTENG POSISYON NG SANGGUNIANG BAYAN, PINUNAN NA NG DILG MATAPOS ANG PAGSUSPINDE SA MAYOR AT VICE MAYOR NG BAYAN NG LABO",
+      "date": "2022-02-17T14:44:47",
+      "url": "https://labo.gov.ph/2-bakanteng-posisyon-ng-sangguniang-bayan-pinunan-na-ng-dilg-matapos-ang-pagsuspinde-sa-mayor-at-vice-mayor-ng-bayan-ng-labo/",
+      "excerpt": "Itinalaga ng Department of Interior and Local Government bilang Acting Sangguniang Bayan Members sina Michael Dolera at Gemma Villagomez gayundin bilang Acting Municipal Vice Mayor na si Konsehal Cherry May Masbate sa Bayan ng Labo base sa Memorandum na pirmado ni Regional Director Atty. Anthony C. Nuyda, CESO III na m",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/1355",
+      "archivedAt": "2026-02-02T00:49:19Z",
+      "categoryIds": [
+        7
+      ]
+    },
+    {
+      "id": 1151,
+      "slug": "covid-19-advisory",
+      "title": "COVID-19 ADVISORY",
+      "date": "2021-09-01T18:56:03",
+      "url": "https://labo.gov.ph/covid-19-advisory/",
+      "excerpt": "Dahil sa biglaang pagtaas ng kaso ng COVID19 sa Lalawigan ng Camarines Norte, Gov. Tallado, pinaikli sa tatlong (3) araw ang validity rapid antigen test at RT-PCR bilang control measure sa mga border checkpoints ng lalawigan",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/1149",
+      "archivedAt": "2024-11-24T14:53:25Z",
+      "categoryIds": [
+        30,
+        7
+      ]
+    },
+    {
+      "id": 943,
+      "slug": "covid-19-update-labo-camarines-norte",
+      "title": "COVID-19 POSITIVE LABO CN as of August 28, 2021",
+      "date": "2021-08-28T19:44:30",
+      "url": "https://labo.gov.ph/covid-19-update-labo-camarines-norte/",
+      "excerpt": "16 NA PANIBAGONG KASO Bicol case #: 24260 Name:XXX Age: 90 Sex: F Onset of Illness: 8/18/21 History of travel/exposure: None Occupation: None Status: Admitted DRU: Daet RHU 1 Address: Malasugui Labo, CN Bicol case #: 24265 Name: XXX Age: 29 Sex: M Onset of Illness: For Verification History of travel/exposure: For Verif",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/929",
+      "archivedAt": "2026-02-02T10:17:13Z",
+      "categoryIds": [
+        7
+      ]
+    },
+    {
+      "id": 939,
+      "slug": "tesdamayan-program-isinagawa-sa-bayan-ng-labo-at-sta-elena-200-katao-kabilang-ang-ilang-ips-naging-bahagi-ng-ika-27-anibersaryo-ng-tesda",
+      "title": "TESDAMAYAN PROGRAM, ISINAGAWA SA BAYAN NG LABO AT STA. ELENA; 200 KATAO KABILANG ANG ILANG IPs, NAGING BAHAGI NG IKA – 27 ANIBERSARYO NG TESDA",
+      "date": "2021-08-27T18:08:09",
+      "url": "https://labo.gov.ph/tesdamayan-program-isinagawa-sa-bayan-ng-labo-at-sta-elena-200-katao-kabilang-ang-ilang-ips-naging-bahagi-ng-ika-27-anibersaryo-ng-tesda/",
+      "excerpt": "Labis ang tuwa ng dalawang daang katao kabilang na ang ilang Indigenous People (IPs) matapos tumanggap food packs mula sa Technical Education and Skills Development Authority (TESDA) Camarines Norte kaninang tanghali. Ang nasabing mga benepisyaryo ay mula sa Brgy. Bayabas at Guisican sa Bayan ng Labo, at Brgy. Bulala s",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/940",
+      "archivedAt": "2022-07-28T09:53:46Z",
+      "categoryIds": [
+        7
+      ]
+    },
+    {
+      "id": 931,
+      "slug": "25-benepisyaryo-mula-sa-barangay-bagong-silang-1-ng-tgp-partylist-sa-pamamagitan-ng-dole-tupad-tumanggap-ng-cash-payout",
+      "title": "25 BENEPISYARYO MULA SA BARANGAY BAGONG SILANG 1 NG TGP PARTYLIST SA PAMAMAGITAN NG DOLE TUPAD, TUMANGGAP NG CASH PAYOUT",
+      "date": "2021-08-27T12:31:13",
+      "url": "https://labo.gov.ph/25-benepisyaryo-mula-sa-barangay-bagong-silang-1-ng-tgp-partylist-sa-pamamagitan-ng-dole-tupad-tumanggap-ng-cash-payout/",
+      "excerpt": "Personal na tinanggap ng 25 benepisyaryo mula sa Brgy. Bagong Silang 1 ang kanilang payout mula sa TGP Partylist at sa pamamagitan na rin ng TUPAD Program ng Department of Labor and Employment. Sa labinlimang (15) araw na serbisyo, ay tumanggap ang bawat isang benepisyaryo ng 4,650.00 sa pamamagitan ng representative n",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/932",
+      "archivedAt": "2026-02-04T21:17:40Z",
+      "categoryIds": [
+        7
+      ]
+    },
+    {
+      "id": 830,
+      "slug": "kislap-sigla-at-saya-sa-bayan-ng-labo",
+      "title": "Kislap, Sigla At Saya sa Bayan ng Labo",
+      "date": "2020-12-07T10:35:14",
+      "url": "https://labo.gov.ph/kislap-sigla-at-saya-sa-bayan-ng-labo/",
+      "excerpt": "Bagamat tayo ay dumadaan sa ibat ibang pagsubok sa nakalipas na mga araw, tuloy na tuloy parin ang pagbibigay liwanag at pagasa sa ating bayan. Kasama sina Mayor JVA, Admin Jojo F., VM DVP at mga miyembro ng Sangguniang Bayan nilibot natin ang mga palamuti, dekorasyon at nag gagandahang mga belen sa ating bayan. Marami",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/853",
+      "archivedAt": "2025-04-15T03:32:40Z",
+      "categoryIds": [
+        30,
+        7
+      ]
+    },
+    {
+      "id": 826,
+      "slug": "lgu-labo-vacant-position",
+      "title": "LGU Labo Vacant Position",
+      "date": "2020-12-04T10:19:00",
+      "url": "https://labo.gov.ph/lgu-labo-vacant-position/",
+      "excerpt": "Interested and qualified applicants should signify their interest in writing. Attach the following documents to the application letter and send to the address below. Fully accomplished Personal Data Sheet (PDS) with resent passport-sized picture (CS Form No. 212, Revised 2017) which can be downloaded at www.csc.gov.ph;",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/829",
+      "archivedAt": "2025-04-14T19:02:24Z",
+      "categoryIds": [
+        30,
+        7
+      ]
+    },
+    {
+      "id": 803,
+      "slug": "announcement",
+      "title": "Announcement: LGU-LABO URGENT HIRING",
+      "date": "2020-10-17T10:36:46",
+      "url": "https://labo.gov.ph/announcement/",
+      "excerpt": "LGU-LABO URGENT HIRING:NURSES CONTRACTUAL STATUS. SUBMIT YOUR RESUME AND OTHER CREDENTIALS TO HR OFFICE, GROUND FLOOR MUNICIPAL BUILDING, LABO, CAMARINES NORTE.",
+      "featuredMediaUrl": null,
+      "archivedAt": "2025-04-14T01:05:45Z",
+      "categoryIds": [
+        30
+      ]
+    },
+    {
+      "id": 683,
+      "slug": "covid-19-update",
+      "title": "COVID-19 Update",
+      "date": "2020-10-01T11:07:16",
+      "url": "https://labo.gov.ph/covid-19-update/",
+      "excerpt": "𝐁𝐈𝐂𝐎𝐋 𝐑𝐄𝐆𝐈𝐎𝐍As of September 24, 2020𝐂𝐀𝐒𝐄𝐒Cumulative Cases (27 March to 24 Sept 2020 ) 1,816 I. 𝐀𝐂𝐓𝐈𝐕𝐄 𝐂𝐀𝐒𝐄𝐒: 410 (22.58%) a. Previously Reported and Still Sick Cases – 388 (94.63%)b. Newly Reported Sick Cases (reported 24 Sept) – 22 (5.37%) Distribution of Newly Reported Cases: ALBAY: 9 (40.9",
+      "featuredMediaUrl": null,
+      "archivedAt": "2025-04-14T00:24:29Z",
+      "categoryIds": [
+        30
+      ]
+    },
+    {
+      "id": 689,
+      "slug": "power-service-interruption-september-19-2020-sabado",
+      "title": "Power Interruption: September 19, 2020 (Sabado)",
+      "date": "2020-09-16T23:20:32",
+      "url": "https://labo.gov.ph/power-service-interruption-september-19-2020-sabado/",
+      "excerpt": "PATALASTAS NG POWER SERVICE INTERRUPTION(NATIONAL GRID CORPORATION OF THE PHILIPPINES’POWER SERVICE INTERRUPTION) Magkakaroon ng power service interruption sa:PETSA : September 19, 2020 (Sabado)ORAS : 6:00AM – 6:00PM (12 oras)SANHI : To facilitate replacement of 69kV LA for Labo 50MVA T02; and to conduct derusting and",
+      "featuredMediaUrl": null,
+      "archivedAt": "2025-04-14T06:22:26Z",
+      "categoryIds": [
+        30
+      ]
+    },
+    {
+      "id": 692,
+      "slug": "ground-breaking-ceremonies-of-engineered-sanitary-landfill-and-new-government-center",
+      "title": "Ground Breaking Ceremonies of Engineered Sanitary Landfill and New Government Center",
+      "date": "2020-09-08T11:24:01",
+      "url": "https://labo.gov.ph/ground-breaking-ceremonies-of-engineered-sanitary-landfill-and-new-government-center/",
+      "excerpt": "Ground Breaking Ceremonies of Engineered Sanitary Landfill at Brgy. Masalong, Labo, Camarines Norte and New Government Center at Brgy. Bulhao, Labo, Camarines Norte #BetterLaboBetterLife…#ForTheLoveOfOurCountry…",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/170",
+      "archivedAt": "2025-04-24T14:51:47Z",
+      "categoryIds": [
+        7
+      ]
+    },
+    {
+      "id": 661,
+      "slug": "peso-labo-advisory",
+      "title": "PESO LABO ADVISORY: Malasakit",
+      "date": "2020-03-16T22:51:16",
+      "url": "https://labo.gov.ph/peso-labo-advisory/",
+      "excerpt": "Sana naman po ang mga umuwi sa Labo at sa iba pang bayan galing sa mga areas na infected ng COVID-19 ay sumunod sa ipinaguutos na mag self quarantine ng 14 days para naman po mapigil ang pagkalat ng virus. Sa mga Barangay Officials naman po pakiusap maging vigilant tayo sa pagbabantay sa kanya kanyang [&hellip;]",
+      "featuredMediaUrl": null,
+      "archivedAt": "2025-04-24T21:06:44Z",
+      "categoryIds": [
+        30
+      ]
+    },
+    {
+      "id": 681,
+      "slug": "peso-labo-advisory-ofws",
+      "title": "PESO LABO ADVISORY: OFWs",
+      "date": "2020-03-16T11:05:03",
+      "url": "https://labo.gov.ph/peso-labo-advisory-ofws/",
+      "excerpt": "Sa mga OFWs po na kauuwi lang at pabalik sa kanilang employer after ng bakasyon na mag aavail sa PESO LABO ng FREE ONLINE APPOINTMENT ASSISTANCE SA OWWA PARA MAKAKUHA KAYO NG OVERSEAS EMPLOYMENT CERTIFICATE (OEC) pakiusap po wag na kayong pumunta sa aming tanggapan (PESO Labo, Camarines Norte) mag message na lang po ka",
+      "featuredMediaUrl": null,
+      "archivedAt": "2026-02-06T23:18:20Z",
+      "categoryIds": [
+        30
+      ]
     }
   ],
-  "generatedAt": "2026-10-17T07:48:00.079Z",
-  "dataHash": "b7fb23aa9be5394a26ec8a20745a08144a046efcf8047ced7fd3b8416e91f1f8"
+  "generatedAt": "2026-10-17T08:09:16.896Z",
+  "dataHash": "204b802ec6731a7ad86244b5b238fa506cb77493f3583eda8c85f9a2ea490a48",
+  "refilteredAt": "2026-10-17T08:08:51.365Z"
 }

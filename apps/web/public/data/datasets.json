@@ -80,8 +80,8 @@
         "apps/web/public/data/lgu-updates.json"
       ],
       "license": "Public domain (Philippine government work)",
-      "retrievedAt": "2026-10-17T07:48:00.081Z",
-      "note": "2 posts compiled, 8 excluded by the injection blocklist."
+      "retrievedAt": "2026-10-17T08:07:44.494Z",
+      "note": "24 posts compiled, 34 excluded by the injection blocklist."
     },
     {
       "id": "labo-lgu-website",
@@ -184,6 +184,6 @@
       "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
     }
   ],
-  "dataHash": "4be922ddb44974baac7d7b356b4238bb5816d2f035cfc444c410e81cf8870dc1",
-  "generatedAt": "2026-10-17T07:48:00.123Z"
+  "dataHash": "965c7e31821ba8bd3d2587e4773a07ecb978cd4cd8e290c8bd6d9f70c150019d",
+  "generatedAt": "2026-10-17T08:07:44.559Z"
 }
