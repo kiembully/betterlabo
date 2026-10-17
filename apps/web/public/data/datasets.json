@@ -11,7 +11,7 @@
       "license": "Public Domain",
       "licenseUrl": null,
       "attributionText": "Local fiscal data compiled and published by the Bureau of Local Government Finance (BLGF), Department of Finance.",
-      "retrievedAt": "2026-10-16T23:34:23.842Z",
+      "retrievedAt": "2026-10-17T23:06:46.092Z",
       "sourceVersion": "FY 2024 (Preliminary)",
       "rowCount": 95,
       "bytes": 1935275,
@@ -36,7 +36,7 @@
       "license": "CC0 1.0 Universal",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "attributionText": "Infrastructure project data from the official DPWH transparency platform, packaged by BetterGov.ph.",
-      "retrievedAt": "2026-10-16T23:34:26.575Z",
+      "retrievedAt": "2026-10-17T23:06:47.173Z",
       "sourceVersion": "2025-11-29",
       "rowCount": 309,
       "bytes": 24330129,
@@ -48,42 +48,6 @@
       "unavailable": false
     },
     {
-      "id": "labo-emergency-contacts",
-      "title": "Emergency and public-safety contact numbers for Labo",
-      "publisher": "Compiled from the LGU, CNPPO, BFP, DOH and the national eHotlines portal",
-      "sourceUrl": "https://ehotlines.e.gov.ph/",
-      "outputs": [
-        "apps/web/public/data/hotlines.json"
-      ],
-      "license": "Public domain (Philippine government work)",
-      "retrievedAt": "2026-10-17",
-      "note": "12 entries; 0 local defects and 2 upstream data defects recorded."
-    },
-    {
-      "id": "labo-history",
-      "title": "A brief history of the Municipality of Labo",
-      "publisher": "Compiled from NHI/NHCP markers, the Official Gazette, PSA, the provincial government and the LGU",
-      "sourceUrl": "https://camsnorte.com/history/",
-      "outputs": [
-        "apps/web/public/data/history.json"
-      ],
-      "license": "Public domain (Philippine government work) / cited third parties",
-      "retrievedAt": "2026-10-17",
-      "note": "20 citations; 5 commonly repeated claims excluded as unsourced."
-    },
-    {
-      "id": "labo-lgu-updates",
-      "title": "Municipality of Labo — news posts (WordPress REST API, via Wayback Machine)",
-      "publisher": "Municipality of Labo, Camarines Norte (labo.gov.ph)",
-      "sourceUrl": "https://labo.gov.ph/wp-json/wp/v2/posts",
-      "outputs": [
-        "apps/web/public/data/lgu-updates.json"
-      ],
-      "license": "Public domain (Philippine government work)",
-      "retrievedAt": "2026-10-17T08:07:44.494Z",
-      "note": "24 posts compiled, 34 excluded by the injection blocklist."
-    },
-    {
       "id": "labo-lgu-website",
       "title": "Municipality of Labo official website",
       "publisher": "Municipal Government of Labo, Camarines Norte",
@@ -93,29 +57,14 @@
       "license": "Public domain (per the site footer: \"All content is in the public domain unless otherwise stated.\")",
       "licenseUrl": "https://labo.gov.ph/",
       "attributionText": "Municipal Government of Labo, Camarines Norte — official website (labo.gov.ph). Retrieved via the Internet Archive Wayback Machine; each section records its snapshot date.",
-      "retrievedAt": "2026-10-16T00:17:47.259Z",
-      "sourceVersion": "snapshot 2026-02-01",
-      "rowCount": 40,
-      "bytes": 193017,
+      "retrievedAt": "2026-10-16T23:37:46.543Z",
+      "sourceVersion": null,
+      "rowCount": null,
+      "bytes": null,
       "sha256": null,
-      "outputs": [
-        "apps/web/public/data/lgu.json"
-      ],
-      "notes": "Not compiled in this run: no task in this run produced it Read from Wayback captures because the live host is Cloudflare-gated. Officials capture 2026-02-01; executive names last stated 2025-05-16; legislative roster as of 2025-05-16. 20 department heads, 7 section heads, 11 legislative members. The LGU's own barangay list cross-checks 52/52 against the PSGC-compiled index.",
-      "unavailable": false,
-      "lastAttemptUnavailable": true
-    },
-    {
-      "id": "labo-services-directory",
-      "title": "Municipal Services Directory (compiled from the LGU's own Citizen's Charter PDFs)",
-      "publisher": "Municipality of Labo, Camarines Norte (labo.gov.ph)",
-      "sourceUrl": "https://labo.gov.ph/services/citizens-charter/",
-      "outputs": [
-        "apps/web/public/data/services.json"
-      ],
-      "license": "Public domain (Philippine government work)",
-      "retrievedAt": "2026-10-17T07:24:06.687Z",
-      "note": "51 services across 5 categories; 26 published gaps recorded."
+      "outputs": [],
+      "notes": "Not compiled in this run: no task in this run produced it",
+      "unavailable": true
     },
     {
       "id": "noah-hazard-maps",
@@ -127,7 +76,7 @@
       "license": "ODC-ODbL",
       "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
       "attributionText": "Hazard layers produced by Project NOAH, Department of Science and Technology, Philippines.",
-      "retrievedAt": "2026-10-16T23:37:43.627Z",
+      "retrievedAt": "2026-10-17T23:10:13.790Z",
       "sourceVersion": "2026-04-11",
       "rowCount": 13,
       "bytes": 39715669,
@@ -152,7 +101,7 @@
       "license": "MIT",
       "licenseUrl": "https://github.com/bendlikeabamboo/barangay-boundaries-repository/blob/main/LICENSE",
       "attributionText": "Boundary polygons derived from PSA Philippine Standard Geographic Code snapshots (2023-10-24) and NAMRIA administrative-boundary shapefiles (v2023-11-06), packaged by Manuel Balmeo.",
-      "retrievedAt": "2026-10-16T23:34:11.370Z",
+      "retrievedAt": "2026-10-17T23:06:44.690Z",
       "sourceVersion": "v2026.4.13.0",
       "rowCount": 52,
       "bytes": 72910665,
@@ -188,7 +137,6 @@
       "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
     }
   ],
-  "dataHash": "470b123d11f56d5112c698234e8d88acafc6c68e756bc5d03fbc72335f4d3d0a",
-  "generatedAt": "2026-10-17T09:08:34.585Z",
-  "note": "Registry of every compiled source. Merged from this branch (services, hotlines, history, LGU news feed) and main’s scheduled refresh (hazard layers, exposure, profile); where a source exists on both sides, the more recently compiled entry wins."
+  "dataHash": "496c6ea164a29ac386e321f22c2bb3ad3bf448578089b9d93fe180e469e601cf",
+  "generatedAt": "2026-10-17T23:10:16.457Z"
 }
