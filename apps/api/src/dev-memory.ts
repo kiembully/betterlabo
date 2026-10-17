@@ -21,6 +21,7 @@ import { getDefaultRegistry } from './barangays.js';
 import { loadConfig } from './config.js';
 import { computeReportStats } from './lib/stats.js';
 import { errorMessage, log, setLogLevel } from './logger.js';
+import { SESSION_COOKIE } from './middleware/auth.js';
 import { SEED_REPORTS } from './seed-data.js';
 import { createReport, updateReport } from './services/report-service.js';
 import { connectDatabase, disconnectDatabase } from './db.js';
@@ -171,11 +172,15 @@ async function runSeed(): Promise<number> {
 interface ApiResponse {
   status: number;
   body: unknown;
+  /** Raw `Set-Cookie` header, when the response carried one. */
+  setCookie: string | null;
 }
 
 interface CallInit {
   body?: unknown;
   token?: string;
+  /** Sent back as a `Cookie` header — how the console's session actually travels. */
+  cookie?: string;
 }
 
 async function runSmoke(): Promise<number> {
@@ -215,6 +220,7 @@ async function runSmoke(): Promise<number> {
     const headers: Record<string, string> = { Accept: 'application/json' };
     if (init.body !== undefined) headers['Content-Type'] = 'application/json';
     if (init.token !== undefined) headers['Authorization'] = `Bearer ${init.token}`;
+    if (init.cookie !== undefined) headers['Cookie'] = init.cookie;
 
     const response = await fetch(`${base}${path}`, {
       method,
@@ -229,7 +235,13 @@ async function runSmoke(): Promise<number> {
     } catch {
       body = text;
     }
-    return { status: response.status, body };
+    /**
+     * The cookie has to be observable, because that is the console's real
+     * transport. Without it this harness could only test the bearer path, which
+     * is exactly how a sign-in that never worked shipped unnoticed.
+     */
+    const setCookie = response.headers.getSetCookie?.()[0] ?? null;
+    return { status: response.status, body, setCookie };
   };
 
   const validReport = {
@@ -414,6 +426,47 @@ async function runSmoke(): Promise<number> {
       'POST /api/admin/session exchanges the admin token for a session',
       session.status === 201 && sessionToken.length > 0,
       `status=${session.status}`,
+    );
+
+    /*
+     * The console's real transport is the session COOKIE, not the bearer token.
+     * Assert the whole round trip — issue it, send it back, be recognised — because
+     * bearer-only coverage is exactly how a sign-in that could never succeed
+     * survived 34 green assertions.
+     */
+    const cookieValue = (session.setCookie ?? '').split(';')[0] ?? '';
+    check(
+      'POST /api/admin/session sets an httpOnly session cookie',
+      cookieValue.startsWith(`${SESSION_COOKIE}=`) && /httponly/i.test(session.setCookie ?? ''),
+      `set-cookie=${(session.setCookie ?? '(none)').slice(0, 90)}`,
+    );
+
+    const withCookie = await call('GET', '/api/admin/session', { cookie: cookieValue });
+    check(
+      'GET /api/admin/session reports authenticated for that cookie',
+      withCookie.status === 200 && pick(withCookie.body, 'authenticated') === true,
+      `status=${withCookie.status} body=${JSON.stringify(withCookie.body).slice(0, 120)}`,
+    );
+
+    const anonSession = await call('GET', '/api/admin/session');
+    check(
+      'GET /api/admin/session answers 200/false when anonymous',
+      anonSession.status === 200 && pick(anonSession.body, 'authenticated') === false,
+      `status=${anonSession.status} body=${JSON.stringify(anonSession.body).slice(0, 120)}`,
+    );
+
+    const cookieCanList = await call('GET', '/api/admin/reports', { cookie: cookieValue });
+    check(
+      'the session cookie authorises the console API',
+      cookieCanList.status === 200,
+      `status=${cookieCanList.status}`,
+    );
+
+    const signOut = await call('DELETE', '/api/admin/session', { cookie: cookieValue });
+    check(
+      'DELETE /api/admin/session clears the cookie',
+      signOut.status === 200 && /max-age=0|expires=/i.test(signOut.setCookie ?? ''),
+      `set-cookie=${(signOut.setCookie ?? '(none)').slice(0, 90)}`,
     );
 
     const sandbox = await call('GET', '/api/admin/reports', { token: sessionToken });

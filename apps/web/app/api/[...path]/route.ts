@@ -142,6 +142,21 @@ async function proxy(request: NextRequest, context: { params: Promise<{ path?: s
   }
 
   const outHeaders = new Headers(upstream.headers);
+  /**
+   * Forward `Set-Cookie` explicitly.
+   *
+   * `Set-Cookie` is special in the Fetch API — a "forbidden response-header
+   * name" that implementations may filter out of a `Headers` copy, and which
+   * `get()` returns null for. The console's whole session lives in that cookie,
+   * so relying on the copy alone would break sign-in on any runtime that filters
+   * it. `getSetCookie()` returns them unjoined, which is the only form that
+   * survives multiple cookies.
+   */
+  const setCookies = upstream.headers.getSetCookie?.() ?? [];
+  if (setCookies.length > 0) {
+    outHeaders.delete('set-cookie');
+    for (const cookie of setCookies) outHeaders.append('set-cookie', cookie);
+  }
   // A proxied response must not be cached as if it were static data.
   outHeaders.set('Cache-Control', 'no-store');
   return new Response(upstream.body, {
