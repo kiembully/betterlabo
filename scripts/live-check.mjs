@@ -77,6 +77,16 @@ async function dropCheckDb() {
  * A preset env var wins over `.env.local` (verified), so the override holds.
  */
 const CHECK_DB = process.env['LIVECHECK_DB'] ?? 'betterlabo_livecheck';
+
+/**
+ * `.env.local` is loaded here so the console assertions below can sign in with the
+ * real ADMIN_TOKEN. A missing file is not an error — those checks skip instead.
+ */
+try {
+  process.loadEnvFile(join(repoRoot, '.env.local'));
+} catch {
+  /* no local env — the console checks are skipped */
+}
 const child = spawn(
   process.execPath,
   [join(repoRoot, 'node_modules', 'next', 'dist', 'bin', 'next'), 'start', '-p', String(PORT)],
@@ -242,6 +252,62 @@ if (post.status === 201) {
     post.status === 503 && postBody.includes('db_unavailable'),
     `HTTP ${post.status} ${postBody.slice(0, 160)}`,
   );
+}
+
+console.log('== console sign-in through the bridge (the cookie round trip) ==');
+/*
+ * The console authenticates with an httpOnly session cookie. EVERY other check in
+ * this file used a bearer header, which is why a sign-in that could never work —
+ * no cookie ever set, no `/session` endpoint to ask, an envelope shape the client
+ * could not read — passed all of them. Assert the real path: exchange the token,
+ * keep the cookie, be recognised by it.
+ */
+const adminToken = (process.env['ADMIN_TOKEN'] ?? '').trim();
+if (!adminToken) {
+  console.log('SKIP console sign-in (ADMIN_TOKEN is not set in .env.local)');
+} else {
+  const login = await fetch(`${BASE}/api/admin/session`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token: adminToken }),
+  });
+  const cookie = (login.headers.getSetCookie?.()[0] ?? '').split(';')[0];
+  check(
+    'POST /api/admin/session through the bridge sets a session cookie',
+    login.status === 201 && cookie.includes('='),
+    `HTTP ${login.status}, set-cookie ${cookie ? 'present' : '(absent)'}`,
+  );
+
+  const status = await fetch(`${BASE}/api/admin/session`, { headers: { Cookie: cookie } });
+  const statusBody = await status.json().catch(() => ({}));
+  check(
+    'GET /api/admin/session reports authenticated for that cookie',
+    status.status === 200 && statusBody.authenticated === true,
+    `HTTP ${status.status} authenticated=${statusBody.authenticated}`,
+  );
+
+  const anon = await fetch(`${BASE}/api/admin/session`);
+  const anonBody = await anon.json().catch(() => ({}));
+  check(
+    'GET /api/admin/session answers 200/false when anonymous',
+    anon.status === 200 && anonBody.authenticated === false,
+    `HTTP ${anon.status} authenticated=${anonBody.authenticated}`,
+  );
+
+  const listWithCookie = await fetch(`${BASE}/api/admin/reports?limit=1`, {
+    headers: { Cookie: cookie },
+  });
+  check(
+    'the session cookie lists reports',
+    listWithCookie.status === 200,
+    `HTTP ${listWithCookie.status}`,
+  );
+
+  const cleared = await fetch(`${BASE}/api/admin/session`, {
+    method: 'DELETE',
+    headers: { Cookie: cookie },
+  });
+  check('DELETE /api/admin/session succeeds', cleared.status === 200, `HTTP ${cleared.status}`);
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

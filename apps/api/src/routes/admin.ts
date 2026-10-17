@@ -23,7 +23,7 @@ import { sendItem, sendList, sendOk } from '../http.js';
 import { asyncHandler } from '../lib/async-handler.js';
 import { computeReportStats } from '../lib/stats.js';
 import { zodIssues } from '../lib/validation.js';
-import { adminTokenMatches, issueAdminSession, requireAdmin } from '../middleware/auth.js';
+import { adminTokenMatches, clearSessionCookie, isAdminRequest, issueAdminSession, requireAdmin, setSessionCookie } from '../middleware/auth.js';
 import { toReport } from '../models/report.js';
 import {
   createReport,
@@ -67,9 +67,35 @@ export function createAdminRouter(deps: AdminRoutesDeps): Router {
         throw fail.unauthorized('That admin token is not valid.');
       }
       const session = issueAdminSession(deps.config);
+      // The console never sees this token in JavaScript: it arrives as an
+      // httpOnly cookie. The body still carries it for scripts and CI.
+      setSessionCookie(req, res, session);
       sendItem(res, { token: session.token, expiresAt: session.expiresAt }, 201);
     }),
   );
+
+  /**
+   * "Am I signed in?" — the question the console asks on load and after login.
+   *
+   * Registered BEFORE `requireAdmin` because its whole purpose is to answer for
+   * an anonymous visitor, and it must answer 200 either way. The shape is a bare
+   * `{ ok, authenticated }`, not the `{ item }` envelope: the console reads
+   * `res.authenticated` directly, and wrapping it is how this endpoint would
+   * silently report "signed out" forever.
+   */
+  router.get('/session', (req, res) => {
+    res.status(200).json({
+      ok: true,
+      authenticated: deps.config.adminToken !== '' && isAdminRequest(deps.config, req),
+    });
+  });
+
+  /** Sign-out. Idempotent, and deliberately outside `requireAdmin`: clearing a
+   *  cookie must work even when the session it names has already expired. */
+  router.delete('/session', (req, res) => {
+    clearSessionCookie(req, res);
+    sendOk(res);
+  });
 
   router.use(requireAdmin(deps.config));
 
