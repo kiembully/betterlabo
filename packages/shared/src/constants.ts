@@ -154,3 +154,102 @@ export const DATA_LICENSE = {
   code: 'MIT',
   url: 'https://opensource.org/license/mit',
 } as const;
+
+/**
+ * Appointment taxonomy: the municipal services a resident can realistically
+ * book a slot with. `mayors_office` is first because it is the counter most
+ * residents ask for by name; the rest mirror the offices a walk-in would be
+ * sent to (BPLO, Civil Registry, Treasurer, RHU, MSWDO, MAO, MEO, MENRO).
+ *
+ * A booking here is a *request* for a slot, never a confirmed schedule — the
+ * office confirms it. Nothing in this taxonomy is a claim about the LGU's
+ * internal structure; it is a routing hint the console can override.
+ */
+export const APPOINTMENT_PURPOSES = [
+  'mayors_office',
+  'business_permit_licensing',
+  'civil_registry',
+  'treasury_tax_payment',
+  'health_services',
+  'social_welfare',
+  'agriculture',
+  'engineering_public_works',
+  'environment',
+] as const;
+
+export type AppointmentPurpose = (typeof APPOINTMENT_PURPOSES)[number];
+
+export const APPOINTMENT_PURPOSE_LABELS: Record<AppointmentPurpose, string> = {
+  mayors_office: 'Mayor’s Office',
+  business_permit_licensing: 'Business permit & licensing',
+  civil_registry: 'Civil registry (birth, marriage, death certificates)',
+  treasury_tax_payment: 'Treasury & tax payments',
+  health_services: 'Health services',
+  social_welfare: 'Social welfare',
+  agriculture: 'Agriculture',
+  engineering_public_works: 'Engineering & public works',
+  environment: 'Environment',
+};
+
+export const APPOINTMENT_STATUSES = [
+  'requested',
+  'confirmed',
+  'rescheduled',
+  'completed',
+  'cancelled',
+  'no_show',
+] as const;
+
+export type AppointmentStatus = (typeof APPOINTMENT_STATUSES)[number];
+
+export const APPOINTMENT_STATUS_LABELS: Record<AppointmentStatus, string> = {
+  requested: 'Requested',
+  confirmed: 'Confirmed',
+  rescheduled: 'Rescheduled',
+  completed: 'Completed',
+  cancelled: 'Cancelled',
+  no_show: 'No show',
+};
+
+/**
+ * The two bookable windows. The municipal hall keeps office hours, so a
+ * half-day slot is the finest granularity a resident can be promised.
+ */
+export const APPOINTMENT_SLOTS = ['morning', 'afternoon'] as const;
+
+export type AppointmentSlot = (typeof APPOINTMENT_SLOTS)[number];
+
+export const APPOINTMENT_SLOT_LABELS: Record<AppointmentSlot, string> = {
+  morning: 'Morning (8:00 AM – 12:00 PM)',
+  afternoon: 'Afternoon (1:00 PM – 5:00 PM)',
+};
+
+/**
+ * Default routing table for appointments — the same "likely office" contract as
+ * `REPORT_DEFAULT_OFFICE`, and equally editable by the console operator.
+ */
+export const APPOINTMENT_DEFAULT_OFFICE: Record<AppointmentPurpose, string | null> = {
+  mayors_office: 'Office of the Municipal Mayor',
+  business_permit_licensing: 'Business Permits and Licensing Office (BPLO)',
+  civil_registry: 'Office of the Municipal Civil Registrar (MCR)',
+  treasury_tax_payment: 'Municipal Treasurer’s Office (MTO)',
+  health_services: 'Rural Health Unit (RHU I / II)',
+  social_welfare: 'MSWDO',
+  agriculture: 'Municipal Agriculture Office (MAO)',
+  engineering_public_works: 'Municipal Engineering Office (MEO)',
+  environment: 'Municipal Environment & Natural Resources Office (MENRO)',
+};
+
+/** Explicit, honest limits of the appointment intake form. */
+export const APPOINTMENT_LIMITS = {
+  fullNameMax: 120,
+  contactMax: 160,
+  notesMax: 1000,
+} as const;
+
+/**
+ * Appointment codes are issued from their OWN counter under their OWN prefix,
+ * so an appointment can never consume or collide with a report number
+ * (`LB-2026-000042` vs `APT-2026-000001`).
+ */
+export const APPOINTMENT_REFERENCE_PREFIX = 'APT';

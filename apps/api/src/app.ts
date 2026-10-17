@@ -15,6 +15,7 @@ import { errorHandler, notFoundHandler } from './middleware/error-handler.js';
 import { requestLogger } from './middleware/request-logger.js';
 import { createAdminRouter } from './routes/admin.js';
 import { createHealthRouter } from './routes/health.js';
+import { createPublicAppointmentsRouter } from './routes/appointments.js';
 import { createPublicReportsRouter } from './routes/reports.js';
 
 export interface CreateAppOptions {
@@ -67,6 +68,7 @@ export function createApp(options: CreateAppOptions): Express {
 
   app.use('/api', createHealthRouter());
   app.use('/api', createPublicReportsRouter({ config, registry }));
+  app.use('/api', createPublicAppointmentsRouter({ config, registry }));
   app.use('/api/admin', createAdminRouter({ config, registry }));
 
   app.use(notFoundHandler);

@@ -16,6 +16,7 @@ import type { AddressInfo } from 'node:net';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import mms from 'mongodb-memory-server';
+import { manilaToday } from '@betterlabo/shared';
 import { createApp } from './app.js';
 import { getDefaultRegistry } from './barangays.js';
 import { loadConfig } from './config.js';
@@ -91,6 +92,25 @@ function isNonEmptyString(value: unknown): boolean {
 function countOf(value: unknown): number {
   const numeric = typeof value === 'number' ? value : Number(value);
   return Number.isFinite(numeric) ? numeric : -1;
+}
+
+/**
+ * The next weekday (`YYYY-MM-DD`) at least `offsetDays` ahead, in Asia/Manila.
+ *
+ * Appointment assertions need a date the intake schema will accept — today or
+ * later, and a weekday — so the date is computed rather than hard-coded, and the
+ * smoke suite does not depend on the day it happens to run.
+ */
+function nextWeekdayDate(offsetDays = 1): string {
+  const parts = manilaToday().split('-').map((part) => Number.parseInt(part, 10));
+  const [year, month, day] = parts;
+  if (year === undefined || month === undefined || day === undefined) return manilaToday();
+  for (let step = offsetDays; step < offsetDays + 7; step += 1) {
+    const probe = new Date(Date.UTC(year, month - 1, day + step));
+    const dow = probe.getUTCDay();
+    if (dow >= 1 && dow <= 5) return probe.toISOString().slice(0, 10);
+  }
+  return manilaToday();
 }
 
 /* ───────────────────────────── mode: server ──────────────────────────────── */
@@ -276,8 +296,8 @@ async function runSmoke(): Promise<number> {
     const emptyStats = await call('GET', '/api/reports/stats');
     check(
       'GET /api/reports/stats starts at zero',
-      emptyStats.status === 200 && countOf(pick(emptyStats.body, 'total')) === 0,
-      `total=${String(pick(emptyStats.body, 'total'))}`,
+      emptyStats.status === 200 && countOf(pick(emptyStats.body, 'item.total')) === 0,
+      `total=${String(pick(emptyStats.body, 'item.total'))}`,
     );
 
     const missingRoute = await call('GET', '/api/does-not-exist');
@@ -535,17 +555,19 @@ async function runSmoke(): Promise<number> {
     const adminStats = await call('GET', '/api/admin/stats', { token: sessionToken });
     check(
       'GET /api/admin/stats aggregates the reports',
-      adminStats.status === 200 && countOf(pick(adminStats.body, 'total')) >= 1,
-      `status=${adminStats.status} total=${String(pick(adminStats.body, 'total'))}`,
+      adminStats.status === 200 && countOf(pick(adminStats.body, 'item.total')) >= 1,
+      `status=${adminStats.status} total=${String(pick(adminStats.body, 'item.total'))}`,
     );
 
     const publicStats = await call('GET', '/api/reports/stats');
     check(
       'public stats count the report under its new status',
       publicStats.status === 200 &&
-        countOf(pick(publicStats.body, 'total')) >= 1 &&
-        asArray(pick(publicStats.body, 'byStatus')).some((entry) => pick(entry, 'status') === 'in_progress'),
-      `status=${publicStats.status} byStatus=${JSON.stringify(pick(publicStats.body, 'byStatus'))}`,
+        countOf(pick(publicStats.body, 'item.total')) >= 1 &&
+        asArray(pick(publicStats.body, 'item.byStatus')).some(
+          (entry) => pick(entry, 'status') === 'in_progress',
+        ),
+      `status=${publicStats.status} byStatus=${JSON.stringify(pick(publicStats.body, 'item.byStatus'))}`,
     );
 
     /* ── abuse protection ────────────────────────────────────────────────── */
@@ -576,6 +598,215 @@ async function runSmoke(): Promise<number> {
       token: sessionToken,
     });
     check('the deleted report is gone', afterDelete.status === 404, `status=${afterDelete.status}`);
+
+    /* ── appointments ────────────────────────────────────────────────────── */
+    const validAppointment = {
+      fullName: 'Smoke Applicant',
+      contact: 'smoke.applicant@example.ph',
+      barangayPsgc: SMOKE_BARANGAY_PSGC,
+      purpose: 'mayors_office',
+      preferredDate: nextWeekdayDate(),
+      preferredSlot: 'morning',
+      notes: 'Bringing the barangay certificate and one valid ID.',
+    };
+
+    const createdAppointment = await call('POST', '/api/appointments', { body: validAppointment });
+    const appointmentItem = pick(createdAppointment.body, 'item');
+    const appointmentId = String(pick(appointmentItem, 'id') ?? '');
+    const appointmentCode = String(pick(appointmentItem, 'referenceCode') ?? '');
+
+    check(
+      'POST /api/appointments creates a request',
+      createdAppointment.status === 201 && appointmentId.length > 0,
+      `status=${createdAppointment.status} body=${JSON.stringify(createdAppointment.body).slice(0, 200)}`,
+    );
+    check(
+      'POST /api/appointments returns an APT reference code',
+      /^APT-\d{4}-\d{6}$/.test(appointmentCode),
+      `referenceCode=${appointmentCode}`,
+    );
+    check(
+      'an appointment code never collides with a report code',
+      appointmentCode !== referenceCode,
+      `appointmentCode=${appointmentCode} reportCode=${referenceCode}`,
+    );
+    check(
+      'a new appointment starts requested with no slot booked',
+      pick(appointmentItem, 'status') === 'requested' &&
+        pick(appointmentItem, 'scheduledDate') === null,
+      `status=${String(pick(appointmentItem, 'status'))} scheduledDate=${String(pick(appointmentItem, 'scheduledDate'))}`,
+    );
+    check(
+      'the appointment records a citizen audit entry',
+      pick(appointmentItem, 'history.0.actor') === 'citizen' &&
+        pick(appointmentItem, 'history.0.action') === 'requested',
+      `history.0=${JSON.stringify(pick(appointmentItem, 'history.0'))}`,
+    );
+    check(
+      'the appointment public projection hides the applicant identity',
+      !('contact' in asRecord(appointmentItem)) && !('fullName' in asRecord(appointmentItem)),
+      `keys=${Object.keys(asRecord(appointmentItem)).join(',')}`,
+    );
+
+    const appointmentLookup = await call(
+      'GET',
+      `/api/appointments/lookup?referenceCode=${encodeURIComponent(appointmentCode)}`,
+    );
+    check(
+      'GET /api/appointments/lookup finds the request by reference code',
+      appointmentLookup.status === 200 && pick(appointmentLookup.body, 'item.id') === appointmentId,
+      `status=${appointmentLookup.status}`,
+    );
+    check(
+      'the appointment lookup does not leak contact details',
+      !('contact' in asRecord(pick(appointmentLookup.body, 'item'))) &&
+        !('fullName' in asRecord(pick(appointmentLookup.body, 'item'))),
+      `keys=${Object.keys(asRecord(pick(appointmentLookup.body, 'item'))).join(',')}`,
+    );
+
+    const unknownAppointment = await call(
+      'GET',
+      '/api/appointments/lookup?referenceCode=APT-1999-000001',
+    );
+    check(
+      'looking up an unknown appointment code is 404 not_found',
+      unknownAppointment.status === 404 &&
+        pick(unknownAppointment.body, 'error.code') === 'not_found',
+      `status=${unknownAppointment.status}`,
+    );
+
+    const malformedAppointment = await call('GET', '/api/appointments/lookup?referenceCode=nope');
+    check(
+      'a malformed appointment code is 400 validation_failed',
+      malformedAppointment.status === 400 &&
+        pick(malformedAppointment.body, 'error.code') === 'validation_failed',
+      `status=${malformedAppointment.status}`,
+    );
+
+    const appointmentHoneypot = await call('POST', '/api/appointments', {
+      body: { ...validAppointment, website: 'http://spam.example' },
+    });
+    check(
+      'a filled honeypot field is rejected on appointments',
+      appointmentHoneypot.status === 400,
+      `status=${appointmentHoneypot.status}`,
+    );
+
+    if (canEnforceMembership) {
+      const appointmentOutside = await call('POST', '/api/appointments', {
+        body: { ...validAppointment, barangayPsgc: '0599999999' },
+      });
+      check(
+        'a PSGC code outside the municipality is rejected on appointments',
+        appointmentOutside.status === 400 &&
+          pick(appointmentOutside.body, 'error.code') === 'validation_failed',
+        `status=${appointmentOutside.status}`,
+      );
+    } else {
+      console.log(
+        'SKIP a PSGC code outside the municipality is rejected on appointments (no barangay index was found)',
+      );
+    }
+
+    const appointmentList = await call('GET', '/api/admin/appointments?limit=5', {
+      token: sessionToken,
+    });
+    check(
+      'the console lists appointments with the session token',
+      appointmentList.status === 200 && countOf(pick(appointmentList.body, 'total')) >= 1,
+      `status=${appointmentList.status} total=${String(pick(appointmentList.body, 'total'))}`,
+    );
+    check(
+      'the console appointment list contains the request just filed',
+      asArray(pick(appointmentList.body, 'items')).some((item) => pick(item, 'id') === appointmentId),
+      `items=${asArray(pick(appointmentList.body, 'items')).length}`,
+    );
+
+    const historyBefore = asArray(pick(appointmentItem, 'history')).length;
+    const bookedDate = nextWeekdayDate();
+    const patchedAppointment = await call('PATCH', `/api/admin/appointments/${appointmentId}`, {
+      token: sessionToken,
+      body: {
+        status: 'confirmed',
+        scheduledDate: bookedDate,
+        scheduledSlot: 'afternoon',
+        assignedOffice: 'Office of the Municipal Mayor',
+      },
+    });
+    check(
+      'PATCH confirms the appointment and sets the slot',
+      patchedAppointment.status === 200 &&
+        pick(patchedAppointment.body, 'item.status') === 'confirmed' &&
+        pick(patchedAppointment.body, 'item.scheduledDate') === bookedDate &&
+        pick(patchedAppointment.body, 'item.scheduledSlot') === 'afternoon',
+      `status=${patchedAppointment.status} body=${JSON.stringify(patchedAppointment.body).slice(0, 200)}`,
+    );
+    check(
+      'PATCH appends a console entry to the appointment audit trail',
+      asArray(pick(patchedAppointment.body, 'item.history')).length === historyBefore + 1 &&
+        pick(patchedAppointment.body, `item.history.${historyBefore}.actor`) === 'console',
+      `history=${asArray(pick(patchedAppointment.body, 'item.history')).length} before=${historyBefore}`,
+    );
+
+    const publicAfterPatch = await call(
+      'GET',
+      `/api/appointments/lookup?referenceCode=${encodeURIComponent(appointmentCode)}`,
+    );
+    check(
+      'the public lookup now shows the scheduled date and slot',
+      pick(publicAfterPatch.body, 'item.scheduledDate') === bookedDate &&
+        pick(publicAfterPatch.body, 'item.scheduledSlot') === 'afternoon',
+      `scheduledDate=${String(pick(publicAfterPatch.body, 'item.scheduledDate'))}`,
+    );
+
+    const badAppointmentPatch = await call('PATCH', `/api/admin/appointments/${appointmentId}`, {
+      token: sessionToken,
+      body: { status: 'nonsense' },
+    });
+    check(
+      'PATCH with an unknown appointment status is rejected',
+      badAppointmentPatch.status === 400 &&
+        pick(badAppointmentPatch.body, 'error.code') === 'validation_failed',
+      `status=${badAppointmentPatch.status}`,
+    );
+
+    const unscheduled = await call('GET', `/api/admin/appointments/${appointmentId}`, {
+      token: sessionToken,
+    });
+    check(
+      'the rejected status was not written',
+      pick(unscheduled.body, 'item.status') === 'confirmed',
+      `status=${String(pick(unscheduled.body, 'item.status'))}`,
+    );
+
+    const appointmentStats = await call('GET', '/api/admin/appointments/stats', {
+      token: sessionToken,
+    });
+    check(
+      'GET /api/admin/appointments/stats counts the request',
+      appointmentStats.status === 200 && countOf(pick(appointmentStats.body, 'item.total')) >= 1,
+      `status=${appointmentStats.status} total=${String(pick(appointmentStats.body, 'item.total'))}`,
+    );
+
+    const removedAppointment = await call('DELETE', `/api/admin/appointments/${appointmentId}`, {
+      token: sessionToken,
+    });
+    check(
+      'DELETE removes the appointment',
+      removedAppointment.status === 200 && pick(removedAppointment.body, 'ok') === true,
+      `status=${removedAppointment.status}`,
+    );
+
+    const afterAppointmentDelete = await call(
+      'GET',
+      `/api/admin/appointments/${appointmentId}`,
+      { token: sessionToken },
+    );
+    check(
+      'the deleted appointment is gone',
+      afterAppointmentDelete.status === 404,
+      `status=${afterAppointmentDelete.status}`,
+    );
   } catch (err) {
     failures.push('the smoke run threw');
     console.error(`FAIL the smoke run threw — ${errorMessage(err)}`);

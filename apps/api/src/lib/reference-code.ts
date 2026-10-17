@@ -30,3 +30,27 @@ export async function allocateReferenceCode(now: Date = new Date()): Promise<str
   const sequence = await nextSequence(`report:${year}`);
   return formatReferenceCode(year, sequence);
 }
+
+/* ───────────────────────────── appointments ───────────────────────────── */
+
+/**
+ * Appointment identifiers: `APT-2026-000001`.
+ *
+ * A different prefix AND a different counter key (`appointment:<year>`), so the
+ * two channels of intake never share a number space. A report and an appointment
+ * filed in the same second must not be able to collide, and an operator reading
+ * `APT-…` aloud must never be quoting a report.
+ */
+export const APPOINTMENT_CODE_PREFIX = 'APT';
+export const APPOINTMENT_CODE_PATTERN = /^APT-\d{4}-\d{6}$/;
+
+export function formatAppointmentCode(year: number, sequence: number): string {
+  return `${APPOINTMENT_CODE_PREFIX}-${year}-${String(sequence).padStart(6, '0')}`;
+}
+
+/** Reserves the next appointment code for the municipal year of `now`. */
+export async function allocateAppointmentReferenceCode(now: Date = new Date()): Promise<string> {
+  const year = municipalYear(now);
+  const sequence = await nextSequence(`appointment:${year}`);
+  return formatAppointmentCode(year, sequence);
+}

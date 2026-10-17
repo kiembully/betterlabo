@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { AppointmentsSummary } from '@/components/console/appointments-summary';
 import { ConsoleDashboard } from '@/components/console/dashboard';
 import { Eyebrow } from '@/components/ui/primitives';
 
@@ -20,6 +21,18 @@ export default function ConsoleHomePage() {
         </p>
       </header>
       <ConsoleDashboard />
+
+      <section className="flex flex-col gap-5 border-t border-rule pt-6">
+        <header>
+          <Eyebrow>Appointments</Eyebrow>
+          <h2 className="mt-1.5 text-xl font-bold text-ink sm:text-2xl">Appointment requests</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-support">
+            Requests for a slot at the municipal hall. The figures here count requests, not bookings
+            — a slot exists only once an operator confirms one.
+          </p>
+        </header>
+        <AppointmentsSummary />
+      </section>
     </div>
   );
 }

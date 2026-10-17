@@ -76,6 +76,19 @@ export async function apiPatch<T>(path: string, body: unknown): Promise<T> {
   return parse<T>(res);
 }
 
+/**
+ * `DELETE`. The delete routes answer the `{ ok: true }` envelope, so the caller
+ * that wants it asks for `OkEnvelope`; nothing else comes back.
+ */
+export async function apiDelete<T = { ok: true }>(path: string): Promise<T> {
+  const res = await fetch(`${API_BASE}${path}`, {
+    method: 'DELETE',
+    headers: { Accept: 'application/json' },
+    credentials: 'same-origin',
+  });
+  return parse<T>(res);
+}
+
 /** Turns any thrown value into a sentence a resident can act on. */
 export function describeError(err: unknown): string {
   if (err instanceof ApiError) {
