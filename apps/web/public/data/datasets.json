@@ -11,7 +11,7 @@
       "license": "Public Domain",
       "licenseUrl": null,
       "attributionText": "Local fiscal data compiled and published by the Bureau of Local Government Finance (BLGF), Department of Finance.",
-      "retrievedAt": "2026-10-15T23:22:38.869Z",
+      "retrievedAt": "2026-10-16T23:34:23.842Z",
       "sourceVersion": "FY 2024 (Preliminary)",
       "rowCount": 95,
       "bytes": 1935275,
@@ -36,7 +36,7 @@
       "license": "CC0 1.0 Universal",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "attributionText": "Infrastructure project data from the official DPWH transparency platform, packaged by BetterGov.ph.",
-      "retrievedAt": "2026-10-15T23:22:40.307Z",
+      "retrievedAt": "2026-10-16T23:34:26.575Z",
       "sourceVersion": "2025-11-29",
       "rowCount": 309,
       "bytes": 24330129,
@@ -101,8 +101,9 @@
       "outputs": [
         "apps/web/public/data/lgu.json"
       ],
-      "notes": "Read from Wayback captures because the live host is Cloudflare-gated. Officials capture 2026-02-01; executive names last stated 2025-05-16; legislative roster as of 2025-05-16. 20 department heads, 7 section heads, 11 legislative members. The LGU's own barangay list cross-checks 52/52 against the PSGC-compiled index.",
-      "unavailable": false
+      "notes": "Not compiled in this run: no task in this run produced it Read from Wayback captures because the live host is Cloudflare-gated. Officials capture 2026-02-01; executive names last stated 2025-05-16; legislative roster as of 2025-05-16. 20 department heads, 7 section heads, 11 legislative members. The LGU's own barangay list cross-checks 52/52 against the PSGC-compiled index.",
+      "unavailable": false,
+      "lastAttemptUnavailable": true
     },
     {
       "id": "labo-services-directory",
@@ -126,16 +127,19 @@
       "license": "ODC-ODbL",
       "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
       "attributionText": "Hazard layers produced by Project NOAH, Department of Science and Technology, Philippines.",
-      "retrievedAt": "2026-10-15T23:22:52.632Z",
+      "retrievedAt": "2026-10-16T23:37:43.627Z",
       "sourceVersion": "2026-04-11",
-      "rowCount": 3,
-      "bytes": 6365400,
+      "rowCount": 13,
+      "bytes": 39715669,
       "sha256": "8b3fbedbb8027bbea6e8300867dc639d2d2e4616b7b658fedde19249cfee667c",
       "outputs": [
         "apps/web/public/data/hazards.json",
-        "apps/web/public/data/hazards/labo-flood-5yr.geojson"
+        "apps/web/public/data/hazards/labo-flood-5yr.geojson",
+        "apps/web/public/data/hazards/labo-flood-25yr.geojson",
+        "apps/web/public/data/hazards/labo-flood-100yr.geojson",
+        "apps/web/public/data/hazards/labo-landslide.geojson"
       ],
-      "notes": "Per-province shapefile archives for Camarines Norte, clipped to the Labo municipal outline with a point-in-polygon test. Analysed: flood_5yr (static, 3 features), storm_surge (none-in-area, 0 features). Not compiled: flood_25yr, flood_100yr, landslide.",
+      "notes": "Per-province shapefile archives for Camarines Norte, clipped to the Labo municipal outline with a point-in-polygon test. Analysed: flood_5yr (static, 3 features), flood_25yr (static, 3 features), flood_100yr (static, 3 features), landslide (static, 4 features), storm_surge (none-in-area, 0 features).",
       "unavailable": false
     },
     {
@@ -148,7 +152,7 @@
       "license": "MIT",
       "licenseUrl": "https://github.com/bendlikeabamboo/barangay-boundaries-repository/blob/main/LICENSE",
       "attributionText": "Boundary polygons derived from PSA Philippine Standard Geographic Code snapshots (2023-10-24) and NAMRIA administrative-boundary shapefiles (v2023-11-06), packaged by Manuel Balmeo.",
-      "retrievedAt": "2026-10-15T23:22:36.255Z",
+      "retrievedAt": "2026-10-16T23:34:11.370Z",
       "sourceVersion": "v2026.4.13.0",
       "rowCount": 52,
       "bytes": 72910665,
@@ -184,6 +188,7 @@
       "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
     }
   ],
-  "dataHash": "965c7e31821ba8bd3d2587e4773a07ecb978cd4cd8e290c8bd6d9f70c150019d",
-  "generatedAt": "2026-10-17T08:07:44.559Z"
+  "dataHash": "470b123d11f56d5112c698234e8d88acafc6c68e756bc5d03fbc72335f4d3d0a",
+  "generatedAt": "2026-10-17T09:08:34.585Z",
+  "note": "Registry of every compiled source. Merged from this branch (services, hotlines, history, LGU news feed) and main’s scheduled refresh (hazard layers, exposure, profile); where a source exists on both sides, the more recently compiled entry wins."
 }

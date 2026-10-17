@@ -62,7 +62,7 @@
     },
     {
       "field": "Elected and appointed officials",
-      "reason": "No open dataset carries current Labo officials with contact details. Left out rather than transcribed from an unverifiable page."
+      "reason": "COMPILED — see apps/web/public/data/lgu.json. Source: the Municipality of Labo's own website (labo.gov.ph) via the Wayback Machine, because the live host is behind a Cloudflare challenge. Every section carries the snapshot date it came from, because the current capture names no mayor, vice mayor or councilor."
     },
     {
       "field": "Ordinance index",
@@ -73,6 +73,6 @@
   "sources": [
     "psgc-barangay-boundaries"
   ],
-  "dataHash": "959fe2a1c116ecfed27639a20e4b54275f06b96152959f3a530f27d4139801f7",
-  "generatedAt": "2026-10-15T21:02:38.675Z"
+  "dataHash": "72bd635f65b1d5a3a3f6ff5ad8dfaefafe97514c3e2b44566870e22335c901db",
+  "generatedAt": "2026-10-16T23:34:11.454Z"
 }
