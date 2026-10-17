@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 import { cn } from '@/lib/cn';
 import { NAV, SITE } from '@/lib/site';
+import { LaboMark } from '@/components/brand/labo-mark';
 
 /**
  * The public masthead. One component, two layouts: a horizontal rail from `lg`,
@@ -31,12 +32,7 @@ export function SiteHeader() {
       </a>
       <div className="container-page flex h-16 items-center gap-4">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <span
-            aria-hidden
-            className="grid size-9 place-items-center rounded-md bg-brand-900 font-mono text-sm font-bold text-brand-50"
-          >
-            BL
-          </span>
+          <LaboMark className="h-8 w-auto shrink-0" />
           <span className="flex flex-col leading-none">
             <span className="text-base font-bold tracking-tight text-ink">{SITE.name}</span>
             <span className="hidden text-[0.6875rem] font-medium text-ink-subtle xs:block">
