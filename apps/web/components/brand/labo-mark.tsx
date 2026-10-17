@@ -1,14 +1,13 @@
 /**
- * The BetterLabo emblem — the actual outline of the Municipality of Labo.
+ * The BetterLabo emblem: the Philippine sun, with the Municipality of Labo at its centre.
  *
  * GENERATED FILE. Do not hand-edit: run `node apps/web/scripts/generate-logo.mjs`,
- * which derives the path from the compiled municipal boundary
- * (public/data/labo-municipality.geojson) so the silhouette is the real
- * municipality rather than a traced approximation, and re-derives it whenever the
- * boundary source is refreshed.
+ * which derives the silhouette from the compiled municipal boundary
+ * (public/data/labo-municipality.geojson) so the shape is the real municipality rather
+ * than a traced approximation, and re-derives it whenever the boundary is refreshed.
  *
- * Inline rather than an <img>: no extra request, and it inherits sizing from
- * whatever it is dropped into. The wordmark beside it is real HTML text.
+ * Inline rather than an <img>: no extra request, and it inherits sizing from whatever
+ * it is dropped into. The wordmark beside it is real HTML text.
  */
 export function LaboMark({
   className,
@@ -19,14 +18,17 @@ export function LaboMark({
 }) {
   return (
     <svg
-      viewBox="0 0 64 36"
+      viewBox="0 0 64 64"
       className={className}
       role="img"
       aria-label={title}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="64" height="36" rx="7" fill="#0032a0" />
-      <path d="M60.43 15.83L57.56 19.07L53.55 28.46L49.63 32.5L3.57 13.47L3.91 8.64L4.59 5.55L16.24 5.97L22.12 4.99L34.11 8.08L39.79 5.71L48.01 6.3L51.05 3.84L59.62 3.5L58.89 7.28L57.78 8.05L59.66 8.05L60.03 11.33L59.08 12.44L60.4 13.65L59.7 14.84L60.43 15.83Z" fill="#f2c91d" />
+      <circle cx="32" cy="32" r="12.8" fill="#f2c91d" />
+      <path d="M32.88 18.03L34.33 18.2L34.9 6.97ZM31.12 18.03L29.67 18.2L29.1 6.97ZM42.5 22.74L43.41 23.89L49.24 18.33ZM41.26 21.5L40.11 20.59L45.67 14.76ZM45.97 32.88L45.8 34.33L57.03 34.9ZM45.97 31.12L45.8 29.67L57.03 29.1ZM41.26 42.5L40.11 43.41L45.67 49.24ZM42.5 41.26L43.41 40.11L49.24 45.67ZM31.12 45.97L29.67 45.8L29.1 57.03ZM32.88 45.97L34.33 45.8L34.9 57.03ZM21.5 41.26L20.59 40.11L14.76 45.67ZM22.74 42.5L23.89 43.41L18.33 49.24ZM18.03 31.12L18.2 29.67L6.97 29.1ZM18.03 32.88L18.2 34.33L6.97 34.9ZM22.74 21.5L23.89 20.59L18.33 14.76ZM21.5 22.74L20.59 23.89L14.76 18.33Z" fill="#f2c91d" />
+      <g transform="translate(21.2 21.2)">
+        <path d="M21.6 9.98L20.51 11.21L18.99 14.77L17.5 16.31L0 9.08L0.13 7.24L0.39 6.07L4.81 6.23L7.05 5.86L11.6 7.03L13.76 6.13L16.88 6.35L18.04 5.42L21.29 5.29L21.01 6.73L20.59 7.02L21.31 7.02L21.45 8.27L21.08 8.69L21.59 9.15L21.32 9.6L21.6 9.98Z" fill="#0032a0" />
+      </g>
     </svg>
   );
 }
