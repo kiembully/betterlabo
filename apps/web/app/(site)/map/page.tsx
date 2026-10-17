@@ -49,7 +49,7 @@ export default async function MapPage() {
 
   const datasets = registry?.datasets ?? [];
   const geometryDataset =
-    datasets.find((entry) => entry.outputs.some((output) => output.includes('labo-barangays.geojson'))) ??
+    datasets.find((entry) => (entry.outputs ?? []).some((output) => output.includes('labo-barangays.geojson'))) ??
     null;
   const hazardDataset = datasets.find((entry) => entry.id === 'noah-hazard-maps') ?? null;
 

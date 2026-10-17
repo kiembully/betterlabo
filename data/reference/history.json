@@ -1,0 +1,153 @@
+{
+  "municipality": "Labo",
+  "province": "Camarines Norte",
+  "note": "A short history of Labo for the portal, with every claim carrying its source. Where sources disagree - notably the founding year - BOTH values are given rather than one being chosen silently, and claims that could not be sourced to a primary or government record are listed under `unsourced` instead of being stated as fact.",
+  "prose": [
+    "In Spanish records, what is now Labo appears by the early 1590s: an account of encomiendas transcribed in Blair and Robertson's The Philippine Islands, 1493-1898 (Vol. 8) lists a royal encomienda called \"Labo y Aguette\" holding 648 whole tributes, or 2,992 persons. A National Historical Institute marker in neighbouring Vinzons records that in 1636 the visita of Labo was established by missionaries and attached to Indan.",
+    "Sources disagree on when Labo became a town. The municipality's own history, made official by a Sangguniang Bayan resolution in 1997, dates its creation to 8 September 1800, and says Labo had once been a barrio of Indan. Earlier documents - the 1590s encomienda account and the 1636 visita - show a settled community here long before that. Both datings are given here rather than one being chosen silently.",
+    "Local tradition explains the name. In the municipal government's own account the place was first called Busog-on, led by a chieftain named Tarik-Kudook, and \"Labo\" came from a misunderstanding: a Spanish sergeant asking a boatman the name of the place was answered \"Labo po ang tubig\" - the water is murky. The LGU states the name came from no legal decree and no public clamour.",
+    "Under Spanish rule Labo had a castillo, or small fort, built with others in the province against seaborne raids, according to the provincial government's history. In 1898 the Daet revolt against Spain spread to Labo and nearby towns. Labo is the birthplace of Gen. Vicente R. Lukban (born 11 February 1860), later a revolutionary general and governor of Tayabas; 11 February is General Vicente R. Lukban Day in Camarines Norte under Proclamation No. 1161 (1998).",
+    "In the American period Camarines Norte was re-established as a separate province by Act No. 2809 of 3 March 1919, with Daet as its capital. The 1903 census counted 5,246 people in Labo. In the Second World War, the National Historical Institute marker for Wenceslao Q. Vinzons records fighting at Laniton and Tigbinan - Tigbinan is a barangay of Labo - on 17 December 1941, while a 2018 Inquirer milestones item dates the Tigbinan encounter to January 1942.",
+    "Today Labo is a first-class municipality of 52 barangays. The 2024 census counted 108,319 residents, making it the most populous municipality in Camarines Norte, ahead of the capital, Daet (106,465)."
+  ],
+  "population": {
+    "value": "108,319",
+    "year": 2024,
+    "source": "PSA 2024 Census of Population, declared official July 2025",
+    "series": [
+      {
+        "year": 1903,
+        "value": 5246
+      },
+      {
+        "year": 2015,
+        "value": 101082
+      },
+      {
+        "year": 2020,
+        "value": 109245
+      },
+      {
+        "year": 2024,
+        "value": 108319
+      }
+    ]
+  },
+  "landArea": {
+    "disputed": true,
+    "figures": [
+      {
+        "km2": 589.36,
+        "source": "PSA 2015 Census of Population, Report No. 3",
+        "note": "The official statistical figure",
+        "preferred": true
+      },
+      {
+        "km2": 648.84,
+        "source": "Municipality of Labo, Facts and Figures (labo.gov.ph)"
+      },
+      {
+        "km2": 646.45,
+        "source": "DENR Land Management Bureau, 2019 Masterlist of Land Areas"
+      }
+    ]
+  },
+  "notableFacts": [
+    "Birthplace of Gen. Vicente R. Lukban (11 February 1860); Proclamation No. 1161 (1998) declares 11 February each year General Vicente R. Lukban Day in Camarines Norte.",
+    "The Battle of Tigbinan was fought at Tigbinan, now a barangay of Labo, between Japanese forces and Filipino guerrillas under Wenceslao Q. Vinzons. The NHI marker dates it 17 December 1941; a 2018 Inquirer milestones item says January 1942.",
+    "A castillo (small fort) was built at Labo, with Capalonga, Mambulao and Daet, against seaborne raids - and the provincial history records that defence in Labo was reported inadequate.",
+    "Labo's church history predates its 1800 municipal founding: an NHI marker records the visita of Labo was established in 1636 and attached to Indan (now Vinzons).",
+    "Mount Labo (1,544 m) is the highest peak in Camarines Norte; the boundaries of Camarines Norte, Camarines Sur and Quezon converge on it.",
+    "At 108,319 in the 2024 census Labo is the most populous municipality in the province, ahead of the capital Daet (106,465), and is a 1st income class municipality with 52 barangays."
+  ],
+  "citations": [
+    {
+      "claim": "A Spanish account of the encomiendas lists a royal encomienda 'Labo y Aguette' with 648 whole tributes, or 2,992 persons",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Philippine_Islands,_1493%E2%80%931898/Volume_8/Account_of_the_encomiendas"
+    },
+    {
+      "claim": "NHI marker (Simbahang San Pedro Apostol, Vinzons): in 1636 the visita of Labo was established by missionaries and attached to Indan",
+      "sourceUrl": "https://nhcphistoricsites.blogspot.com/2021/07/simbahang-san-pedro-apostol.html"
+    },
+    {
+      "claim": "The municipality's own history: first known as Busog-on under a leader named Tarik-Kudook; the name Labo came from 'Labo po ang tubig'; became a municipality on 8 September 1800",
+      "sourceUrl": "https://web.archive.org/web/20250115090043/https://labo.gov.ph/about/"
+    },
+    {
+      "claim": "In 1997 the local government adopted a resolution declaring 8 September 1800 as the creation of the municipality",
+      "sourceUrl": "https://peoplaid.com/2020/06/13/labo-camarines-norte"
+    },
+    {
+      "claim": "CBMS paper by the Municipal Mayor of Labo (2004): Labo was once a barrio of Indan, created a municipality on 8 September 1800; aggregate land area 648.84 sq km",
+      "sourceUrl": "https://www.pep-net.org/sites/pep-net.org/files/typo3doc/pdf/files_events/3rd_dakar/balce-oco_pa.pdf"
+    },
+    {
+      "claim": "Camarines Norte provincial history: castillos were constructed at Capalonga, Labo, Mambulao and Daet; defence in Labo, Indan, Daet and others was reported inadequate",
+      "sourceUrl": "https://camsnorte.com/history/"
+    },
+    {
+      "claim": "Provincial history: the 1898 Daet revolt spread to Labo; Gen. Vicente Lukban was born in Labo on 11 February 1860 and served as Juez de Paz of his town",
+      "sourceUrl": "https://camsnorte.com/history/"
+    },
+    {
+      "claim": "Proclamation No. 1161 (6 February 1998) declares 11 February each year General Vicente R. Lukban Day in Camarines Norte",
+      "sourceUrl": "https://lawphil.net/executive/proc/proc1998/proc_1161_1998.html"
+    },
+    {
+      "claim": "Act No. 2809 (3 March 1919) re-established the Province of Camarines Norte, separated from Ambos Camarines",
+      "sourceUrl": "https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/11/34350"
+    },
+    {
+      "claim": "NHI marker for Wenceslao Q. Vinzons: fought at the battles of Laniton and Tigbinan, 17 December 1941",
+      "sourceUrl": "https://nhcphistoricsites.blogspot.com/2021/10/wenceslao-q-vinzons.html"
+    },
+    {
+      "claim": "Inquirer milestones (2018): Vinzons' troops fought Japanese soldiers at Barangay Tigbinan in Labo in January 1942 - a differing date for the encounter",
+      "sourceUrl": "https://newsinfo.inquirer.net/1063596/this-weeks-milestones-dec-16-22-2018"
+    },
+    {
+      "claim": "PSA PSGC, Municipality of Labo (PSGC 0501606000): 1st income class, 52 barangays, population 108,319 (2024 POPCEN)",
+      "sourceUrl": "https://psa.gov.ph/classification/psgc/barangays/0501606000"
+    },
+    {
+      "claim": "PSA: the 2024 POPCEN counts for Labo were declared official by the President (July 2025)",
+      "sourceUrl": "https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president"
+    },
+    {
+      "claim": "PSA RSSO V: Daet's 2024 population is 106,465 and it is second highest in the province - so Labo, at 108,319, is the most populous",
+      "sourceUrl": "https://rsso05.psa.gov.ph/content/highlights-2024-population-census-2024-popcen-daet-camarines-norte"
+    },
+    {
+      "claim": "PSA 2015 Census of Population, Report No. 3: Labo's land area is 589.36 sq km",
+      "sourceUrl": "https://web.archive.org/web/20210525030629/https://www.psa.gov.ph/sites/default/files/_POPCEN%20Report%20No.%203.pdf"
+    },
+    {
+      "claim": "Municipality of Labo 'Facts and Figures': aggregate land area 648.84 km2; Mt. Labo 1,544 m, highest peak in the province",
+      "sourceUrl": "https://labo.gov.ph/about/facts-and-figures/"
+    },
+    {
+      "claim": "Land area reported as 646.45 sq km, citing the DENR Land Management Bureau 2019 Masterlist of Land Areas",
+      "sourceUrl": "https://scene.ph/atlas/camarines-norte/labo"
+    },
+    {
+      "claim": "1903 census population of Labo: 5,246 (census series 1903-2020 attributed to the PSA)",
+      "sourceUrl": "https://www.philatlas.com/luzon/r05/camarines-norte/labo.html"
+    },
+    {
+      "claim": "Labo was among the towns assigned to Camarines Norte when separated from Ambos Camarines in 1829",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Camarines_Norte"
+    },
+    {
+      "claim": "Battle of Tigbinan listed among Labo's historical landmarks, with the Gen. Vicente R. Lukban Landmark and the Labo Museum",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Labo,_Camarines_Norte"
+    }
+  ],
+  "unsourced": [
+    "That the settlement was 'discovered' in 1586 by a former soldier of Juan de Salcedo's expedition, then called Busig-on under a chief Tarik-Kudoog, from 'busog' + 'on'. Survives only in Wikipedia mirrors; the LGU gives the variants Busog-on / Tarik-Kudook as local tradition.",
+    "That Labo had a royal encomienda in 1591 with 2,992 persons - the figures match the Blair & Robertson account, but the document page carries no date and the exact year could not be confirmed.",
+    "That Labo became an 'original Spanish pueblo' in 1603 and was annexed to Indan in 1615. Recurring in Wikipedia mirrors; no government or primary source found.",
+    "That the Parish of St. John the Apostle and Evangelist was founded in 1656, or that its church was built in 1890 by Fr. Sotero Martin. Only personal blogs and AI-generated aggregators.",
+    "That Wenceslao Vinzons was paraded in Labo's plaza after his capture and told the crowd 'Plant! Plant! Plant!'. Widely repeated, but not in a primary, NHCP or government source."
+  ],
+  "retrievedAt": "2026-10-17"
+}

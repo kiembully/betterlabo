@@ -1,0 +1,57 @@
+{
+  "municipality": "Labo",
+  "province": "Camarines Norte",
+  "note": "News posts published by the Municipality of Labo on its own website, read through the site’s WordPress REST API as archived by the Internet Archive. Posts matching the injection blocklist are excluded; see `excluded` for every omission and its reason.",
+  "source": {
+    "host": "https://labo.gov.ph",
+    "api": "https://labo.gov.ph/wp-json/wp/v2/posts",
+    "canonical": "https://labo.gov.ph/news/",
+    "facebook": "https://www.facebook.com/LGULaboCamNorte",
+    "protocol": "Wayback Machine snapshots of the WordPress REST API (the live host challenges scripts)"
+  },
+  "count": 2,
+  "byYear": {
+    "2025": 2
+  },
+  "excludedCount": 1,
+  "unreachableCount": 0,
+  "excluded": [
+    {
+      "id": 16567,
+      "slug": "lgu-labo-vacant-position-2",
+      "reason": "auto-draft"
+    }
+  ],
+  "unreachable": [],
+  "items": [
+    {
+      "id": 17378,
+      "slug": "municipal-nutrition-council-51st-nutrition-month-at-labo-sports-complex-labo-camarines-norte-with-the-theme-food-at-nutrition-security-maging-priority-dapat-na-pagkain-karapatan-natin",
+      "title": "MUNICIPAL NUTRITION COUNCIL 51st Nutrition Month at Labo Sports Complex, Labo, Camarines Norte with the theme \" Food at Nutrition Security, Maging Priority! Dapat na Pagkain, Karapatan Natin!\".",
+      "date": "2025-07-03T15:58:40",
+      "url": "https://labo.gov.ph/municipal-nutrition-council-51st-nutrition-month-at-labo-sports-complex-labo-camarines-norte-with-the-theme-food-at-nutrition-security-maging-priority-dapat-na-pagkain-karapatan-natin/",
+      "excerpt": "https://labo.gov.ph/wp-content/uploads/2025/07/AQPW3gl357XvwKW3JXf0iMBmSS5jmUyrbviPjXeQchuvLwu0dNczz7QQcVXLc1LojkYqfdmzbiPT9_oi593vPUC_.mp4",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/17381",
+      "archivedAt": "2026-01-25T03:11:37Z",
+      "categoryIds": [
+        7
+      ]
+    },
+    {
+      "id": 16761,
+      "slug": "ibat-ibang-sangay-ng-gobyerno-ngos-parents-teachers-at-mga-volunteers-nagsanib-pwersa-para-sa-brigada-eskewala-kick-off-activity-sa-bayan-ng-labo",
+      "title": "IBAT-IBANG SANGAY NG GOBYERNO, NGO’S , PARENTS, TEACHERS AT MGA VOLUNTEERS NAGSANIB PWERSA PARA SA BRIGADA ESKEWALA KICK OFF ACTIVITY SA BAYAN NG LABO",
+      "date": "2025-06-11T10:55:03",
+      "url": "https://labo.gov.ph/ibat-ibang-sangay-ng-gobyerno-ngos-parents-teachers-at-mga-volunteers-nagsanib-pwersa-para-sa-brigada-eskewala-kick-off-activity-sa-bayan-ng-labo/",
+      "excerpt": "Nagsanib pwersa ang mga magulang, mag-aaral, partners/stakeholders, volunteers, teachers at non-teaching staff sa mga pampublikong paaralan upang suportahan ang sabay-sabay na Nationwide BRIGADA ESKWELA Kick-off Activity na isinagawa nitong araw ng Lunes, June 8,2025. Ang BRIGADA ESKWELA ay isang nationwide school main",
+      "featuredMediaUrl": "https://labo.gov.ph/wp-json/wp/v2/media/16762",
+      "archivedAt": "2026-01-10T10:56:54Z",
+      "categoryIds": [
+        7,
+        1
+      ]
+    }
+  ],
+  "generatedAt": "2026-10-17T07:11:08.772Z",
+  "dataHash": "74dade27dda2e7e5ebc86c5adb24d66ee7600ce37b8fdb13429fc2bfdf81c42b"
+}

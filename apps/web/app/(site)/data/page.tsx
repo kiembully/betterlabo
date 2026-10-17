@@ -138,8 +138,8 @@ export default async function DataPage() {
               <div className="rounded-lg border border-rule bg-surface-sunken p-4">
                 <Eyebrow>Produced</Eyebrow>
                 <ul className="mt-2 grid gap-1.5 text-xs">
-                  {d.outputs.length > 0 ? (
-                    d.outputs.map((o) => (
+                  {(d.outputs ?? []).length > 0 ? (
+                    (d.outputs ?? []).map((o) => (
                       <li key={o} className="text-ink-support">
                         {outputLabel(o)}
                       </li>

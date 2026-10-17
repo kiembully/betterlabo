@@ -1,0 +1,194 @@
+{
+  "municipality": "Labo",
+  "province": "Camarines Norte",
+  "note": "Emergency numbers for Labo, as published by the sources cited on each entry. Every number here was read from a named source on 2026-10-17; nothing is inferred. Where two official sources publish DIFFERENT numbers for the same station, both are listed and flagged rather than one being chosen. THE LGU'S OWN EMERGENCY DIRECTORY IS PARTLY UNFILLED: labo.gov.ph/contact-us/ shows the placeholder '0912 345 6789' for BOTH the Labo District Hospital and the PNP, and '091234567890' under General Inquiries - those dummy values are recorded here as a defect, never as numbers to dial.",
+  "retrievedAt": "2026-10-17",
+  "tiers": [
+    {
+      "tier": "Call first in an emergency",
+      "entries": [
+        {
+          "office": "MDRRMO Labo (disaster response)",
+          "numbers": [
+            "0950 868 7045",
+            "0927 864 1222"
+          ],
+          "carriers": [
+            "Smart",
+            "Globe"
+          ],
+          "confidence": "high",
+          "sources": [
+            "https://labo.gov.ph/contact-us/",
+            "https://www.facebook.com/LaboCamNorteTourism/posts/858089966505744"
+          ],
+          "note": "Published by the LGU itself and repeated on its tourism page. The two that are solidly verified and locally specific."
+        },
+        {
+          "office": "Labo Municipal Police Station (PNP)",
+          "numbers": [
+            "0998-598-5957"
+          ],
+          "confidence": "high",
+          "sources": [
+            "https://www.facebook.com/61563190721571/posts/122199435872439690/"
+          ],
+          "note": "From the Camarines Norte Police Provincial Office (CNPPO) updated provincial hotline list, and repeated in the station's own advisories alongside 'UNIFIED 911'."
+        },
+        {
+          "office": "Bureau of Fire Protection - Labo Fire Station",
+          "numbers": [
+            "0949 812 3708",
+            "585 2018"
+          ],
+          "confidence": "disputed",
+          "sources": [
+            "https://labo.gov.ph/contact-us/"
+          ],
+          "note": "Published by the LGU. The station's OWN Facebook page publishes a different number, 0920-986-1451. Both are official publications; which is currently manned could not be determined."
+        },
+        {
+          "office": "BFP Region 5 - Labo Fire Station (station's own page)",
+          "numbers": [
+            "0920-986-1451"
+          ],
+          "confidence": "disputed",
+          "sources": [
+            "https://www.facebook.com/p/BFP-Region-5-Labo-Fire-Station-61575046209391"
+          ],
+          "note": "The station's own published hotline, differing from the LGU's. Listed beside the LGU number, not instead of it."
+        },
+        {
+          "office": "National emergency hotline (police, fire, medical)",
+          "numbers": [
+            "911"
+          ],
+          "confidence": "high",
+          "isNational": true,
+          "sources": [
+            "https://ehotlines.e.gov.ph/"
+          ],
+          "note": "National. Not a Labo number and must never be presented as one."
+        }
+      ]
+    },
+    {
+      "tier": "Municipal offices",
+      "entries": [
+        {
+          "office": "Municipal hall / Office of the Municipal Mayor (switchboard)",
+          "numbers": [
+            "(054) 585-2044"
+          ],
+          "confidence": "high",
+          "sources": [
+            "https://cmci.dti.gov.ph/lgu-profile.php?lgu=Labo",
+            "https://labo.gov.ph/about/municipal-officials-and-department-heads/"
+          ],
+          "note": "Labo's area code is (054). The officials page repeats this same value for all 28 offices, so it is a building switchboard, not a direct line per office."
+        },
+        {
+          "office": "Municipal Civil Registrar's Office",
+          "numbers": [
+            "(054) 585-2365"
+          ],
+          "confidence": "high",
+          "sources": [
+            "https://labo.gov.ph/wp-content/uploads/2019/12/MCRO-Arta.pdf"
+          ],
+          "note": "From the office's own Citizen's Charter. Contact person published as Mrs. Noemi V. Pareja."
+        },
+        {
+          "office": "Municipal Health Office / Rural Health Unit I (Brgy. Gumamela)",
+          "numbers": [
+            "(054) 585 2335",
+            "0999 952 3799"
+          ],
+          "confidence": "medium",
+          "sources": [
+            "https://healthcarephilippines.com/directory/labo-rural-health-unit-i/",
+            "https://www.facebook.com/lgulabolabmho123"
+          ],
+          "note": "Two independent listings agree on the landline, but neither is a current LGU-hosted page. Treat as unconfirmed."
+        },
+        {
+          "office": "Rural Health Unit II - Tulay na Lupa",
+          "numbers": [
+            "(+63) 092-158-4200"
+          ],
+          "confidence": "low",
+          "sources": [
+            "https://ntp.doh.gov.ph/view-facility/?id=6559"
+          ],
+          "note": "Reproduced exactly as the DOH facility registry prints it. The digit grouping looks malformed - verify by dialling before relying on it."
+        },
+        {
+          "office": "Labo District Hospital (Talobatib)",
+          "numbers": [
+            "0998-354-7024"
+          ],
+          "confidence": "medium",
+          "sources": [
+            "https://camsnorte.com/emergency-hotlines/"
+          ],
+          "note": "From a provincial listing reproduced by an LGU tourism page. No hospital-, DOH- or LGU-issued publication of this number was found, and other directories contradict each other."
+        }
+      ]
+    },
+    {
+      "tier": "National fallbacks",
+      "entries": [
+        {
+          "office": "Philippine National Police",
+          "numbers": [
+            "117",
+            "(02) 8722-0650",
+            "0917-847-5757"
+          ],
+          "confidence": "high",
+          "isNational": true,
+          "sources": [
+            "https://ehotlines.e.gov.ph/"
+          ],
+          "note": "117 is the emergency line; 0917-847-5757 is the text hotline."
+        },
+        {
+          "office": "Bureau of Fire Protection",
+          "numbers": [
+            "(02) 8426-0219",
+            "(02) 8426-0246"
+          ],
+          "confidence": "high",
+          "isNational": true,
+          "sources": [
+            "https://ehotlines.e.gov.ph/",
+            "https://bfp.gov.ph/bfp-directory"
+          ],
+          "note": "BFP national headquarters trunk lines."
+        }
+      ]
+    }
+  ],
+  "defects": [],
+  "upstreamDefects": [
+    {
+      "what": "The LGU's emergency directory lists placeholder numbers",
+      "detail": "labo.gov.ph/contact-us/ shows '0912 345 6789' for BOTH 'Labo District Hospital' and 'Philippine National Police', and '091234567890' and '+619 8321' under 'General Information and Inquiries'. Of the five entries in its EMERGENCY block, only three carry real values (MDRRMO, BFP-Labo, and a radio station). Anyone who dials the hospital or police row from the municipality's own page reaches nothing.",
+      "source": "https://web.archive.org/web/20260201231733/https://labo.gov.ph/contact-us/",
+      "kind": "upstream"
+    },
+    {
+      "what": "Two official sources disagree on the Labo fire station's hotline",
+      "detail": "The LGU publishes 0949 812 3708 / 585 2018; the fire station's own Facebook page publishes 0920-986-1451.",
+      "kind": "upstream"
+    }
+  ],
+  "notFound": [
+    "Rural Health Unit III (Brgy. Bagong Silang I) - no official publication of any number.",
+    "MDRRMO - no landline in the (054) 585-xxxx exchange; only the two mobiles above.",
+    "Labo MPS as published by the LGU - its row is the unfilled placeholder, so the CNPPO number is used instead.",
+    "Labo District Hospital phone as issued by the LGU, the hospital or DOH - none found."
+  ],
+  "generatedAt": "2026-10-17T07:24:06.680Z",
+  "dataHash": "3b3787101af09f5e2f12380a04d87b370c7474cd7faf616e9de56ab8d6b6dce0"
+}

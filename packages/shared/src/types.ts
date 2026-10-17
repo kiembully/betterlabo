@@ -5,6 +5,9 @@
  */
 
 import type {
+  AppointmentPurpose,
+  AppointmentSlot,
+  AppointmentStatus,
   ReportCategory,
   ReportPriority,
   ReportStatus,
@@ -462,4 +465,246 @@ export interface LguDocumentIndex {
   }>;
   dataHash?: string;
   generatedAt?: string;
+}
+
+/* ─────────────────────────── appointments ─────────────────────────── */
+
+/**
+ * A request for a slot with a municipal office.
+ *
+ * `preferredDate` is what the resident asked for; `scheduledDate` is what the
+ * office actually committed to, and stays `null` until it does. That separation
+ * is the whole point of the feature — the portal must never present a request as
+ * a confirmed booking.
+ *
+ * Dates are plain `YYYY-MM-DD` calendar dates in Asia/Manila, not instants: a
+ * booking is a day at the municipal hall, and storing it as an instant is how a
+ * 1 January slot drifts to 31 December for a UTC server.
+ */
+export interface Appointment {
+  id: string;
+  /** Human-quotable code, e.g. `APT-2026-000001`. */
+  referenceCode: string;
+  fullName: string;
+  /** An email address or a Philippine mobile number. */
+  contact: string;
+  barangayPsgc: string;
+  barangayName: string;
+  purpose: AppointmentPurpose;
+  status: AppointmentStatus;
+  /** What the resident asked for. */
+  preferredDate: string;
+  preferredSlot: AppointmentSlot;
+  /** What the office confirmed. `null` means "not scheduled yet". */
+  scheduledDate: string | null;
+  scheduledSlot: AppointmentSlot | null;
+  notes: string | null;
+  assignedOffice: string | null;
+  /** Server-side audit trail, newest last. Visible to the console only. */
+  history: AppointmentEvent[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AppointmentEvent {
+  at: string;
+  actor: 'citizen' | 'system' | 'console';
+  action: string;
+  note: string | null;
+}
+
+/**
+ * Public view of an appointment — what a citizen gets back from
+ * `/api/appointments/lookup`. The applicant's name and contact details are
+ * dropped, exactly as the report lookup drops the reporter's.
+ */
+export type PublicAppointment = Omit<Appointment, 'fullName' | 'contact'>;
+
+export interface CreateAppointmentInput {
+  fullName: string;
+  contact: string;
+  barangayPsgc: string;
+  purpose: AppointmentPurpose;
+  preferredDate: string;
+  preferredSlot: AppointmentSlot;
+  notes?: string | null;
+  /** Cloudflare Turnstile token; required when TURNSTILE_MODE=enforce. */
+  turnstileToken?: string | null;
+  /** Honeypot — must be empty. Bots fill it. */
+  website?: string | null;
+}
+
+export interface UpdateAppointmentInput {
+  status?: AppointmentStatus;
+  scheduledDate?: string | null;
+  scheduledSlot?: AppointmentSlot | null;
+  assignedOffice?: string | null;
+}
+
+export interface ListAppointmentsQuery {
+  status?: AppointmentStatus;
+  /** Inclusive lower bound on `preferredDate`. */
+  from?: string;
+  /** Inclusive upper bound on `preferredDate`. */
+  to?: string;
+  q?: string;
+  limit?: number;
+  offset?: number;
+}
+
+export interface AppointmentStats {
+  total: number;
+  requested: number;
+  confirmed: number;
+  /** Requests whose booked (or still-preferred) date falls in the next 7 days. */
+  upcoming7Days: number;
+  cancelled: number;
+  byStatus: Array<{ status: AppointmentStatus; count: number }>;
+  byPurpose: Array<{ purpose: AppointmentPurpose; count: number }>;
+}
+
+
+/* ─────────────────────────────− curated reference data ───────────────────── */
+/*
+ * Services, emergency contacts and the town's history are authored from published
+ * sources rather than scraped, so their shapes carry the evidence inline: a claim
+ * without a `sourceUrl` is a bug, not a gap.
+ */
+
+export interface ServiceRecord {
+  name: string;
+  category: string;
+  office: string;
+  requirements?: string[];
+  /** The fee exactly as the LGU prints it, or omitted when none is published. */
+  fee?: string;
+  processingTime?: string;
+  whereToGo?: string;
+  /** Required — the charter PDF this was read from. */
+  sourceUrl: string;
+}
+
+export interface ServiceCategory {
+  name: string;
+  slug: string;
+  count: number;
+  summary: string | null;
+}
+
+export interface ServicesDirectory {
+  municipality: string;
+  province: string;
+  note: string | null;
+  count: number;
+  categories: ServiceCategory[];
+  /** Everything the LGU does NOT publish, recorded rather than filled in. */
+  notPublished: string[];
+  servicePagesSeen: string[];
+  items: ServiceRecord[];
+  generatedAt: string;
+}
+
+export type HotlineConfidence = 'high' | 'medium' | 'low' | 'disputed';
+
+export interface HotlineEntry {
+  office: string;
+  numbers: string[];
+  carriers?: string[];
+  confidence: HotlineConfidence;
+  /** True when the number is a national one and must not be read as Labo's. */
+  isNational?: boolean;
+  sources: string[];
+  note?: string;
+}
+
+export interface HotlineTier {
+  tier: string;
+  entries: HotlineEntry[];
+}
+
+export interface HotlineDefect {
+  what: string;
+  detail: string;
+  source?: string;
+  kind?: string;
+}
+
+export interface HotlineBoard {
+  municipality: string;
+  province: string;
+  note: string | null;
+  retrievedAt: string | null;
+  tiers: HotlineTier[];
+  /** Defects in the published local numbers — e.g. unfilled placeholders. */
+  defects: HotlineDefect[];
+  upstreamDefects: HotlineDefect[];
+  notFound: string[];
+  generatedAt: string;
+}
+
+export interface HistoryCitation {
+  claim: string;
+  sourceUrl: string;
+}
+
+export interface LandAreaFigure {
+  km2: number;
+  source: string;
+  note?: string;
+  preferred?: boolean;
+}
+
+export interface LaboHistory {
+  municipality: string;
+  province: string;
+  note: string | null;
+  prose: string[];
+  population: {
+    value: string;
+    year: number;
+    source: string;
+    series?: Array<{ year: number; value: number }>;
+  } | null;
+  landArea: { disputed: boolean; figures: LandAreaFigure[] } | null;
+  notableFacts: string[];
+  citations: HistoryCitation[];
+  /** Commonly repeated claims that could not be sourced — shown, not stated. */
+  unsourced: string[];
+  retrievedAt: string | null;
+  generatedAt: string;
+}
+
+export interface NewsUpdate {
+  id: number;
+  slug: string;
+  title: string;
+  /** ISO 8601, as WordPress publishes it. */
+  date: string;
+  /** The LGU's own canonical link. */
+  url: string;
+  excerpt: string | null;
+  featuredMediaUrl: string | null;
+  archivedAt: string;
+  categoryIds: number[];
+}
+
+export interface LguUpdates {
+  municipality: string;
+  province: string;
+  note: string;
+  source: {
+    host: string;
+    api: string;
+    canonical: string;
+    facebook: string;
+    protocol: string;
+  };
+  count: number;
+  byYear: Record<string, number>;
+  excludedCount: number;
+  unreachableCount: number;
+  excluded: Array<{ id: number; slug: string; reason: string }>;
+  unreachable: Array<{ id: number; reason: string }>;
+  items: NewsUpdate[];
+  generatedAt: string;
 }
