@@ -13,13 +13,48 @@
   "byYear": {
     "2025": 2
   },
-  "excludedCount": 1,
+  "excludedCount": 8,
   "unreachableCount": 0,
   "excluded": [
     {
       "id": 16567,
       "slug": "lgu-labo-vacant-position-2",
       "reason": "auto-draft"
+    },
+    {
+      "id": 13760,
+      "slug": "plinko-si-vince-veramente",
+      "reason": "spam:plinko"
+    },
+    {
+      "id": 13686,
+      "slug": "casumo-bonus-3-codes-and-kupon-ohne-einzahlung",
+      "reason": "spam:casumo"
+    },
+    {
+      "id": 12773,
+      "slug": "best-slingo-websites-to-syndicate-casino-no-deposit-free-chip-possess-british-professionals",
+      "reason": "spam:casino"
+    },
+    {
+      "id": 12114,
+      "slug": "16-ideal-bitcoin-crypto-casinos-usa-jan-2024-compared-reviews-ratings",
+      "reason": "spam:bitcoin"
+    },
+    {
+      "id": 8593,
+      "slug": "how-to-calculate-commissions-in-9-easy-steps",
+      "reason": "spam:how-to-calcu"
+    },
+    {
+      "id": 7661,
+      "slug": "azrbaycanda-rsmi-say-5",
+      "reason": "spam:azrbaycan"
+    },
+    {
+      "id": 5815,
+      "slug": "zgarnij-najlepsze-bonusy-bez-depozytu-w-polsce-w-2023",
+      "reason": "spam:zgarnij"
     }
   ],
   "unreachable": [],
@@ -52,6 +87,6 @@
       ]
     }
   ],
-  "generatedAt": "2026-10-17T07:11:08.772Z",
-  "dataHash": "74dade27dda2e7e5ebc86c5adb24d66ee7600ce37b8fdb13429fc2bfdf81c42b"
+  "generatedAt": "2026-10-17T07:36:14.065Z",
+  "dataHash": "c22fc14d9e6496a592a7b950695a08ffd52a70af50f318e9f0bf2f9ae07c904e"
 }

@@ -76,9 +76,12 @@
       "title": "Municipality of Labo — news posts (WordPress REST API, via Wayback Machine)",
       "publisher": "Municipality of Labo, Camarines Norte (labo.gov.ph)",
       "sourceUrl": "https://labo.gov.ph/wp-json/wp/v2/posts",
+      "outputs": [
+        "apps/web/public/data/lgu-updates.json"
+      ],
       "license": "Public domain (Philippine government work)",
-      "retrievedAt": "2026-10-17T07:11:08.778Z",
-      "note": "2 posts compiled, 1 excluded by the injection blocklist."
+      "retrievedAt": "2026-10-17T07:36:14.068Z",
+      "note": "2 posts compiled, 8 excluded by the injection blocklist."
     },
     {
       "id": "labo-lgu-website",
@@ -181,6 +184,6 @@
       "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
     }
   ],
-  "dataHash": "add72632c4a4ca4c80fa250770a38c4eba735330a2a364005cc9bc02f5a4cfb9",
-  "generatedAt": "2026-10-17T07:24:07.145Z"
+  "dataHash": "84f9e73f1aca426836363b3d3a857cd91298de48e58bfeaa2779ce742e0d4d8e",
+  "generatedAt": "2026-10-17T07:36:14.107Z"
 }
