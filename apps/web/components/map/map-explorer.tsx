@@ -121,7 +121,8 @@ export function MapExplorer({
         Interactive barangay and hazard map
       </h2>
 
-      <div className="lg:grid lg:grid-cols-[22rem_minmax(0,1fr)] lg:gap-5">
+      {/* `relative` is what anchors the mobile layer sheet to this block. */}
+      <div className="relative lg:grid lg:grid-cols-[22rem_minmax(0,1fr)] lg:gap-5">
         <div className="relative lg:col-start-2 lg:row-start-1 lg:h-[42rem]">
           <MapSearch
             barangays={barangays}

@@ -150,7 +150,7 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="primary-nav-mobile"
-          className="ml-auto inline-flex items-center gap-2 rounded-md border border-rule-strong px-3 py-2 text-sm font-semibold text-ink lg:hidden"
+          className="ml-auto inline-flex min-h-11 items-center gap-2 rounded-md border border-rule-strong px-3 py-2 text-sm font-semibold text-ink lg:hidden"
         >
           <span className="sr-only">Toggle navigation</span>
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden fill="none">

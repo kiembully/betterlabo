@@ -104,7 +104,7 @@ export function BudgetSection({
                 </Chip>
               ) : null}
             </div>
-            <h3 id={titleId} className="mt-1.5 text-base font-bold text-ink sm:text-lg">
+            <h3 id={titleId} className="mt-1.5 text-base font-bold break-words text-ink sm:text-lg">
               {sheet.title}
             </h3>
           </div>

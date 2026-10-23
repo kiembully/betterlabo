@@ -110,7 +110,7 @@ export default async function DataPage() {
                     href={d.sourceUrl}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center rounded-md border border-rule-strong px-3 py-1.5 text-xs font-semibold text-ink transition-colors hover:border-brand-300"
+                    className="inline-flex min-h-10 items-center rounded-md border border-rule-strong px-3 py-1.5 text-xs font-semibold text-ink transition-colors hover:border-brand-300 xs:min-h-0"
                   >
                     Upstream file
                   </a>
@@ -118,7 +118,7 @@ export default async function DataPage() {
                     href={d.portalUrl}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center rounded-md border border-rule-strong px-3 py-1.5 text-xs font-semibold text-ink transition-colors hover:border-brand-300"
+                    className="inline-flex min-h-10 items-center rounded-md border border-rule-strong px-3 py-1.5 text-xs font-semibold text-ink transition-colors hover:border-brand-300 xs:min-h-0"
                   >
                     BetterGov Open Data Portal
                   </a>
@@ -127,7 +127,7 @@ export default async function DataPage() {
                       href={d.licenseUrl}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="inline-flex items-center rounded-md border border-rule-strong px-3 py-1.5 text-xs font-semibold text-ink transition-colors hover:border-brand-300"
+                      className="inline-flex min-h-10 items-center rounded-md border border-rule-strong px-3 py-1.5 text-xs font-semibold text-ink transition-colors hover:border-brand-300 xs:min-h-0"
                     >
                       Licence text
                     </a>

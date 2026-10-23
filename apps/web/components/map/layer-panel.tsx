@@ -82,7 +82,14 @@ export function LayerPanel({
       aria-label="Map layers and legend"
       className={cn(
         'z-40 flex flex-col overflow-hidden border border-rule bg-surface',
-        'fixed inset-x-0 bottom-0 max-h-[78dvh] rounded-t-xl shadow-raised transition-transform duration-300 ease-out',
+        // `absolute`, not `fixed`: anchored to the map block, so the sheet sits
+        // inside the map and scrolls away with it. Fixed to the viewport it
+        // floated over the stat cards above the map and the provenance text
+        // below it, covering a line of content on a phone at every scroll
+        // position. Capped at 70% of the block so the panel's own header — the
+        // only way to close it — cannot be dragged above the sticky masthead
+        // when the user opens it while the top of the map is off-screen.
+        'absolute inset-x-0 bottom-0 max-h-[70%] rounded-t-xl shadow-raised transition-transform duration-300 ease-out',
         open ? 'translate-y-0' : 'translate-y-[calc(100%_-_3.5rem)]',
         'lg:static lg:inset-auto lg:col-start-1 lg:row-start-1 lg:max-h-none lg:translate-y-0 lg:rounded-card lg:shadow-card',
       )}
@@ -98,7 +105,7 @@ export function LayerPanel({
           onClick={() => onOpenChange(!open)}
           aria-expanded={open}
           aria-controls="map-layer-panel-body"
-          className="ml-auto shrink-0 rounded p-1.5 text-ink-support transition-colors hover:bg-gray-100 hover:text-ink xs:ml-2 lg:hidden"
+          className="ml-auto flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded text-ink-support transition-colors hover:bg-gray-100 hover:text-ink xs:ml-2 lg:hidden"
         >
           {open ? <ChevronDown aria-hidden className="size-4" /> : <ChevronUp aria-hidden className="size-4" />}
           <span className="sr-only">{open ? 'Collapse' : 'Expand'} the layer panel</span>

@@ -51,17 +51,22 @@ const projectMeta = (project: ProjectRecord): string =>
 
 function ProjectCard({ project }: { project: ProjectRecord }) {
   return (
-    <li className="card flex flex-col gap-3 p-4">
-      <p className="text-sm font-semibold text-ink">{project.description}</p>
-      <p className="text-xs leading-relaxed text-ink-support">{projectMeta(project)}</p>
-      <dl className="grid grid-cols-2 gap-x-3 gap-y-2">
-        <div>
+    // min-w-0: as a grid child its automatic minimum is min-content, which for a
+    // DPWH description is one unbreakable all-caps token. Without it the card
+    // (and the whole page) grew wider than the phone.
+    <li className="card flex min-w-0 flex-col gap-3 p-4">
+      <p className="text-sm font-semibold break-words text-ink">{project.description}</p>
+      <p className="text-xs leading-relaxed break-words text-ink-support">{projectMeta(project)}</p>
+      {/* Amount is the wide cell, Year is two words — an even 1fr/1fr split
+          overflowed by the peso figure at 360px. */}
+      <dl className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-2">
+        <div className="min-w-0">
           <dt className="eyebrow">Amount</dt>
           <dd className="mt-1">
             <Money value={project.amount} />
           </dd>
         </div>
-        <div>
+        <div className="text-right">
           <dt className="eyebrow">Year</dt>
           <dd className="figure-num mt-1 text-sm text-ink">{project.year ?? '—'}</dd>
         </div>

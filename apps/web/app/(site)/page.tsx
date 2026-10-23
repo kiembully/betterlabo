@@ -90,22 +90,25 @@ export default async function HomePage() {
               layers from Project NOAH, and a channel for residents to report what needs
               fixing.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            {/* Stacked full-width on a phone: side by side, the three labels
+                barely fit and the third wraps alone to a new line, where its
+                own padding makes it look accidentally indented. */}
+            <div className="mt-7 flex flex-col gap-3 xs:flex-row xs:flex-wrap">
               <Link
                 href="/map"
-                className="inline-flex items-center rounded-md bg-brand-900 px-4 py-2.5 text-sm font-semibold text-brand-50 transition-colors hover:bg-brand-800"
+                className="inline-flex items-center justify-center rounded-md bg-brand-900 px-4 py-3 text-sm font-semibold text-brand-50 transition-colors hover:bg-brand-800 xs:justify-start xs:py-2.5"
               >
                 Open the map
               </Link>
               <Link
                 href="/budget"
-                className="inline-flex items-center rounded-md border border-rule-strong bg-surface px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-brand-300"
+                className="inline-flex items-center justify-center rounded-md border border-rule-strong bg-surface px-4 py-3 text-sm font-semibold text-ink transition-colors hover:border-brand-300 xs:justify-start xs:py-2.5"
               >
                 See where the money goes
               </Link>
               <Link
                 href="/report"
-                className="inline-flex items-center rounded-md border border-transparent px-4 py-2.5 text-sm font-semibold text-brand-800 underline transition-colors hover:text-brand-900"
+                className="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-3 text-sm font-semibold text-brand-800 underline transition-colors hover:text-brand-900 xs:justify-start xs:py-2.5"
               >
                 Report an issue
               </Link>

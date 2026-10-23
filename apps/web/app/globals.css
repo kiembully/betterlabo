@@ -224,11 +224,21 @@
   color: var(--color-ink-subtle);
 }
 
-/** Provenance / source chip. */
+/**
+ * Provenance / source chip.
+ *
+ * Wraps rather than overflows. A licence string ("Public domain (per the site
+ * footer: …") is genuinely longer than a 360px phone, and `white-space: nowrap`
+ * made that single chip 576px wide — which widened the whole document and gave
+ * every page on the site a horizontal scroll. Short chips are unaffected: text
+ * that already fits never breaks. `max-width: 100%` keeps a chip inside a card
+ * whatever it is asked to hold.
+ */
 @utility chip {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
+  max-width: 100%;
   border: 1px solid var(--color-rule-strong);
   background-color: var(--color-surface);
   border-radius: var(--radius-pill);
@@ -237,7 +247,8 @@
   line-height: 1.3;
   font-weight: 600;
   color: var(--color-ink-support);
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 /** Tabular figure, monospaced for codes and amounts in dense tables. */
@@ -325,6 +336,23 @@
 
   &:focus {
     top: 0.5rem;
+  }
+}
+
+/**
+ * iOS Safari zooms the page in when it focuses a form control whose text renders
+ * below 16px, and it never zooms back out — the resident finishes the whole
+ * report form on a page stuck at half size. Every control in this app is
+ * `text-sm` (14px), and a class in the utilities layer beats anything in the base
+ * layer, so this rule lives in the utilities layer too and carries more simple
+ * selectors than `.text-sm` does. Phones get 16px controls; from `sm` up the
+ * design's own sizes apply again.
+ */
+@media (width < 40rem) {
+  input,
+  select,
+  textarea {
+    font-size: 1rem;
   }
 }
 

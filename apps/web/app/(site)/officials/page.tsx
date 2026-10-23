@@ -58,35 +58,80 @@ function PersonRow({ person, index }: { person: LguOfficial; index: number }) {
   );
 }
 
+/**
+ * One person, laid out as a card for phones. Four columns of names, positions,
+ * offices and numbers cannot be read at 360px without scrolling sideways, and
+ * the horizontal-scroll table is the one thing this directory had that the rest
+ * of the portal had already dropped below `sm` (see the barangay directory and
+ * the projects list).
+ */
+function PersonCard({ person }: { person: LguOfficial }) {
+  return (
+    <li className="card min-w-0 p-4">
+      <p className="text-sm font-semibold break-words text-ink">
+        {person.name ? (
+          person.name
+        ) : (
+          <span className="font-normal text-ink-subtle italic">Not named on the current page</span>
+        )}
+      </p>
+      {person.nameRemovedFromCurrentPage && person.nameAsOf ? (
+        <p className="mt-0.5 text-xs text-ink-subtle">Last stated {person.nameAsOf}</p>
+      ) : null}
+      <p className="mt-1 text-sm break-words text-ink-support">{person.position ?? '—'}</p>
+      {person.office ? (
+        <p className="mt-0.5 text-xs leading-relaxed break-words text-ink-subtle">{person.office}</p>
+      ) : null}
+      {person.address ? (
+        <p className="mt-1.5 text-xs leading-relaxed break-words text-ink-support">{person.address}</p>
+      ) : null}
+      {person.floor ? <p className="text-xs text-ink-subtle">{person.floor}</p> : null}
+      <p className="mt-2 text-sm text-ink-support">
+        <span className="text-xs font-semibold tracking-wide text-ink-subtle uppercase">
+          Telephone{' '}
+        </span>
+        <span className="figure-num whitespace-nowrap">{person.phone ?? '—'}</span>
+      </p>
+    </li>
+  );
+}
+
 function PersonTable({ people, caption }: { people: LguOfficial[]; caption: string }) {
   if (people.length === 0) return null;
   return (
-    <div className="overflow-x-auto rounded-card border border-rule">
-      <table className="w-full border-collapse text-left">
-        <caption className="sr-only">{caption}</caption>
-        <thead>
-          <tr className="border-b border-rule bg-sunken">
-            <th scope="col" className="px-3 py-2 text-xs font-semibold tracking-wide text-ink-subtle uppercase">
-              Name
-            </th>
-            <th scope="col" className="px-3 py-2 text-xs font-semibold tracking-wide text-ink-subtle uppercase">
-              Position
-            </th>
-            <th scope="col" className="px-3 py-2 text-xs font-semibold tracking-wide text-ink-subtle uppercase">
-              Office and address
-            </th>
-            <th scope="col" className="px-3 py-2 text-xs font-semibold tracking-wide text-ink-subtle uppercase">
-              Telephone
-            </th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-rule">
-          {people.map((person, index) => (
-            <PersonRow key={`${person.position}-${person.name ?? index}`} person={person} index={index} />
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <>
+      <ul className="grid gap-3 sm:hidden">
+        {people.map((person, index) => (
+          <PersonCard key={`${person.position}-${person.name ?? index}`} person={person} />
+        ))}
+      </ul>
+      <div className="hidden overflow-x-auto rounded-card border border-rule sm:block">
+        <table className="w-full border-collapse text-left">
+          <caption className="sr-only">{caption}</caption>
+          <thead>
+            <tr className="border-b border-rule bg-sunken">
+              <th scope="col" className="px-3 py-2 text-xs font-semibold tracking-wide text-ink-subtle uppercase">
+                Name
+              </th>
+              <th scope="col" className="px-3 py-2 text-xs font-semibold tracking-wide text-ink-subtle uppercase">
+                Position
+              </th>
+              <th scope="col" className="px-3 py-2 text-xs font-semibold tracking-wide text-ink-subtle uppercase">
+                Office and address
+              </th>
+              <th scope="col" className="px-3 py-2 text-xs font-semibold tracking-wide text-ink-subtle uppercase">
+                Telephone
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-rule">
+            {people.map((person, index) => (
+              <PersonRow key={`${person.position}-${person.name ?? index}`} person={person} index={index} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 
