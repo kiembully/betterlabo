@@ -59,7 +59,7 @@ export function FigureTable({ sheet, hideZeros, collisions }: Props) {
             {isRatio ? null : (
               <th
                 scope="col"
-                className="w-16 py-2 text-right text-[0.6875rem] font-bold tracking-wider text-ink-subtle uppercase"
+                className="hidden w-16 py-2 text-right text-[0.6875rem] font-bold tracking-wider text-ink-subtle uppercase xs:table-cell"
               >
                 Share
               </th>
@@ -83,7 +83,7 @@ export function FigureTable({ sheet, hideZeros, collisions }: Props) {
                   figure.amount === 0 && !isTotal && 'text-ink-subtle',
                 )}
               >
-                <th scope="row" className="w-full py-2 pr-2 align-top font-medium break-words">
+                <th scope="row" className="w-full py-2 pr-2 align-top font-medium wrap-anywhere xs:break-words">
                   <span className={cn('text-ink', isTotal && 'font-bold')}>{figure.label}</span>
                   {figure.amount === 0 ? (
                     <span className="ml-1.5 rounded-pill bg-gray-100 px-1.5 py-0.5 text-[0.625rem] font-semibold whitespace-nowrap text-ink-subtle">
@@ -110,9 +110,23 @@ export function FigureTable({ sheet, hideZeros, collisions }: Props) {
                   ) : (
                     <Money value={figure.amount} className={isTotal ? 'text-ink' : undefined} />
                   )}
+                  {/* Below `xs` the share rides under the amount instead of
+                      holding a third column: three columns of BLGF figures did
+                      not fit a 360px phone and made the table scroll sideways. */}
+                  {isRatio || share == null ? null : (
+                    <span
+                      className={cn(
+                        'mt-0.5 block text-[0.6875rem] font-normal xs:hidden',
+                        computed ? 'text-ink-subtle' : 'text-ink-support',
+                      )}
+                    >
+                      {computed ? '~' : ''}
+                      {formatPercent(share, 2)} of section
+                    </span>
+                  )}
                 </td>
                 {isRatio ? null : (
-                  <td className="py-2 text-right align-top">
+                  <td className="hidden py-2 text-right align-top xs:table-cell">
                     {share == null ? (
                       <span
                         className="figure-num text-ink-subtle"
@@ -166,7 +180,7 @@ export function FigureTable({ sheet, hideZeros, collisions }: Props) {
                   <Money value={sheet.total} className="text-ink" />
                 )}
               </td>
-              {isRatio ? null : <td className="py-2" />}
+              {isRatio ? null : <td className="hidden py-2 xs:table-cell" />}
             </tr>
           </tfoot>
         ) : null}

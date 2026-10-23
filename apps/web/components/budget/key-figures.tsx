@@ -232,7 +232,10 @@ export function LabelCollisions({ sheets }: { sheets: FiscalSheet[] }) {
                   const sheet = sheets.find((candidate) => candidate.id === section.id);
                   if (!sheet) return null;
                   return (
-                    <span key={section.id} className="mr-3 inline-block whitespace-nowrap">
+                    // The unit may be a whole section title plus its amount, which
+                    // is wider than a 320px phone: cap it at the column and let the
+                    // title wrap, with only the figure held on one line.
+                    <span key={section.id} className="mr-3 inline-block max-w-full align-top">
                       <a
                         href={`#${anchorOf(section.id)}`}
                         className="font-semibold text-brand-700 underline"
@@ -240,11 +243,11 @@ export function LabelCollisions({ sheets }: { sheets: FiscalSheet[] }) {
                       >
                         {section.title}
                       </a>{' '}
-                      <span className="figure-num text-ink-subtle">
+                      <span className="figure-num whitespace-nowrap text-ink-subtle">
                         {formatNumber(section.amount, 0)}
                       </span>
                       {sheet.unit === '%' ? <span className="text-ink-subtle">%</span> : null}
-                      <span className="ml-1 text-[0.625rem] text-ink-subtle">
+                      <span className="ml-1 text-[0.625rem] whitespace-nowrap text-ink-subtle">
                         {shortWorkbookLabel(parseBasis(sheet.basis).workbook)}
                       </span>
                     </span>

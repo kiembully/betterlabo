@@ -58,14 +58,16 @@ export function StatTile({
   return (
     <div
       className={cn(
-        'card p-4 sm:p-5',
+        'card min-w-0 p-4 sm:p-5',
         tone === 'brand' && 'border-brand-200 bg-brand-50',
         tone === 'warning' && 'border-accent-orange-200 bg-accent-orange-50',
       )}
     >
       <Eyebrow>{label}</Eyebrow>
       <p className="mt-2 flex items-baseline gap-1.5">
-        <span className="font-mono text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+        {/* One step smaller below `xs`: a compact peso figure in tabular mono is
+            113px wide, and two tiles on a 320px phone leave 106px each. */}
+        <span className="font-mono text-xl font-semibold tracking-tight text-ink xs:text-2xl sm:text-3xl">
           {value}
         </span>
         {unit ? <span className="text-xs font-semibold text-ink-support">{unit}</span> : null}

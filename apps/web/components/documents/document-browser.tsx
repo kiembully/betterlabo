@@ -111,7 +111,7 @@ export function DocumentBrowser() {
             className="mt-1.5 w-full rounded-md border border-rule-strong bg-surface px-3 py-2 text-sm text-ink"
           />
         </div>
-        <div>
+        <div className="w-full xs:w-auto">
           <label htmlFor="doc-kind" className="block text-xs font-semibold tracking-wide text-ink-subtle uppercase">
             Type
           </label>
@@ -119,7 +119,7 @@ export function DocumentBrowser() {
             id="doc-kind"
             value={kind}
             onChange={(event) => setKind(event.target.value)}
-            className="mt-1.5 rounded-md border border-rule-strong bg-surface px-3 py-2 text-sm text-ink"
+            className="mt-1.5 w-full rounded-md border border-rule-strong bg-surface px-3 py-2 text-sm text-ink xs:w-auto"
           >
             <option value="all">All types ({index.count})</option>
             {kinds.map(([key, count]) => (
@@ -149,9 +149,14 @@ export function DocumentBrowser() {
               >
                 {item.title}
               </a>
-              <p className="mt-0.5 text-xs text-ink-subtle">
+              <p className="mt-0.5 text-xs break-all text-ink-subtle">
                 /docs/{item.slug}
-                {item.lastSeen ? ` · last published ${item.lastSeen}` : ''}
+                {item.lastSeen ? (
+                  <>
+                    {' · '}
+                    <span className="whitespace-nowrap">last published {item.lastSeen}</span>
+                  </>
+                ) : null}
               </p>
             </div>
             <Chip tone={KIND_LABELS[item.kind]?.tone ?? 'default'}>

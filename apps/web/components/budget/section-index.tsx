@@ -26,12 +26,14 @@ function IndexList({
               <li key={sheet.id}>
                 <a
                   href={`#${anchorOf(sheet.id)}`}
-                  className="flex items-baseline gap-2 rounded px-1.5 py-1 text-xs text-ink-support hover:bg-gray-100 hover:text-ink"
+                  className="flex items-baseline gap-2 rounded px-1.5 py-2.5 text-xs text-ink-support hover:bg-gray-100 hover:text-ink xs:py-1"
                 >
                   <span className="figure-num w-5 shrink-0 text-right text-[0.625rem] text-ink-subtle">
                     {ordinals.get(sheet.id) ?? ''}
                   </span>
-                  <span className="min-w-0 flex-1 truncate" title={`${sheet.title} — ${sheet.basis}`}>
+                  {/* Wraps on a phone instead of truncating: `title` is the only
+                      way to read a truncated label, and a phone has no hover. */}
+                  <span className="min-w-0 flex-1 xs:truncate" title={`${sheet.title} — ${sheet.basis}`}>
                     {sheet.title}
                   </span>
                   <span className="figure-num shrink-0 text-[0.625rem] text-ink-subtle">
