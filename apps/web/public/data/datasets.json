@@ -11,7 +11,7 @@
       "license": "Public Domain",
       "licenseUrl": null,
       "attributionText": "Local fiscal data compiled and published by the Bureau of Local Government Finance (BLGF), Department of Finance.",
-      "retrievedAt": "2026-10-23T23:51:31.000Z",
+      "retrievedAt": "2026-10-24T23:10:33.749Z",
       "sourceVersion": "FY 2024 (Preliminary)",
       "rowCount": 95,
       "bytes": 1935275,
@@ -36,7 +36,7 @@
       "license": "CC0 1.0 Universal",
       "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
       "attributionText": "Infrastructure project data from the official DPWH transparency platform, packaged by BetterGov.ph.",
-      "retrievedAt": "2026-10-23T23:51:32.037Z",
+      "retrievedAt": "2026-10-24T23:10:34.941Z",
       "sourceVersion": "2025-11-29",
       "rowCount": 309,
       "bytes": 24330129,
@@ -76,7 +76,7 @@
       "license": "ODC-ODbL",
       "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
       "attributionText": "Hazard layers produced by Project NOAH, Department of Science and Technology, Philippines.",
-      "retrievedAt": "2026-10-23T23:54:29.962Z",
+      "retrievedAt": "2026-10-24T23:14:14.810Z",
       "sourceVersion": "2026-04-11",
       "rowCount": 13,
       "bytes": 39715669,
@@ -101,7 +101,7 @@
       "license": "MIT",
       "licenseUrl": "https://github.com/bendlikeabamboo/barangay-boundaries-repository/blob/main/LICENSE",
       "attributionText": "Boundary polygons derived from PSA Philippine Standard Geographic Code snapshots (2023-10-24) and NAMRIA administrative-boundary shapefiles (v2023-11-06), packaged by Manuel Balmeo.",
-      "retrievedAt": "2026-10-23T23:51:29.675Z",
+      "retrievedAt": "2026-10-24T23:10:32.023Z",
       "sourceVersion": "v2026.4.13.0",
       "rowCount": 52,
       "bytes": 72910665,
@@ -137,6 +137,6 @@
       "reason": "No machine-readable source; municipal ordinance PDFs are not published as a dataset."
     }
   ],
-  "dataHash": "c5579889ae7f5b5c9dcf99011d7be12e4264507a6e1d9f17844bfedf0a7b5291",
-  "generatedAt": "2026-10-23T23:54:31.717Z"
+  "dataHash": "8ceda7099264aa68a3c08eb485647cfb0c5524221f1871741fc1f08a45c302a4",
+  "generatedAt": "2026-10-24T23:14:17.869Z"
 }
