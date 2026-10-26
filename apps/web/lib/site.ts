@@ -87,3 +87,30 @@ export const INDEPENDENCE_NOTICE =
 
 export const EMERGENCY_NOTICE =
   'This portal is not an emergency channel. In a life-threatening emergency, call 911 or the MDRC/MDRRMO hotline directly.';
+
+/**
+ * Where the portal's source lives. Linked from the footer, because "contribute" is a
+ * claim a reader should be able to act on in one click.
+ */
+export const REPOSITORY = {
+  url: 'https://github.com/kiembully/betterlabo',
+  label: 'Contribute on GitHub',
+} as const;
+
+/** The footer's provenance line, in the wording the BetterGov family uses. */
+export const CONTENT_NOTICE =
+  '© 2025 BetterGov. All content is public domain unless otherwise specified.';
+
+/**
+ * What the portal costs the people it serves.
+ *
+ * Zero is a claim, not a placeholder: there is no fee, no paywall, no advertising and no
+ * subscription anywhere on this site, and every compiled dataset is published under the
+ * licence recorded on `/data`. It is the counter-argument to "nothing is free", so it is
+ * stated plainly rather than hidden in an about page.
+ */
+export const COST_TO_PEOPLE = {
+  label: 'Cost to the People of Labo',
+  value: '₱0',
+  note: 'No fees, no paywall, no advertising. Built and maintained by volunteers.',
+} as const;
