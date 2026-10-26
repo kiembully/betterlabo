@@ -68,7 +68,9 @@ export function SiteHeader() {
       </a>
       <div className="container-page flex h-16 items-center gap-4">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <LaboMark className="size-10 shrink-0" />
+          {/* Sized by height: the mark's canvas is 1.4:1, so `size-10` would letterbox
+              it and leave the emblem smaller than the wordmark expects. */}
+          <LaboMark className="h-10 w-auto shrink-0" />
           <span className="flex flex-col leading-none">
             <span className="text-base font-bold tracking-tight text-ink">{SITE.name}</span>
             <span className="hidden text-[0.6875rem] font-medium text-ink-subtle xs:block">
